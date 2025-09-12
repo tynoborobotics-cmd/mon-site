@@ -1,1 +1,275 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Magnifique Robotique — Learn Robotics</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container">
+<h1 class="logo">🤖 Magnifique Robotique</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#curriculum">Curriculum</a>
+<a href="#simulator">Simulator</a>
+<a href="#quiz">Quiz</a>
+</nav>
+</div>
+</header>
+<main>
+<section id="home" class="hero">
+<div class="container hero-grid">
+<div>
+<h2>Apprenez la robotique — intuitif, visuel et magnifique.</h2>
+<p>From basics of sensors & actuators to kinematics and control — short lessons, hands-on exercises, and an interactive simulator.</p>
+<a class="cta" href="#curriculum">Start learning</a>
+</div>
+<div class="hero-card">
+<h3>Today's mini-lesson</h3>
+<p><strong>Forward Kinematics:</strong> compute the end-effector position given joint angles. Try it in the simulator.</p>
+</div>
+</div>
+</section>
+<section id="curriculum" class="container curriculum">
+<h2>Curriculum</h2>
+<div class="cards">
+<article class="card">
+<h3>Basics</h3>
+<p>Sensors, actuators, power, and safety.</p>
+<a class="small-btn" href="#">Read</a>
+</article>
+<article class="card">
+<h3>Kinematics</h3>
+<p>Joint space, forward and inverse kinematics.</p>
+<a class="small-btn" href="#simulator">Try Simulator</a>
+</article>
+<article class="card">
+<h3>Control</h3>
+<p>PID controllers, feedback, and stability basics.</p>
+<a class="small-btn" href="#quiz">Test</a>
+</article>
+</div>
+</section>
+<section id="simulator" class="container simulator">
+<h2>Interactive 2‑link Arm Simulator</h2>
+<p>Move the sliders (joint angles) and observe forward kinematics. Try to reach points by adjusting angles.</p>
+<div class="sim-grid">
+<div class="sim-canvas">
+<canvas id="robotCanvas" width="480" height="360" aria-label="robot arm simulator"></canvas>
+</div>
+<div class="controls">
+<label>Joint 1: <span id="a1val">45</span>°
+<input id="a1" type="range" min="-180" max="180" value="45">
+</label>
+<label>Joint 2: <span id="a2val">30</span>°
+<input id="a2" type="range" min="-180" max="180" value="30">
+</label>
+<label>Link1 length
+<input id="l1" type="range" min="40" max="200" value="120">
+</label>
+<label>Link2 length
+<input id="l2" type="range" min="40" max="200" value="100">
+</label>
+<div class="sim-actions">
+<button id="randomBtn">Random pose</button>
+<button id="resetBtn">Reset</button>
+</div>
+<div class="coords">End-effector: <span id="coords">(0, 0)</span></div>
+</div>
+</div>
+</section>
+<section id="quiz" class="container quiz">
+<h2>Quick Quiz</h2>
+<div id="quizBox">
+<p class="question" id="qtext">Which quantity does forward kinematics compute?</p>
+<div class="answers">
+<button class="ans">The torques needed at joints</button>
+<button class="ans">The position of the end-effector</button>
+<button class="ans">The sensor calibration values</button>
+<button class="ans">The battery state-of-charge</button>
+</div>
+<div id="feedback" aria-live="polite"></div>
+<button id="nextQ" class="small-btn">Next question</button>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<small>Made with ❤ for curious minds — Magnifique Robotique 2025</small>
+</div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

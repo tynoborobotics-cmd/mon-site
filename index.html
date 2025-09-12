@@ -1,276 +1,242 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Magnifique Robotique — Learn Robotics</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Hub - Master Data Science</title>
+    <meta name="description" content="Learn data science with cutting-edge courses and e-books. Join a community of innovators and transform your career.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 </head>
-<body>
-<header class="site-header">
-<div class="container">
-<h1 class="logo">🤖 Magnifique Robotique</h1>
-<nav>
-<a href="#home">Home</a>
-<a href="#curriculum">Curriculum</a>
-<a href="#simulator">Simulator</a>
-<a href="#quiz">Quiz</a>
-</nav>
-</div>
-</header>
-<main>
-<section id="home" class="hero">
-<div class="container hero-grid">
-<div>
-<h2>Apprenez la robotique — intuitif, visuel et magnifique.</h2>
-<p>From basics of sensors & actuators to kinematics and control — short lessons, hands-on exercises, and an interactive simulator.</p>
-<a class="cta" href="#curriculum">Start learning</a>
-</div>
-<div class="hero-card">
-<h3>Today's mini-lesson</h3>
-<p><strong>Forward Kinematics:</strong> compute the end-effector position given joint angles. Try it in the simulator.</p>
-</div>
-</div>
-</section>
-<section id="curriculum" class="container curriculum">
-<h2>Curriculum</h2>
-<div class="cards">
-<article class="card">
-<h3>Basics</h3>
-<p>Sensors, actuators, power, and safety.</p>
-<a class="small-btn" href="#">Read</a>
-</article>
-<article class="card">
-<h3>Kinematics</h3>
-<p>Joint space, forward and inverse kinematics.</p>
-<a class="small-btn" href="#simulator">Try Simulator</a>
-</article>
-<article class="card">
-<h3>Control</h3>
-<p>PID controllers, feedback, and stability basics.</p>
-<a class="small-btn" href="#quiz">Test</a>
-</article>
-</div>
-</section>
-<section id="simulator" class="container simulator">
-<h2>Interactive 2‑link Arm Simulator</h2>
-<p>Move the sliders (joint angles) and observe forward kinematics. Try to reach points by adjusting angles.</p>
-<div class="sim-grid">
-<div class="sim-canvas">
-<canvas id="robotCanvas" width="480" height="360" aria-label="robot arm simulator"></canvas>
-</div>
-<div class="controls">
-<label>Joint 1: <span id="a1val">45</span>°
-<input id="a1" type="range" min="-180" max="180" value="45">
-</label>
-<label>Joint 2: <span id="a2val">30</span>°
-<input id="a2" type="range" min="-180" max="180" value="30">
-</label>
-<label>Link1 length
-<input id="l1" type="range" min="40" max="200" value="120">
-</label>
-<label>Link2 length
-<input id="l2" type="range" min="40" max="200" value="100">
-</label>
-<div class="sim-actions">
-<button id="randomBtn">Random pose</button>
-<button id="resetBtn">Reset</button>
-</div>
-<div class="coords">End-effector: <span id="coords">(0, 0)</span></div>
-</div>
-</div>
-</section>
-<section id="quiz" class="container quiz">
-<h2>Quick Quiz</h2>
-<div id="quizBox">
-<p class="question" id="qtext">Which quantity does forward kinematics compute?</p>
-<div class="answers">
-<button class="ans">The torques needed at joints</button>
-<button class="ans">The position of the end-effector</button>
-<button class="ans">The sensor calibration values</button>
-<button class="ans">The battery state-of-charge</button>
-</div>
-<div id="feedback" aria-live="polite"></div>
-<button id="nextQ" class="small-btn">Next question</button>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container">
-<small>Made with ❤ for curious minds — Magnifique Robotique 2025</small>
-</div>
-</footer>
+<body class="bg-gray-50 font-sans">
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center text-white" aria-label="Hero Section">
+        <div id="webgl-bg" class="absolute inset-0 z-0 bg-gradient-to-r from-indigo-900 to-emerald-600"></div>
+        <div class="absolute inset-0 z-0 bg-black opacity-30"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Master Data Science. Transform Your Career.</h1>
+            <p class="text-xl md:text-2xl mb-6">Cutting-edge courses, expert-led training, and a community of innovators. Your journey to data fluency starts here.</p>
+            <div class="space-x-4">
+                <a href="#courses" class="btn btn-primary" role="button">Explore Our Courses</a>
+                <a href="#resources" class="btn btn-secondary" role="button">Download Free Resources</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Social Proof Section -->
+    <section class="py-12 bg-white" aria-label="Trusted Companies">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-lg font-semibold mb-6">Trusted by data professionals at:</p>
+            <div class="flex justify-center gap-8 flex-wrap">
+                <img loading="lazy" src="https://via.placeholder.com/150x50?text=Google" alt="Google Logo" class="h-10">
+                <img loading="lazy" src="https://via.placeholder.com/150x50?text=Amazon" alt="Amazon Logo" class="h-10">
+                <img loading="lazy" src="https://via.placeholder.com/150x50?text=Microsoft" alt="Microsoft Logo" class="h-10">
+                <img loading="lazy" src="https://via.placeholder.com/150x50?text=Netflix" alt="Netflix Logo" class="h-10">
+                <img loading="lazy" src="https://via.placeholder.com/150x50?text=Spotify" alt="Spotify Logo" class="h-10">
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- About Us Page -->
+    <section id="about" class="py-16 bg-gray-100" aria-label="About Us">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">The Future of Data Science Education is Here</h2>
+            <!-- Our Mission -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-semibold mb-4">Democratizing World-Class Data Science Expertise</h3>
+                <p class="text-lg">We believe that the power of data should be accessible to all. Data Science Hub was founded to break down complex data science concepts into actionable, understandable knowledge, bridging the gap between academia and the tech industry.</p>
+            </div>
+            <!-- Our Pedagogy -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-semibold mb-6">Our Pedagogy</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <img loading="lazy" src="https://via.placeholder.com/50?text=📚" alt="Curriculum Icon" class="mx-auto mb-4">
+                        <h4 class="text-xl font-semibold">Industry-Relevant Curriculum</h4>
+                        <p>Updated by practitioners to teach the tools and techniques companies need today.</p>
+                    </div>
+                    <div class="text-center">
+                        <img loading="lazy" src="https://via.placeholder.com/50?text=🛠" alt="Project Icon" class="mx-auto mb-4">
+                        <h4 class="text-xl font-semibold">Project-Based Learning</h4>
+                        <p>Build a portfolio with capstone projects that showcase your skills.</p>
+                    </div>
+                    <div class="text-center">
+                        <img loading="lazy" src="https://via.placeholder.com/50?text=🤝" alt="Community Icon" class="mx-auto mb-4">
+                        <h4 class="text-xl font-semibold">Community-Driven Support</h4>
+                        <p>Learn with peers, mentors, and vibrant forum discussions.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Meet The Instructors -->
+            <div>
+                <h3 class="text-3xl font-semibold mb-6">Meet The Instructors</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="instructor-card" role="region" aria-label="Instructor Profile">
+                        <img loading="lazy" src="https://via.placeholder.com/150?text=Elena" alt="Elena Rodriguez" class="w-full h-48 object-cover rounded-lg">
+                        <h4 class="text-xl font-semibold">Dr. Elena Rodriguez</h4>
+                        <p>PhD in Computational Statistics, Former Lead Data Scientist at SpaceX</p>
+                        <p><strong>Specializes in:</strong> Bayesian Methods, Machine Learning</p>
+                    </div>
+                    <div class="instructor-card" role="region" aria-label="Instructor Profile">
+                        <img loading="lazy" src="https://via.placeholder.com/150?text=Marcus" alt="Marcus Chen" class="w-full h-48 object-cover rounded-lg">
+                        <h4 class="text-xl font-semibold">Marcus Chen</h4>
+                        <p>Principal AI Engineer, Built recommendation systems for Fortune 500 companies</p>
+                        <p><strong>Specializes in:</strong> Deep Learning, NLP</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="#instructors" class="btn btn-primary" role="button">View Our Instructor Profiles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses / Learning Paths Page -->
+    <section id="courses" class="py-16" aria-label="Courses">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Structured Learning for Ambitious Goals</h2>
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap gap-4 mb-8" role="form" aria-label="Course Filters">
+                <select id="level-filter" class="border p-2 rounded">
+                    <option value="all">Level: All</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <select id="topic-filter" class="border p-2 rounded">
+                    <option value="all">Topic: All</option>
+                    <option value="python">Python</option>
+                    <option value="machine-learning">Machine Learning</option>
+                    <option value="data-visualization">Data Visualization</option>
+                </select>
+                <select id="format-filter" class="border p-2 rounded">
+                    <option value="all">Format: All</option>
+                    <option value="self-paced">Self-Paced</option>
+                    <option value="cohort-based">Cohort-Based</option>
+                </select>
+            </div>
+            <!-- Course Cards -->
+            <div id="course-list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="course-card" data-level="advanced" data-topic="machine-learning" data-format="cohort-based">
+                    <span class="bg-emerald-500 text-white px-2 py-1 rounded absolute">MOST POPULAR</span>
+                    <img loading="lazy" src="https://via.placeholder.com/300x150?text=Course+Preview" alt="Machine Learning Bootcamp" class="w-full h-48 object-cover rounded-lg">
+                    <h3 class="text-2xl font-semibold mt-4">The Machine Learning Engineer Bootcamp</h3>
+                    <p class="text-gray-600">Master Scikit-learn, TensorFlow, and MLOps to build production-ready models.</p>
+                    <ul class="text-sm text-gray-500 mt-2">
+                        <li><strong>Level:</strong> Advanced</li>
+                        <li><strong>Duration:</strong> 12 Weeks</li>
+                        <li><strong>Format:</strong> Mentor-Led Cohort</li>
+                        <li><strong>Projects:</strong> 4 Portfolio Projects</li>
+                        <li><strong>Price:</strong> $1,499 <span class="line-through">$1,999</span> (Limited Time Offer)</li>
+                    </ul>
+                    <button class="btn btn-primary mt-4 enroll-btn" data-course="Machine Learning Bootcamp">Enroll Now</button>
+                </div>
+                <!-- Add more course cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Books & Resources Store Page -->
+    <section id="resources" class="py-16 bg-gray-100" aria-label="E-books and Resources">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">The Data Scientist's Library</h2>
+            <p class="text-lg text-center mb-8">Deepen your knowledge with our expertly crafted e-books, designed to be definitive guides for data science topics.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="product-card">
+                    <img loading="lazy" src="https://via.placeholder.com/300x400?text=E-book+Cover" alt="Python for Data Analysis E-book" class="w-full h-64 object-cover rounded-lg">
+                    <h3 class="text-2xl font-semibold mt-4">"Python for Data Analysis: The Definitive Handbook"</h3>
+                    <p class="text-gray-600">Master Pandas, NumPy, and Matplotlib with real-world datasets and exercises.</p>
+                    <p class="text-sm text-gray-500 mt-2"><strong>Format:</strong> PDF, ePub, Mobi | <strong>Pages:</strong> 350 | <strong>Download Size:</strong> 45MB</p>
+                    <p class="text-lg font-semibold mt-2">$49.99</p>
+                    <div class="flex gap-4 mt-4">
+                        <button class="btn btn-primary cart-btn" data-product="Python for Data Analysis" data-price="49.99">Add to Cart</button>
+                        <button class="btn btn-secondary buy-btn" data-product="Python for Data Analysis" data-price="49.99">Buy Now</button>
+                    </div>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+            <div class="mt-8 text-center">
+                <h3 class="text-xl font-semibold">Cart</h3>
+                <ul id="cart-list" class="text-left max-w-md mx-auto"></ul>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Success Stories Page -->
+    <section id="testimonials" class="py-16" aria-label="Testimonials">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Hear From Our Alumni</h2>
+            <!-- Video Testimonial -->
+            <div class="relative mb-12">
+                <video src="https://via.placeholder.com/800x450?text=Video+Testimonial" controls class="w-full h-96 rounded-lg" aria-label="Alumni Testimonial Video"></video>
+                <div class="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-4 rounded">
+                    <p class="text-lg">"This bootcamp taught me how to think like a data scientist. I landed a FAANG job within 3 months."</p>
+                    <p class="font-semibold">- Sarah K., Data Analyst at Amazon</p>
+                </div>
+            </div>
+            <!-- Written Testimonials -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow">
+                    <p class="text-lg">"The e-books are detailed and helped me pass my TensorFlow Developer certification."</p>
+                    <p class="font-semibold mt-4">- David L., AI Developer</p>
+                </div>
+                <!-- Add more testimonials as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Insights Page -->
+    <section id="blog" class="py-16 bg-gray-100" aria-label="Blog and Insights">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Insights & Tutorials from The Data Frontier</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Featured Post -->
+                <div class="bg-white rounded-lg shadow">
+                    <img loading="lazy" src="https://via.placeholder.com/600x300?text=Featured+Post" alt="Anomaly Detection Tutorial" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <span class="text-sm text-emerald-500">TUTORIAL</span>
+                        <h3 class="text-2xl font-semibold mt-2">How to Build a Real-Time Anomaly Detection System in 2024</h3>
+                        <p class="text-gray-600 mt-2">A step-by-step guide using Python, Kafka, and PySpark.</p>
+                        <p class="text-sm text-gray-500 mt-2">12 min read</p>
+                        <button class="btn btn-primary mt-4">Read More</button>
+                    </div>
+                </div>
+                <!-- Standard Post -->
+                <div class="bg-white rounded-lg shadow">
+                    <img loading="lazy" src="https://via.placeholder.com/600x300?text=Post" alt="Generative AI Post" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <span class="text-sm text-indigo-500">INDUSTRY NEWS</span>
+                        <h3 class="text-2xl font-semibold mt-2">Beyond ChatGPT: The Next Wave of Generative AI Models</h3>
+                        <p class="text-gray-600 mt-2">Breaking down the latest research for enterprise AI applications.</p>
+                        <p class="text-sm text-gray-500 mt-2">8 min read</p>
+                        <button class="btn btn-primary mt-4">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-white py-12" aria-label="Footer">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-2xl font-semibold mb-6">Never Miss an Update</h3>
+            <p class="mb-4">Subscribe for exclusive tutorials, industry news, and early-bird access to courses and book launches.</p>
+            <div class="flex gap-4 max-w-md">
+                <input type="email" id="newsletter-email" placeholder="Enter your email..." class="w-full p-2 rounded text-gray-900" aria-label="Email for newsletter">
+                <button id="subscribe-btn" class="btn btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-emerald-500 text-white p-4 flex justify-between items-center hidden" role="alert">
+        <p>Start your data science journey today. Enroll now and get 20% off your first course.</p>
+        <button class="btn btn-primary">Claim Your Discount</button>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

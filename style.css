@@ -1,32 +1,40 @@
-:root{
---bg:#0f1724; --card:#0b1220; --accent:#9b5cff; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
+/* Custom styles to complement Tailwind */
+#webgl-bg {
+    background: linear-gradient(135deg, #1e3a8a, #10b981);
 }
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,#071028 0%, #071833 100%)}
-.container{max-width:1100px;margin:0 auto;padding:24px}
-.site-header{backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
-.site-header .container{display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:1.25rem;margin:0;color:var(--accent)}
-nav a{color:var(--muted);text-decoration:none;margin-left:16px}
-.hero{padding:48px 0}
-.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center}
-.hero h2{font-size:2rem;margin:0 0 12px}
-.hero p{color:var(--muted)}
-.cta{display:inline-block;margin-top:12px;background:linear-gradient(90deg,var(--accent),#6fd3ff);padding:10px 16px;border-radius:10px;color:#041022;text-decoration:none;font-weight:600}
-.hero-card{background:var(--glass);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.curriculum .cards{display:flex;gap:14px;margin-top:16px}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;flex:1}
-.small-btn{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03);color:var(--muted);text-decoration:none}
-.simulator{margin-top:20px}
-.sim-grid{display:grid;grid-template-columns:480px 1fr;gap:16px;align-items:start}
-.sim-canvas{background:linear-gradient(180deg,#021022,#061836);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.controls label{display:block;margin-bottom:8px;color:var(--muted)}
-.controls input[type=range]{width:100%}
-.sim-actions{margin-top:10px;display:flex;gap:8px}
-.coords{margin-top:12px;color:var(--muted)}
-.quiz{margin-top:28px}
-.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
-.ans{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:var(--card);color:#e6eef8;cursor:pointer}
-.ans:hover{transform:translateY(-2px)}
-.site-footer{padding:18px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03)}
-@media (max-width:880px){.hero-grid{grid-template-columns:1fr}.sim-grid{grid-template-columns:1fr}.cards{flex-direction:column}}
+
+.btn {
+    @apply px-4 py-2 rounded font-semibold transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500;
+}
+
+.btn-primary {
+    @apply bg-emerald-500 text-white hover:bg-emerald-600;
+}
+
+.btn-secondary {
+    @apply bg-transparent border border-white text-white hover:bg-white hover:text-emerald-500;
+}
+
+.instructor-card, .course-card, .product-card {
+    @apply relative bg-white p-6 rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1;
+}
+
+.instructor-card img {
+    transition: transform 0.3s ease;
+}
+
+.instructor-card:hover img {
+    transform: scale(1.05);
+}
+
+#sticky-cta {
+    transition: transform 0.3s ease;
+}
+
+#sticky-cta.hidden {
+    transform: translateY(100%);
+}
+
+input, select {
+    @apply focus:ring-2 focus:ring-emerald-500;
+}

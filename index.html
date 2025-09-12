@@ -11,8 +11,25 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 </head>
 <body class="bg-gray-50 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-indigo-900 text-white py-4 fixed w-full top-0 z-50" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <a href="#hero" class="flex items-center">
+                <img src="tynobo-academy-logo.png" alt="Tynobo Academy Logo" class="h-12 w-auto">
+            </a>
+            <ul class="flex gap-6">
+                <li><a href="#hero" class="hover:text-emerald-500">Home</a></li>
+                <li><a href="#about" class="hover:text-emerald-500">About</a></li>
+                <li><a href="#courses" class="hover:text-emerald-500">Courses</a></li>
+                <li><a href="#resources" class="hover:text-emerald-500">E-books</a></li>
+                <li><a href="#testimonials" class="hover:text-emerald-500">Testimonials</a></li>
+                <li><a href="#blog" class="hover:text-emerald-500">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen flex items-center justify-center text-white" aria-label="Hero Section">
+    <section id="hero" class="relative h-screen flex items-center justify-center text-white pt-16" aria-label="Hero Section">
         <div id="webgl-bg" class="absolute inset-0 z-0 bg-gradient-to-r from-indigo-900 to-emerald-600"></div>
         <div class="absolute inset-0 z-0 bg-black opacity-30"></div>
         <div class="relative z-10 text-center px-4">
@@ -240,5 +257,3 @@
     <script src="script.js" defer></script>
 </body>
 </html>
-
-

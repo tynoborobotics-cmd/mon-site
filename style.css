@@ -1,40 +1,1315 @@
-/* Custom styles to complement Tailwind */
-#webgl-bg {
-    background: linear-gradient(135deg, #1e3a8a, #10b981);
+:root {
+    --quantum-flux: #ff0080;
+    --neural-stream: #00ffff;
+    --bio-pulse: #80ff00;
+    --consciousness-wave: #ff8000;
+    --void-matter: #000000;
+    --dark-energy: #0a0a0f;
+    --light-plasma: #1a1a2e;
+    --hologram-essence: rgba(255, 255, 255, 0.95);
+    --reality-bend: #ff00ff;
+    --time-distortion: #ffff00;
+    --dimensional-shift: #8000ff;
+    --singularity-core: #ff00ff;
 }
 
-.btn {
-    @apply px-4 py-2 rounded font-semibold transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.btn-primary {
-    @apply bg-emerald-500 text-white hover:bg-emerald-600;
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: radial-gradient(ellipse at center, var(--dark-energy) 0%, var(--void-matter) 100%);
+    color: var(--hologram-essence);
+    overflow-x: hidden;
+    position: relative;
+    cursor: none;
 }
 
-.btn-secondary {
-    @apply bg-transparent border border-white text-white hover:bg-white hover:text-emerald-500;
+/* Enhanced Neural Cursor with Dimensional Tracking */
+.neural-cursor {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, var(--neural-stream) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: screen;
+    transition: transform 0.08s ease;
 }
 
-.instructor-card, .course-card, .product-card {
-    @apply relative bg-white p-6 rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1;
+.neural-cursor::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--neural-stream);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: cursorPulse 1.5s infinite;
 }
 
-.instructor-card img {
+.neural-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--reality-bend);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+body:hover .neural-cursor::after {
+    width: 10px;
+    height: 10px;
+}
+
+/* Advanced Reality Distortion Field with Multi-Layer Effects */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(135deg, var(--quantum-flux) 0%, transparent 50%),
+        linear-gradient(45deg, var(--neural-stream) 0%, transparent 50%),
+        linear-gradient(225deg, var(--bio-pulse) 0%, transparent 50%),
+        linear-gradient(315deg, var(--dimensional-shift) 0%, transparent 50%);
+    opacity: 0.08;
+    z-index: -3;
+    animation: realityShift 15s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 20%, var(--quantum-flux) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, var(--neural-stream) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 50%, var(--bio-pulse) 0%, transparent 30%);
+    opacity: 0.05;
+    z-index: -4;
+    animation: gridShift 25s linear infinite;
+}
+
+/* Quantum Particle System with Enhanced Dynamics */
+.quantum-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.quantum-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--neural-stream);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--neural-stream);
+    animation: quantumFloat 7s linear infinite;
+    filter: blur(0.5px);
+}
+
+.quantum-particle:nth-child(3n) {
+    background: var(--quantum-flux);
+    box-shadow: 0 0 15px var(--quantum-flux);
+    animation-delay: -1.5s;
+    animation-duration: 9s;
+}
+
+.quantum-particle:nth-child(5n) {
+    background: var(--bio-pulse);
+    box-shadow: 0 0 15px var(--bio-pulse);
+    animation-delay: -3s;
+    animation-duration: 6s;
+}
+
+.quantum-particle:nth-child(7n) {
+    background: var(--consciousness-wave);
+    box-shadow: 0 0 15px var(--consciousness-wave);
+    animation-delay: -4.5s;
+    animation-duration: 8s;
+}
+
+.quantum-particle:nth-child(11n) {
+    background: var(--dimensional-shift);
+    box-shadow: 0 0 15px var(--dimensional-shift);
+    animation-delay: -6s;
+    animation-duration: 10s;
+}
+
+/* Bio-Neural Interface Lines with Dynamic Connections */
+.neural-web {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.neural-connection {
+    position: absolute;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--neural-stream), transparent);
+    opacity: 0.15;
+    animation: neuralPulse 3.5s ease-in-out infinite;
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* Enhanced Mind-Machine Navigation with Haptic Feedback Simulation */
+nav {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(40px) saturate(200%);
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift)) 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 25px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, 
+        var(--quantum-flux), 
+        var(--neural-stream), 
+        var(--bio-pulse), 
+        var(--consciousness-wave), 
+        var(--dimensional-shift));
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: logoShift 5s ease-in-out infinite;
+}
+
+.logo::before {
+    content: "🧬";
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 25px var(--bio-pulse));
+    animation: dnaRotate 2.5s linear infinite;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 3.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--hologram-essence);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: 3px solid transparent;
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--neural-stream), var(--quantum-flux), transparent);
+    transition: left 0.7s;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--bio-pulse) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.nav-menu a:hover::before,
+.nav-menu a.active::before {
+    left: 100%;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 120px;
+    height: 120px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    border-color: var(--dimensional-shift);
+    box-shadow: 0 0 40px rgba(128, 0, 255, 0.6);
+    text-shadow: 0 0 20px var(--neural-stream);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 3px solid var(--neural-stream);
+    color: var(--neural-stream);
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Upgraded Consciousness Stream Indicator with AI Integration */
+.consciousness-indicator {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, var(--consciousness-wave) 0%, transparent 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    animation: consciousnessFlow 2.5s ease-in-out infinite;
+    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.instructor-card:hover img {
-    transform: scale(1.05);
+.consciousness-indicator:hover {
+    transform: scale(1.2);
 }
 
-#sticky-cta {
-    transition: transform 0.3s ease;
+.consciousness-indicator::before {
+    content: '🧠';
+    font-size: 1.8rem;
+    animation: brainWave 1.5s ease-in-out infinite;
 }
 
-#sticky-cta.hidden {
+/* Page Content with Dimensional Phasing */
+.page {
+    display: none;
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+.page.active {
+    display: block;
+    animation: pagePhase 1s ease-out;
+}
+
+/* Reality-Bending Hero Section with Singularity Effects */
+.hero {
+    background: linear-gradient(135deg, 
+        rgba(255, 0, 128, 0.15) 0%, 
+        rgba(0, 255, 255, 0.15) 25%,
+        rgba(128, 255, 0, 0.15) 50%,
+        rgba(255, 128, 0, 0.15) 75%,
+        rgba(255, 0, 255, 0.15) 100%,
+        rgba(128, 0, 255, 0.15) 100%);
+    padding: 180px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 25%, rgba(0, 255, 255, 0.15) 45%, transparent 65%),
+        linear-gradient(-45deg, transparent 25%, rgba(255, 0, 128, 0.15) 45%, transparent 65%),
+        linear-gradient(135deg, transparent 25%, rgba(128, 255, 0, 0.15) 45%, transparent 65%),
+        linear-gradient(-135deg, transparent 25%, rgba(128, 0, 255, 0.15) 45%, transparent 65%);
+    animation: realityRipple 5s linear infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(45deg, 
+        var(--quantum-flux), 
+        var(--neural-stream), 
+        var(--bio-pulse), 
+        var(--consciousness-wave),
+        var(--reality-bend),
+        var(--dimensional-shift));
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: consciousnessEvolution 7s ease-in-out infinite;
+    text-shadow: 0 0 60px var(--neural-stream);
+    line-height: 1.05;
+}
+
+.hero .subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 3.5rem;
+    color: var(--hologram-essence);
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    animation: subtitleFloat 3.5s ease-in-out infinite;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift));
+    background-size: 400% 400%;
+    color: white;
+    padding: 30px 60px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid var(--neural-stream);
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.7);
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: buttonEvolution 3.5s ease-in-out infinite;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.7s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 20px 60px rgba(0, 255, 255, 0.9);
+}
+
+/* Advanced Bio-Integrated Cards with Singularity Glow */
+.bio-card {
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(40px) saturate(200%);
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift)) 1;
+    border-radius: 30px;
+    padding: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.bio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 0, 128, 0.15), 
+        rgba(0, 255, 255, 0.15), 
+        rgba(128, 255, 0, 0.15),
+        rgba(128, 0, 255, 0.15));
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.bio-card:hover::before {
+    opacity: 1;
+}
+
+.bio-card:hover {
+    transform: translateY(-20px) rotateX(8deg) rotateY(8deg) scale(1.03);
+    box-shadow: 0 40px 80px rgba(0, 255, 255, 0.5);
+    border-image: linear-gradient(135deg, var(--consciousness-wave), var(--reality-bend), var(--time-distortion), var(--singularity-core)) 1;
+}
+
+/* Features Section with Multidimensional Layout */
+.features {
+    padding: 140px 0;
+    position: relative;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3.5rem;
+    margin-top: 5rem;
+}
+
+.feature-icon {
+    font-size: 4.5rem;
+    margin-bottom: 2.5rem;
+    filter: drop-shadow(0 0 25px var(--bio-pulse));
+    animation: iconEvolution 3.5s ease-in-out infinite;
+}
+
+/* Enhanced Courses Grid with Reality-Warping Effects */
+.courses-section {
+    padding: 140px 0;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3.5rem;
+    margin-top: 5rem;
+}
+
+.course-card {
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(40px) saturate(200%);
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift)) 1;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.7s ease;
+    transform-style: preserve-3d;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        var(--quantum-flux), 
+        var(--neural-stream), 
+        var(--bio-pulse), 
+        var(--consciousness-wave),
+        var(--reality-bend),
+        var(--dimensional-shift));
+    background-size: 500% 500%;
+    animation: courseEvolution 4s linear infinite;
+}
+
+.course-card:hover {
+    transform: translateY(-25px) rotateX(12deg) scale(1.05);
+    box-shadow: 0 50px 100px rgba(0, 255, 255, 0.6);
+}
+
+.course-header {
+    background: linear-gradient(135deg, 
+        rgba(255, 0, 128, 0.25), 
+        rgba(0, 255, 255, 0.25), 
+        rgba(128, 255, 0, 0.25),
+        rgba(128, 0, 255, 0.25));
+    padding: 3.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.course-content {
+    padding: 3.5rem;
+}
+
+.course-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--neural-stream), var(--bio-pulse), var(--dimensional-shift));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px var(--neural-stream);
+}
+
+.enroll-btn {
+    width: 100%;
+    background: linear-gradient(45deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift));
+    background-size: 400% 400%;
+    color: white;
+    border: 4px solid var(--neural-stream);
+    padding: 25px;
+    border-radius: 35px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: buttonPulse 2.5s ease-in-out infinite;
+}
+
+.enroll-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.7s;
+}
+
+.enroll-btn:hover::before {
+    left: 100%;
+}
+
+.enroll-btn:hover {
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.9);
+    transform: translateY(-5px) scale(1.05);
+    background-position: 100% 0;
+}
+
+/* About Section with Multiversal Narrative */
+.about-section {
+    padding: 140px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-top: 3.5rem;
+}
+
+.benefits-list li {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.5s ease;
+    border-bottom: 1.5px solid rgba(0, 255, 255, 0.15);
+}
+
+.benefits-list li:hover {
+    transform: translateX(30px);
+    color: var(--neural-stream);
+    text-shadow: 0 0 15px var(--neural-stream);
+}
+
+.benefits-list li::before {
+    content: "⚡";
+    background: linear-gradient(45deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift));
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+    animation: benefitPulse 1.5s ease-in-out infinite;
+}
+
+/* Contact Section with Quantum Entanglement Interface */
+.contact-section {
+    padding: 140px 0;
+    background: rgba(10, 10, 15, 0.4);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-top: 5rem;
+}
+
+.contact-form {
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(40px) saturate(200%);
+    padding: 3.5rem;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift)) 1;
+}
+
+.form-group {
+    margin-bottom: 3rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--neural-stream);
+    text-shadow: 0 0 15px var(--neural-stream);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 3px solid rgba(0, 255, 255, 0.4);
+    border-radius: 20px;
+    color: var(--hologram-essence);
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(15px);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--dimensional-shift);
+    box-shadow: 0 0 40px rgba(128, 0, 255, 0.5);
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(45deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift));
+    background-size: 400% 400%;
+    color: white;
+    border: 4px solid var(--neural-stream);
+    padding: 25px;
+    border-radius: 35px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: submitEvolution 3.5s ease-in-out infinite;
+}
+
+.submit-btn:hover {
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.9);
+    transform: translateY(-5px) scale(1.05);
+    background-position: 100% 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift));
+    background-size: 400% 400%;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+    animation: socialEvolution 2.5s ease-in-out infinite;
+}
+
+.social-link:hover {
+    transform: translateY(-10px) scale(1.3);
+    box-shadow: 0 20px 50px rgba(0, 255, 255, 0.9);
+    background-position: 100% 0;
+}
+
+/* Section Headers with Singularity Animation */
+.section-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.section-header h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, 
+        var(--quantum-flux), 
+        var(--neural-stream), 
+        var(--bio-pulse), 
+        var(--consciousness-wave),
+        var(--dimensional-shift));
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2.5rem;
+    animation: headerEvolution 5s ease-in-out infinite;
+    text-shadow: 0 0 40px var(--neural-stream);
+}
+
+.section-header p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Enhanced Mind-Machine Loading Interface */
+.consciousness-loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    display: none;
+    z-index: 9999;
+}
+
+/* Quantum AI Assistant 2099 */
+.quantum-ai-assistant {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 400px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(40px) saturate(200%);
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, var(--quantum-flux), var(--neural-stream), var(--bio-pulse), var(--dimensional-shift)) 1;
+    border-radius: 30px;
+    z-index: 10000;
     transform: translateY(100%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 255, 255, 0.3);
 }
 
-input, select {
-    @apply focus:ring-2 focus:ring-emerald-500;
+.quantum-ai-assistant.active {
+    transform: translateY(0);
+}
+
+.ai-avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.neural-core {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, var(--neural-stream) 0%, var(--quantum-flux) 100%);
+    border-radius: 50%;
+    position: relative;
+    animation: neuralPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 30px var(--neural-stream);
+}
+
+.neural-core::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--quantum-flux);
+    border-radius: 50%;
+    animation: quantumPulse 3s ease-in-out infinite;
+}
+
+.quantum-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ring {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    animation: quantumRotate 4s linear infinite;
+}
+
+.ring-1 {
+    width: 60px;
+    height: 60px;
+    border-top-color: var(--quantum-flux);
+    border-right-color: var(--neural-stream);
+    animation-duration: 3s;
+}
+
+.ring-2 {
+    width: 80px;
+    height: 80px;
+    border-bottom-color: var(--bio-pulse);
+    border-left-color: var(--dimensional-shift);
+    animation-duration: 4s;
+    animation-direction: reverse;
+}
+
+.ring-3 {
+    width: 100px;
+    height: 100px;
+    border-top-color: var(--consciousness-wave);
+    border-bottom-color: var(--reality-bend);
+    animation-duration: 5s;
+}
+
+.ai-chat {
+    height: 300px;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 0 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.ai-message {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1));
+    border-radius: 15px;
+    border-left: 4px solid var(--neural-stream);
+    animation: messageAppear 0.5s ease-out;
+}
+
+.ai-text {
+    color: var(--hologram-essence);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    display: block;
+}
+
+.ai-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.ai-toggle, .ai-voice, .ai-clear {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--neural-stream);
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--neural-stream);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-toggle:hover, .ai-voice:hover, .ai-clear:hover {
+    background: var(--neural-stream);
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--neural-stream);
+}
+
+.consciousness-loader::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    border-top: 5px solid var(--quantum-flux);
+    border-right: 5px solid var(--neural-stream);
+    border-bottom: 5px solid var(--bio-pulse);
+    border-left: 5px solid var(--consciousness-wave);
+    border-radius: 50%;
+    animation: consciousnessLoad 1.2s linear infinite;
+}
+
+.consciousness-loader::after {
+    content: '🧬';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    animation: dnaEvolution 1.5s ease-in-out infinite;
+}
+
+/* Advanced Animations with Additional Effects */
+@keyframes realityShift {
+    0%, 100% { opacity: 0.06; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.12; transform: scale(1.15) rotate(5deg); }
+}
+
+@keyframes gridShift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-20px, -20px); }
+}
+
+@keyframes quantumFloat {
+    0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) translateX(150px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes neuralPulse {
+    0%, 100% { opacity: 0.15; transform: scaleX(1); }
+    50% { opacity: 0.35; transform: scaleX(1.8); }
+}
+
+@keyframes cursorPulse {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.6); opacity: 0.7; }
+}
+
+@keyframes logoShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes dnaRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes consciousnessFlow {
+    0%, 100% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.25); opacity: 1; }
+}
+
+@keyframes brainWave {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes pagePhase {
+    0% { opacity: 0; transform: translateY(60px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes realityRipple {
+    0% { transform: translateX(-100%) skewX(0deg); }
+    100% { transform: translateX(100%) skewX(50deg); }
+}
+
+@keyframes consciousnessEvolution {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 50% 100%; }
+    75% { background-position: 50% 0%; }
+}
+
+@keyframes subtitleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes buttonEvolution {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes iconEvolution {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+}
+
+@keyframes courseEvolution {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes buttonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes benefitPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes socialEvolution {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes headerEvolution {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 50% 100%; }
+    75% { background-position: 50% 0%; }
+}
+
+@keyframes consciousnessLoad {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes dnaEvolution {
+    0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+    50% { transform: translate(-50%, -50%) scale(1.3) rotate(180deg); }
+}
+
+/* Quantum AI Animations 2099 */
+@keyframes neuralPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--neural-stream); }
+    50% { transform: scale(1.1); box-shadow: 0 0 50px var(--neural-stream), 0 0 80px var(--quantum-flux); }
+}
+
+@keyframes quantumPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes quantumRotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes messageAppear {
+    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Holographic 3D Effects 2099 */
+.holographic-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--quantum-flux), 
+        var(--neural-stream), 
+        var(--bio-pulse), 
+        var(--dimensional-shift),
+        var(--quantum-flux));
+    background-size: 400% 400%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: holographicShift 3s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.holographic-card:hover::before {
+    opacity: 1;
+}
+
+.holographic-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 255, 255, 0.3),
+        0 0 60px rgba(255, 0, 128, 0.2),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+@keyframes holographicShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Quantum Particle Trails */
+.quantum-trail {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--neural-stream);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: quantumTrail 2s ease-out forwards;
+    box-shadow: 0 0 10px var(--neural-stream);
+}
+
+@keyframes quantumTrail {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Neural Network Visualization */
+.neural-network {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.neural-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--neural-stream);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--neural-stream);
+    animation: nodePulse 3s ease-in-out infinite;
+}
+
+.neural-connection-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neural-stream), transparent);
+    animation: connectionFlow 4s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.5); opacity: 1; }
+}
+
+@keyframes connectionFlow {
+    0%, 100% { opacity: 0.2; transform: scaleX(0.5); }
+    50% { opacity: 0.8; transform: scaleX(1); }
+}
+
+/* Responsive Design for Multiversal Devices */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(40px);
+        flex-direction: column;
+        padding: 3.5rem;
+        border-top: 3px solid var(--neural-stream);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .courses-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 3rem;
+    }
+
+    .consciousness-indicator {
+        width: 60px;
+        height: 60px;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 25px 45px;
+        font-size: 1.3rem;
+    }
 }

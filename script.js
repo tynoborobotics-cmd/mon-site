@@ -30,35 +30,6 @@ function createNeuralWeb() {
     }
 }
 
-// Enhanced Neural Cursor with Predictive Tracking
-function initializeNeuralCursor() {
-    const cursor = document.getElementById('neuralCursor');
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    function updateCursor() {
-        cursorX += (mouseX - cursorX) * 0.3;
-        cursorY += (mouseY - cursorY) * 0.3;
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        requestAnimationFrame(updateCursor);
-    }
-
-    updateCursor();
-
-    document.addEventListener('mousedown', () => {
-        cursor.style.transform = 'scale(1.8)';
-    });
-
-    document.addEventListener('mouseup', () => {
-        cursor.style.transform = 'scale(1)';
-    });
-}
 
 // Singularity Navigation System
 const navLinks = document.querySelectorAll('.nav-link');
@@ -339,7 +310,6 @@ class QuantumAI {
 document.addEventListener('DOMContentLoaded', () => {
     createQuantumField();
     createNeuralWeb();
-    initializeNeuralCursor();
     
     // Initialize Quantum AI Assistant
     const quantumAI = new QuantumAI();

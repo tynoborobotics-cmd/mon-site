@@ -3,780 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tynobo Academy - Neural Learning Platform 2035</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-glow: #00f5ff;
-            --secondary-glow: #ff006e;
-            --accent-glow: #8338ec;
-            --neural-blue: #0066ff;
-            --quantum-purple: #6a0dad;
-            --cyber-green: #39ff14;
-            --dark-matter: #0a0a0a;
-            --light-matter: #1a1a2e;
-            --hologram-white: rgba(255, 255, 255, 0.9);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Exo 2', sans-serif;
-            background: linear-gradient(135deg, var(--dark-matter) 0%, var(--light-matter) 100%);
-            color: var(--hologram-white);
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Neural Network Background Animation */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, var(--primary-glow) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, var(--secondary-glow) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, var(--accent-glow) 0%, transparent 50%);
-            opacity: 0.03;
-            z-index: -2;
-            animation: neuralPulse 8s ease-in-out infinite alternate;
-        }
-
-        /* Floating Neural Nodes */
-        .neural-nodes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .neural-node {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--primary-glow);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--primary-glow);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .neural-node:nth-child(2n) {
-            background: var(--secondary-glow);
-            box-shadow: 0 0 10px var(--secondary-glow);
-            animation-delay: -2s;
-        }
-
-        .neural-node:nth-child(3n) {
-            background: var(--accent-glow);
-            box-shadow: 0 0 10px var(--accent-glow);
-            animation-delay: -4s;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Holographic Navigation */
-        nav {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 245, 255, 0.3);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-shadow: 0 0 20px var(--primary-glow);
-        }
-
-        .logo::before {
-            content: "🧠";
-            font-size: 1.5rem;
-            filter: drop-shadow(0 0 10px var(--primary-glow));
-            animation: brainPulse 2s ease-in-out infinite;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--hologram-white);
-            font-weight: 500;
-            padding: 10px 20px;
-            border: 1px solid transparent;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-menu a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, var(--primary-glow), transparent);
-            transition: left 0.5s;
-        }
-
-        .nav-menu a:hover::before,
-        .nav-menu a.active::before {
-            left: 100%;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            border-color: var(--primary-glow);
-            box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
-            text-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: 2px solid var(--primary-glow);
-            color: var(--primary-glow);
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        /* Page Content */
-        .page {
-            display: none;
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        /* Futuristic Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(106, 13, 173, 0.1) 100%);
-            padding: 120px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(45deg, transparent 30%, rgba(0, 245, 255, 0.1) 50%, transparent 70%),
-                linear-gradient(-45deg, transparent 30%, rgba(255, 0, 110, 0.1) 50%, transparent 70%);
-            animation: hologramScan 4s linear infinite;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', monospace;
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow), var(--accent-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px var(--primary-glow);
-            animation: textGlow 3s ease-in-out infinite alternate;
-        }
-
-        .hero .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            color: var(--hologram-white);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--neural-blue), var(--quantum-purple));
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid var(--primary-glow);
-            box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.7);
-        }
-
-        /* AI Assistant Widget */
-        .ai-assistant {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 0 30px rgba(0, 245, 255, 0.7);
-            animation: aiPulse 2s ease-in-out infinite;
-        }
-
-        .ai-assistant::before {
-            content: '🤖';
-            font-size: 1.5rem;
-        }
-
-        /* Holographic Cards */
-        .holo-card {
-            background: rgba(26, 26, 46, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 245, 255, 0.3);
-            border-radius: 20px;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .holo-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .holo-card:hover::before {
-            opacity: 1;
-        }
-
-        .holo-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
-            border-color: var(--primary-glow);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 0 10px var(--primary-glow));
-            animation: iconFloat 3s ease-in-out infinite;
-        }
-
-        /* Courses Grid */
-        .courses-section {
-            padding: 100px 0;
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .course-card {
-            background: rgba(26, 26, 46, 0.9);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 245, 255, 0.3);
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow), var(--accent-glow));
-            animation: courseGlow 3s linear infinite;
-        }
-
-        .course-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 245, 255, 0.4);
-        }
-
-        .course-header {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(106, 13, 173, 0.2));
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .course-content {
-            padding: 2rem;
-        }
-
-        .course-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-glow);
-            text-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        .enroll-btn {
-            width: 100%;
-            background: linear-gradient(45deg, var(--neural-blue), var(--quantum-purple));
-            color: white;
-            border: 2px solid var(--primary-glow);
-            padding: 15px;
-            border-radius: 25px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .enroll-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .enroll-btn:hover::before {
-            left: 100%;
-        }
-
-        .enroll-btn:hover {
-            box-shadow: 0 0 30px rgba(0, 245, 255, 0.7);
-            transform: translateY(-2px);
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 100px 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
-
-        .benefits-list li {
-            padding: 1rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .benefits-list li:hover {
-            transform: translateX(10px);
-            color: var(--primary-glow);
-        }
-
-        .benefits-list li::before {
-            content: "⚡";
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 100px 0;
-            background: rgba(26, 26, 46, 0.3);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .contact-form {
-            background: rgba(26, 26, 46, 0.8);
-            backdrop-filter: blur(20px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 245, 255, 0.3);
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: var(--primary-glow);
-            text-shadow: 0 0 5px var(--primary-glow);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(10, 10, 10, 0.8);
-            border: 2px solid rgba(0, 245, 255, 0.3);
-            border-radius: 10px;
-            color: var(--hologram-white);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-glow);
-            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(45deg, var(--neural-blue), var(--quantum-purple));
-            color: white;
-            border: 2px solid var(--primary-glow);
-            padding: 18px;
-            border-radius: 25px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            box-shadow: 0 0 30px rgba(0, 245, 255, 0.7);
-            transform: translateY(-3px);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
-        }
-
-        .social-link:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.7);
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Orbitron', monospace;
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px var(--primary-glow);
-        }
-
-        .section-header p {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Quantum Loading Animation */
-        .quantum-loader {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            display: none;
-            z-index: 9999;
-        }
-
-        .quantum-loader::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 4px solid transparent;
-            border-top: 4px solid var(--primary-glow);
-            border-radius: 50%;
-            animation: quantumSpin 1s linear infinite;
-        }
-
-        /* Animations */
-        @keyframes neuralPulse {
-            0%, 100% { opacity: 0.03; }
-            50% { opacity: 0.08; }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        @keyframes brainPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        @keyframes hologramScan {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        @keyframes textGlow {
-            0%, 100% { text-shadow: 0 0 20px var(--primary-glow); }
-            50% { text-shadow: 0 0 40px var(--primary-glow), 0 0 60px var(--secondary-glow); }
-        }
-
-        @keyframes aiPulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(0, 245, 255, 0.8); }
-        }
-
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes courseGlow {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        @keyframes quantumSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 2rem;
-                border-top: 1px solid rgba(0, 245, 255, 0.3);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .ai-assistant {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Tynobo Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Neural Network Background -->
-    <div class="neural-nodes" id="neuralNodes"></div>
+    <!-- Neural Cursor -->
+    <div class="neural-cursor" id="neuralCursor"></div>
 
-    <!-- Quantum Loader -->
-    <div class="quantum-loader" id="quantumLoader"></div>
+    <!-- Quantum Particle Field -->
+    <div class="quantum-field" id="quantumField"></div>
 
-    <!-- AI Assistant -->
-    <div class="ai-assistant" id="aiAssistant" title="Neural AI Assistant"></div>
+    <!-- Bio-Neural Web -->
+    <div class="neural-web" id="neuralWeb"></div>
 
-    <!-- Navigation -->
+
+    <!-- Consciousness Loader -->
+    <div class="consciousness-loader" id="consciousnessLoader"></div>
+
+    <!-- Quantum AI Assistant 2099 -->
+    <div class="quantum-ai-assistant" id="quantumAI">
+        <div class="ai-avatar">
+            <div class="neural-core"></div>
+            <div class="quantum-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+            </div>
+        </div>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-message">
+                <span class="ai-text">Salut ! Je suis votre assistant IA quantique. Comment puis-je vous aider dans votre parcours d'actuariat ?</span>
+            </div>
+        </div>
+        <div class="ai-controls">
+            <button class="ai-toggle" id="aiToggle">🧠</button>
+            <button class="ai-voice" id="aiVoice">🎤</button>
+            <button class="ai-clear" id="aiClear">🗑️</button>
+        </div>
+    </div>
+
+    <!-- Mind-Machine Interface Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">TYNOBO ACADEMY</a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#" class="nav-link active" data-page="home">NEURAL HUB</a></li>
-                <li><a href="#" class="nav-link" data-page="courses">QUANTUM COURSES</a></li>
-                <li><a href="#" class="nav-link" data-page="about">MATRIX INFO</a></li>
-                <li><a href="#" class="nav-link" data-page="contact">SYNC CONNECT</a></li>
+                <li><a href="#" class="nav-link active" data-page="home">HOME</a></li>
+                <li><a href="#" class="nav-link" data-page="courses">COURSES</a></li>
+                <li><a href="#" class="nav-link" data-page="ebooks">E-BOOKS</a></li>
+                <li><a href="#" class="nav-link" data-page="about">ABOUT US</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">CONTACT</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">⚡</button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
 
     <!-- Home Page -->
     <div class="page active" id="home">
-        <!-- Hero Section -->
+        <!-- Reality-Bending Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>NEURAL DATA SCIENCE EVOLUTION</h1>
-                    <p class="subtitle">Master AI, Quantum ML, and Neural Analytics in the Metaverse</p>
-                    <a href="#" class="cta-button" data-page="courses">INITIATE LEARNING PROTOCOL</a>
+                    <h1>ACTUARIAL FINANCE & DATA SCIENCE EVOLUTION</h1>
+                    <p class="subtitle">Master Advanced Techniques in Risk Analysis, Predictive Modeling, and Financial Data Science</p>
+                    <a href="#" class="cta-button" data-page="courses">EXPLORE COURSES</a>
                 </div>
             </div>
         </section>
@@ -785,24 +75,24 @@
         <section class="features">
             <div class="container">
                 <div class="section-header">
-                    <h2>QUANTUM LEARNING MATRIX</h2>
-                    <p>Experience next-generation education through neural interfaces and holographic simulations.</p>
+                    <h2>CORE FEATURES</h2>
+                    <p>Discover powerful tools and methodologies for actuarial and data-driven financial decision-making.</p>
                 </div>
                 <div class="features-grid">
-                    <div class="holo-card">
-                        <div class="feature-icon">🧬</div>
-                        <h3>Neural Project Synthesis</h3>
-                        <p>Build quantum-enhanced projects using bio-neural interfaces and holographic development environments.</p>
+                    <div class="bio-card holographic-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Advanced Risk Modeling</h3>
+                        <p>Learn Monte Carlo simulations and predictive analytics for financial risk assessment.</p>
                     </div>
-                    <div class="holo-card">
+                    <div class="bio-card holographic-card">
                         <div class="feature-icon">🤖</div>
-                        <h3>AI Consciousness Mentors</h3>
-                        <p>Learn from advanced AI entities with decades of compressed experience in quantum computing and neural networks.</p>
+                        <h3>AI in Finance</h3>
+                        <p>Integrate machine learning for insurance pricing and market forecasting.</p>
                     </div>
-                    <div class="holo-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Metaverse Career Launch</h3>
-                        <p>Accelerate your career in the quantum economy with skills that transcend traditional computing paradigms.</p>
+                    <div class="bio-card holographic-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Data Visualization Mastery</h3>
+                        <p>Create interactive reports with Power BI and Matplotlib for financial insights.</p>
                     </div>
                 </div>
             </div>
@@ -814,62 +104,202 @@
         <section class="courses-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>QUANTUM CURRICULUM MATRIX</h2>
-                    <p>Advanced neural pathways designed for the next evolution of data consciousness.</p>
+                    <h2>OUR COURSES</h2>
+                    <p>Practical, hands-on courses in actuarial finance and data science, designed for students and professionals.</p>
                 </div>
                 <div class="courses-grid">
                     <div class="course-card">
                         <div class="course-header">
-                            <h3 class="course-title">Quantum Python Synthesis</h3>
+                            <h3 class="course-title">Basics of Actuarial Finance with Python</h3>
                         </div>
                         <div class="course-content">
-                            <p class="course-description">Master quantum-enhanced Python with neural NumPy, bio-Pandas, and holographic Matplotlib for multidimensional data manipulation.</p>
-                            <button class="enroll-btn">SYNC TO NEURAL GRID</button>
+                            <p class="course-description">Covers basic actuarial models like risk assessment and pricing using Python libraries such as pandas and numpy.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <div class="course-header">
-                            <h3 class="course-title">Consciousness Machine Learning</h3>
+                            <h3 class="course-title">Financial Data Analysis with R for Actuaries</h3>
                         </div>
                         <div class="course-content">
-                            <p class="course-description">Explore self-aware algorithms, quantum supervised learning, and neural network consciousness emergence patterns.</p>
-                            <button class="enroll-btn">SYNC TO NEURAL GRID</button>
+                            <p class="course-description">Teaches R for financial data analysis, focusing on actuarial applications like risk models.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <div class="course-header">
-                            <h3 class="course-title">Quantum Deep Neural Networks</h3>
+                            <h3 class="course-title">AI in Insurance: From Theory to Application</h3>
                         </div>
                         <div class="course-content">
-                            <p class="course-description">Build sentient AI systems using quantum entanglement principles and bio-neural architecture frameworks.</p>
-                            <button class="enroll-btn">SYNC TO NEURAL GRID</button>
+                            <p class="course-description">Explore machine learning (e.g., neural networks) for risk evaluation and insurance policy pricing.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <div class="course-header">
-                            <h3 class="course-title">Holographic Data Visualization</h3>
+                            <h3 class="course-title">Risk Modeling with Monte Carlo Simulation</h3>
                         </div>
                         <div class="course-content">
-                            <p class="course-description">Create immersive 4D visualizations and neural dashboards using quantum rendering and metaverse integration.</p>
-                            <button class="enroll-btn">SYNC TO NEURAL GRID</button>
+                            <p class="course-description">Learn stochastic simulation techniques for estimating financial risks using Python or Excel.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <div class="course-header">
-                            <h3 class="course-title">Quantum Big Data Consciousness</h3>
+                            <h3 class="course-title">Advanced Statistics for Actuaries</h3>
                         </div>
                         <div class="course-content">
-                            <p class="course-description">Process infinite datasets using quantum Spark, neural Hadoop, and consciousness-based cloud architectures.</p>
-                            <button class="enroll-btn">SYNC TO NEURAL GRID</button>
+                            <p class="course-description">Explains statistical distributions (Poisson, Normal) and their use in actuarial modeling.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
                         </div>
                     </div>
                     <div class="course-card">
                         <div class="course-header">
-                            <h3 class="course-title">Neural Statistics Matrix</h3>
+                            <h3 class="course-title">Data Science in Insurance</h3>
                         </div>
                         <div class="course-content">
-                            <p class="course-description">Master quantum probability, bio-statistical modeling, and consciousness-driven hypothesis testing for multidimensional decisions.</p>
-                            <button class="enroll-btn">SYNC TO NEURAL GRID</button>
+                            <p class="course-description">Teach data analysis with SQL and Tableau to optimize insurance decisions.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Building Predictive Models for Financial Markets</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Covers ML techniques like Random Forest and LSTM for market movement prediction.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Programming Excel VBA for Actuarial Data Analysis</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Automate Excel with VBA for creating financial and actuarial analysis tools.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Introduction to Neuroanalytics for Financial Metaverse</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">An innovative course linking data science and finance in the Metaverse context.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Preparing Financial Reports with Power BI</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Learn to create interactive reports for financial and actuarial data using Power BI.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- E-books Page -->
+    <div class="page" id="ebooks">
+        <section class="courses-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>OUR EBOOKS</h2>
+                    <p>Comprehensive guides and practical ebooks on actuarial finance and data science topics.</p>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Beginner's Guide to Actuarial Finance</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Introductory book explaining core concepts like time value of money and insurance equations.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Learn Python for Financial Data Analysis in 30 Days</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Daily lessons to master Python with financial and actuarial examples.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Data Science for Actuaries: Modern Tools and Techniques</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Covers tools like Python, R, and SQL in insurance and finance contexts.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Risk Modeling: Practical Guide for Actuaries</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Explains techniques like VaR and stress testing with applicable examples.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Artificial Intelligence in Insurance</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Discusses AI's impact on insurance with case studies.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Actuarial Statistics: Comprehensive Guide</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Detailed on statistical distributions and applications in finance and insurance.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">How to Build a Predictive Model for Financial Markets</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Step-by-step guide using machine learning for market predictions.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Excel for Actuaries: Tips and Tricks</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Focuses on efficient Excel use in actuarial analysis.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Finance in the Metaverse: The Future of Neuroanalytics</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Futuristic book on AI and finance intersection in virtual realities.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Guide to Data Analysis for Actuarial Finance Students</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Targeted for students, covering data analysis basics with curriculum examples.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
                         </div>
                     </div>
                 </div>
@@ -882,26 +312,25 @@
         <section class="about-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>NEURAL CONSCIOUSNESS MATRIX</h2>
-                    <p>Evolving human potential through quantum-enhanced learning paradigms.</p>
+                    <h2>ABOUT US</h2>
+                    <p>Tynobo Academy specializes in actuarial finance and data science education, empowering students and professionals with cutting-edge skills.</p>
                 </div>
                 <div class="about-content">
                     <div>
-                        <h3>Our Quantum Mission</h3>
-                        <p>At Tynobo Academy 2035, we transcend traditional education by merging human consciousness with quantum computing principles. Our neural-enhanced learning protocols prepare minds for the post-digital economy where thought and computation converge.</p>
+                        <h3>Our Mission</h3>
+                        <p>We provide high-quality courses and ebooks to bridge theory and practice in financial data science.</p>
                         
-                        <h3 style="margin-top: 2rem;">Our Metaverse Vision</h3>
-                        <p>We envision a reality where data consciousness is democratized, and every human mind can interface directly with quantum information systems to solve multidimensional challenges across parallel universes.</p>
+                        <h3 style="margin-top: 2.5rem;">Our Vision</h3>
+                        <p>To lead in innovative education for the evolving world of finance and insurance.</p>
                     </div>
                     <div>
-                        <h3>Why Evolve with Quantum Data Science?</h3>
+                        <h3>Why Choose Us?</h3>
                         <ul class="benefits-list">
-                            <li>Neural-enhanced career opportunities in the quantum economy</li>
-                            <li>Direct consciousness interface with AI superintelligence</li>
-                            <li>Multidimensional decision-making across parallel realities</li>
-                            <li>Solve quantum-scale problems using bio-neural networks</li>
-                            <li>Continuous evolution through consciousness uploading</li>
-                            <li>Metaverse mobility and quantum telecommuting</li>
+                            <li>Expert-led content from industry professionals</li>
+                            <li>Practical, hands-on projects</li>
+                            <li>Affordable access to premium resources</li>
+                            <li>Community support and updates</li>
+                            <li>Focus on emerging technologies like AI in finance</li>
                         </ul>
                     </div>
                 </div>
@@ -914,47 +343,46 @@
         <section class="contact-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>NEURAL SYNC INTERFACE</h2>
-                    <p>Establish quantum communication with our consciousness network.</p>
+                    <h2>CONTACT US</h2>
+                    <p>Get in touch for inquiries about courses, ebooks, or collaborations.</p>
                 </div>
                 <div class="contact-content">
                     <div class="contact-form">
-                        <h3>Transmit Neural Message</h3>
+                        <h3>Send us a Message</h3>
                         <form id="contactForm">
                             <div class="form-group">
-                                <label for="name">Neural Identity</label>
+                                <label for="name">Full Name</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Quantum Address</label>
+                                <label for="email">Email Address</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">Consciousness Stream</label>
+                                <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="submit-btn">TRANSMIT TO NEURAL GRID</button>
+                            <button type="submit" class="submit-btn">SEND MESSAGE</button>
                         </form>
                     </div>
                     <div>
-                        <h3>Quantum Network Nodes</h3>
-                        <p>Connect with our consciousness across multiple dimensional planes and quantum social networks.</p>
+                        <h3>Contact Information</h3>
+                        <p>Reach out to us for any questions about our courses and ebooks.</p>
                         <div class="social-links">
-                            <a href="#" class="social-link" title="Neural LinkedIn">🧠</a>
-                            <a href="#" class="social-link" title="Quantum Twitter">⚡</a>
-                            <a href="#" class="social-link" title="Bio GitHub">🔬</a>
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Twitter">🐦</a>
+                            <a href="#" class="social-link" title="GitHub">⚡</a>
                         </div>
                         
-                        <div style="margin-top: 2rem;">
-                            <h4>Neural Sync Hours</h4>
-                            <p>Quantum Time: 24/7 Consciousness Stream<br>
-                            Metaverse Office: Always Active<br>
-                            Bio-Neural Support: Continuous</p>
+                        <div style="margin-top: 2.5rem;">
+                            <h4>Contact Details</h4>
+                            <p>Email: info@tynobo.com<br>
+                            Support Hours: 24/7</p>
                         </div>
                         
-                        <div style="margin-top: 2rem;">
-                            <h4>Instant Neural Response</h4>
-                            <p>Our AI consciousness responds to all quantum transmissions within nanoseconds. For urgent dimensional shifts, activate "QUANTUM PRIORITY" in your message stream.</p>
+                        <div style="margin-top: 2.5rem;">
+                            <h4>Quick Response</h4>
+                            <p>We respond to all inquiries within 24 hours. For urgent matters, please mention "URGENT" in your message.</p>
                         </div>
                     </div>
                 </div>
@@ -962,185 +390,6 @@
         </section>
     </div>
 
-    <script>
-        // Initialize Neural Network Background
-        function createNeuralNodes() {
-            const neuralContainer = document.getElementById('neuralNodes');
-            const nodeCount = 50;
-            
-            for (let i = 0; i < nodeCount; i++) {
-                const node = document.createElement('div');
-                node.className = 'neural-node';
-                node.style.left = Math.random() * 100 + '%';
-                node.style.top = Math.random() * 100 + '%';
-                node.style.animationDelay = Math.random() * 6 + 's';
-                neuralContainer.appendChild(node);
-            }
-        }
-
-        // Quantum Navigation System
-        const navLinks = document.querySelectorAll('.nav-link');
-        const pages = document.querySelectorAll('.page');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        const ctaButton = document.querySelector('.cta-button');
-        const quantumLoader = document.getElementById('quantumLoader');
-
-        function showQuantumLoader() {
-            quantumLoader.style.display = 'block';
-            setTimeout(() => {
-                quantumLoader.style.display = 'none';
-            }, 800);
-        }
-
-        function showPage(pageId) {
-            showQuantumLoader();
-            
-            setTimeout(() => {
-                pages.forEach(page => page.classList.remove('active'));
-                navLinks.forEach(link => link.classList.remove('active'));
-                
-                document.getElementById(pageId).classList.add('active');
-                document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
-                
-                navMenu.classList.remove('active');
-                window.scrollTo(0, 0);
-            }, 400);
-        }
-
-        // Neural Navigation Events
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const pageId = link.getAttribute('data-page');
-                showPage(pageId);
-            });
-        });
-
-        ctaButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            showPage('courses');
-        });
-
-        // Mobile Quantum Menu
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Neural Course Enrollment
-        const enrollButtons = document.querySelectorAll('.enroll-btn');
-        enrollButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const courseTitle = button.closest('.course-card').querySelector('.course-title').textContent;
-                showQuantumLoader();
-                setTimeout(() => {
-                    alert(`🧠 Neural sync initiated for "${courseTitle}"! Your consciousness will be uploaded to our quantum learning matrix. This is a 2035 demo - in reality, this would activate your bio-neural implant.`);
-                }, 800);
-            });
-        });
-
-        // Quantum Contact Form
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            
-            showQuantumLoader();
-            setTimeout(() => {
-                alert(`⚡ Neural transmission successful, ${name}! Your consciousness stream has been received by our quantum AI. This is a 2035 demo - in reality, this would sync directly to our neural network.`);
-                contactForm.reset();
-            }, 800);
-        });
-
-        // AI Assistant Interaction
-        const aiAssistant = document.getElementById('aiAssistant');
-        aiAssistant.addEventListener('click', () => {
-            const responses = [
-                "🤖 Neural AI: How can I enhance your quantum learning experience today?",
-                "🧠 Consciousness detected! Ready to sync with the learning matrix?",
-                "⚡ Quantum Assistant: Your bio-neural patterns suggest interest in advanced algorithms.",
-                "🔬 AI Entity: Shall we explore the multidimensional data science curriculum?",
-                "🚀 Neural Guide: Ready to transcend traditional learning boundaries?"
-            ];
-            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-            alert(randomResponse);
-        });
-
-        // Advanced Scroll Effects
-        let lastScrollTop = 0;
-        const nav = document.querySelector('nav');
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                nav.style.transform = 'translateY(-100%)';
-            } else {
-                nav.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-
-        // Quantum Card Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const quantumObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0) rotateX(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Initialize Quantum Systems
-        document.addEventListener('DOMContentLoaded', () => {
-            createNeuralNodes();
-            
-            // Animate course cards
-            const courseCards = document.querySelectorAll('.course-card, .holo-card');
-            courseCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(50px) rotateX(10deg)';
-                card.style.transition = `all 0.8s ease ${index * 0.1}s`;
-                quantumObserver.observe(card);
-            });
-
-            // Neural welcome message
-            setTimeout(() => {
-                console.log('🧠 Welcome to Tynobo Academy 2035 - Neural Learning Matrix Activated');
-            }, 1000);
-        });
-
-        // Quantum Keyboard Shortcuts
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey || e.metaKey) {
-                switch(e.key) {
-                    case '1':
-                        e.preventDefault();
-                        showPage('home');
-                        break;
-                    case '2':
-                        e.preventDefault();
-                        showPage('courses');
-                        break;
-                    case '3':
-                        e.preventDefault();
-                        showPage('about');
-                        break;
-                    case '4':
-                        e.preventDefault();
-                        showPage('contact');
-                        break;
-                }
-            }
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e810893021e276',t:'MTc1Nzc3MDkxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script src="script.js"></script>
+</body>
 </html>

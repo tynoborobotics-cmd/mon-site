@@ -72,37 +72,6 @@ body:hover .neural-cursor::after {
     height: 10px;
 }
 
-/* Advanced Reality Distortion Field with Multi-Layer Effects */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(135deg, var(--quantum-flux) 0%, transparent 50%),
-        linear-gradient(45deg, var(--neural-stream) 0%, transparent 50%),
-        linear-gradient(225deg, var(--bio-pulse) 0%, transparent 50%),
-        linear-gradient(315deg, var(--dimensional-shift) 0%, transparent 50%);
-    opacity: 0.08;
-    z-index: -3;
-}
-
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(ellipse at 20% 20%, var(--quantum-flux) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 80%, var(--neural-stream) 0%, transparent 40%),
-        radial-gradient(ellipse at 50% 50%, var(--bio-pulse) 0%, transparent 30%);
-    opacity: 0.05;
-    z-index: -4;
-}
 
 /* Quantum Particle System with Enhanced Dynamics */
 .quantum-field {

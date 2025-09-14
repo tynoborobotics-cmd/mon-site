@@ -25,9 +25,52 @@ body {
     color: var(--hologram-essence);
     overflow-x: hidden;
     position: relative;
-    cursor: default;
+    cursor: none;
 }
 
+/* Enhanced Neural Cursor with Dimensional Tracking */
+.neural-cursor {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, var(--neural-stream) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: screen;
+    transition: transform 0.08s ease;
+}
+
+.neural-cursor::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--neural-stream);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: cursorPulse 1.5s infinite;
+}
+
+.neural-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--reality-bend);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+body:hover .neural-cursor::after {
+    width: 10px;
+    height: 10px;
+}
 
 /* Advanced Reality Distortion Field with Multi-Layer Effects */
 body::before {
@@ -44,6 +87,7 @@ body::before {
         linear-gradient(315deg, var(--dimensional-shift) 0%, transparent 50%);
     opacity: 0.08;
     z-index: -3;
+    animation: realityShift 15s ease-in-out infinite alternate;
 }
 
 body::after {
@@ -59,6 +103,7 @@ body::after {
         radial-gradient(ellipse at 50% 50%, var(--bio-pulse) 0%, transparent 30%);
     opacity: 0.05;
     z-index: -4;
+    animation: gridShift 25s linear infinite;
 }
 
 /* Quantum Particle System with Enhanced Dynamics */
@@ -956,6 +1001,15 @@ nav {
 }
 
 /* Advanced Animations with Additional Effects */
+@keyframes realityShift {
+    0%, 100% { opacity: 0.06; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.12; transform: scale(1.15) rotate(5deg); }
+}
+
+@keyframes gridShift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-20px, -20px); }
+}
 
 @keyframes quantumFloat {
     0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }

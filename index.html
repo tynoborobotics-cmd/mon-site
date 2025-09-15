@@ -4,44 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tynobo Academy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Quantum Particle Field -->
-    <div class="quantum-field" id="quantumField"></div>
-
-    <!-- Bio-Neural Web -->
-    <div class="neural-web" id="neuralWeb"></div>
-
-
-    <!-- Consciousness Loader -->
-    <div class="consciousness-loader" id="consciousnessLoader"></div>
-
-    <!-- Quantum AI Assistant 2099 -->
-    <div class="quantum-ai-assistant" id="quantumAI">
-        <div class="ai-avatar">
-            <div class="neural-core"></div>
-            <div class="quantum-rings">
-                <div class="ring ring-1"></div>
-                <div class="ring ring-2"></div>
-                <div class="ring ring-3"></div>
-            </div>
-        </div>
-        <div class="ai-chat" id="aiChat">
-            <div class="ai-message">
-                <span class="ai-text">Salut ! Je suis votre assistant IA quantique. Comment puis-je vous aider dans votre parcours d'actuariat ?</span>
-            </div>
-        </div>
-        <div class="ai-controls">
-            <button class="ai-toggle" id="aiToggle">🧠</button>
-            <button class="ai-voice" id="aiVoice">🎤</button>
-            <button class="ai-clear" id="aiClear">🗑️</button>
-        </div>
+    <!-- Simple Help Button -->
+    <div class="help-button">
+        <button class="help-btn" id="helpBtn" title="Need Help?">?</button>
     </div>
 
-    <!-- Mind-Machine Interface Navigation -->
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">TYNOBO ACADEMY</a>
@@ -49,7 +22,7 @@
                 <li><a href="#" class="nav-link active" data-page="home">HOME</a></li>
                 <li><a href="#" class="nav-link" data-page="courses">COURSES</a></li>
                 <li><a href="#" class="nav-link" data-page="ebooks">E-BOOKS</a></li>
-                <li><a href="#" class="nav-link" data-page="about">ABOUT US</a></li>
+                <li><a href="#" class="nav-link" data-page="about">ABOUT</a></li>
                 <li><a href="#" class="nav-link" data-page="contact">CONTACT</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
@@ -58,11 +31,11 @@
 
     <!-- Home Page -->
     <div class="page active" id="home">
-        <!-- Reality-Bending Hero Section -->
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>ACTUARIAL FINANCE & DATA SCIENCE EVOLUTION</h1>
+                    <h1>ACTUARIAL FINANCE & DATA SCIENCE</h1>
                     <p class="subtitle">Master Advanced Techniques in Risk Analysis, Predictive Modeling, and Financial Data Science</p>
                     <a href="#" class="cta-button" data-page="courses">EXPLORE COURSES</a>
                 </div>
@@ -77,17 +50,17 @@
                     <p>Discover powerful tools and methodologies for actuarial and data-driven financial decision-making.</p>
                 </div>
                 <div class="features-grid">
-                    <div class="bio-card holographic-card">
+                    <div class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3>Advanced Risk Modeling</h3>
                         <p>Learn Monte Carlo simulations and predictive analytics for financial risk assessment.</p>
                     </div>
-                    <div class="bio-card holographic-card">
+                    <div class="feature-card">
                         <div class="feature-icon">🤖</div>
                         <h3>AI in Finance</h3>
                         <p>Integrate machine learning for insurance pricing and market forecasting.</p>
                     </div>
-                    <div class="bio-card holographic-card">
+                    <div class="feature-card">
                         <div class="feature-icon">📈</div>
                         <h3>Data Visualization Mastery</h3>
                         <p>Create interactive reports with Power BI and Matplotlib for financial insights.</p>
@@ -112,15 +85,6 @@
                         </div>
                         <div class="course-content">
                             <p class="course-description">Covers basic actuarial models like risk assessment and pricing using Python libraries such as pandas and numpy.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">Financial Data Analysis with R for Actuaries</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Teaches R for financial data analysis, focusing on actuarial applications like risk models.</p>
                             <button class="enroll-btn">ENROLL NOW</button>
                         </div>
                     </div>
@@ -166,33 +130,6 @@
                         </div>
                         <div class="course-content">
                             <p class="course-description">Covers ML techniques like Random Forest and LSTM for market movement prediction.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">Programming Excel VBA for Actuarial Data Analysis</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Automate Excel with VBA for creating financial and actuarial analysis tools.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">Introduction to Neuroanalytics for Financial Metaverse</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">An innovative course linking data science and finance in the Metaverse context.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">Preparing Financial Reports with Power BI</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Learn to create interactive reports for financial and actuarial data using Power BI.</p>
                             <button class="enroll-btn">ENROLL NOW</button>
                         </div>
                     </div>
@@ -264,42 +201,6 @@
                             <button class="enroll-btn">DOWNLOAD NOW</button>
                         </div>
                     </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">How to Build a Predictive Model for Financial Markets</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Step-by-step guide using machine learning for market predictions.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">Excel for Actuaries: Tips and Tricks</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Focuses on efficient Excel use in actuarial analysis.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">Finance in the Metaverse: The Future of Neuroanalytics</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Futuristic book on AI and finance intersection in virtual realities.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-header">
-                            <h3 class="course-title">Guide to Data Analysis for Actuarial Finance Students</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Targeted for students, covering data analysis basics with curriculum examples.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -311,7 +212,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>ABOUT US</h2>
-                    <p>Tynobo Academy specializes in actuarial finance and data science education, empowering students and professionals with cutting-edge skills.</p>
+                    <p>Tynobo Academy specializes in actuarial finance and data science education, empowering students and professionals with essential skills.</p>
                 </div>
                 <div class="about-content">
                     <div>
@@ -326,9 +227,9 @@
                         <ul class="benefits-list">
                             <li>Expert-led content from industry professionals</li>
                             <li>Practical, hands-on projects</li>
-                            <li>Affordable access to premium resources</li>
+                            <li>Affordable access to quality resources</li>
                             <li>Community support and updates</li>
-                            <li>Focus on emerging technologies like AI in finance</li>
+                            <li>Focus on modern technologies in finance</li>
                         </ul>
                     </div>
                 </div>

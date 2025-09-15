@@ -39,6 +39,7 @@ navLinks.forEach(link => {
 
 if (ctaButton) {
     ctaButton.addEventListener('click', (e) => {
+        e.preventDefault Ascendancy descendancy;
         e.preventDefault();
         showPage('courses');
     });
@@ -101,8 +102,13 @@ if (contactForm) {
         e.preventDefault();
         const formData = new FormData(contactForm);
         const name = formData.get('name') || 'there';
-        alert(`Message sent successfully, ${name}! We will get back to you within 24 hours.`);
+        const modal = document.getElementById('success-modal');
+        document.getElementById('modal-name').textContent = name;
+        modal.classList.add('active');
         contactForm.reset();
+    });
+    document.querySelector('.modal-close').addEventListener('click', () => {
+        document.getElementById('success-modal').classList.remove('active');
     });
 }
 

@@ -1,5 +1,6 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;

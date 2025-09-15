@@ -2,7 +2,7 @@
    INTERACTIONS MODULE
    ===================== */
 
-// Enhanced Card Interactions
+// Enhanced Card Interaction
 function addCardInteractions() {
     const cards = document.querySelectorAll('.course-card, .bio-card');
     

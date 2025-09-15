@@ -45,7 +45,6 @@
     --transition-normal: 0.3s ease;
     --transition-slow: 0.6s ease;
 }
-
 /* Reset */
 * {
     margin: 0;
@@ -481,8 +480,6 @@ nav.scrolled {
     resize: vertical;
     min-height: 120px;
 }
-
-/* Advanced Social Links */
 .social-links {
     display: flex;
     gap: var(--space-3);
@@ -510,8 +507,6 @@ nav.scrolled {
     color: white;
     box-shadow: var(--shadow-md);
 }
-
-/* Modal Styling */
 .modal {
     display: none;
     position: fixed;
@@ -544,8 +539,6 @@ nav.scrolled {
     border: none;
     cursor: pointer;
 }
-
-/* World Map */
 .world-map {
     width: 100%;
     height: 200px;
@@ -555,8 +548,6 @@ nav.scrolled {
 .world-map:hover {
     filter: brightness(1.2);
 }
-
-/* Advanced Responsive Design */
 @media (min-width: 640px) {
     .container { padding: 0 var(--space-8); }
 }
@@ -598,8 +589,6 @@ nav.scrolled {
     .hero h1 { font-size: var(--text-3xl); }
     .hero-ctas { flex-direction: column; }
 }
-
-/* Accessibility Improvements */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -607,14 +596,10 @@ nav.scrolled {
         transition-duration: 0.01ms !important;
     }
 }
-
-/* Focus Management */
 *:focus-visible {
     outline: 2px solid var(--primary-500);
     outline-offset: 2px;
 }
-
-/* High Contrast Mode Support */
 @media (prefers-contrast: high) {
     .bio-card, .course-card, .contact-form {
         border-width: 2px;
@@ -625,8 +610,6 @@ nav.scrolled {
         background: var(--gray-200);
     }
 }
-
-/* Print Styles */
 @media print {
     .nav, .cta-button, .enroll-btn, .submit-btn {
         display: none;
@@ -639,22 +622,18 @@ nav.scrolled {
         padding: var(--space-8) 0;
     }
 }
-
-/* Grid Layouts */
 .features-grid, .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-8);
     margin-top: var(--space-12);
 }
-
 .about-content, .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-16);
     margin-top: var(--space-12);
 }
-
 @media (max-width: 768px) {
     .features-grid, .courses-grid {
         grid-template-columns: 1fr;
@@ -665,8 +644,6 @@ nav.scrolled {
         gap: var(--space-8);
     }
 }
-
-/* Quantum Field Animation */
 @keyframes quantumFlow {
     0% { background-position: 0 0; }
     100% { background-position: 1000px 1000px; }

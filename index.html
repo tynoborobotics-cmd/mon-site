@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tynobo Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS Inlined for Performance -->
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-50: #f0f9ff;
+            --primary-100: #e0f2fe;
+            --primary-500: #0ea5e9;
+            --primary-600: #0284c7;
+            --primary-700: #0369a1;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            --space-32: 8rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+            --radius-lg: 0.75rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Critical Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+            background: #ffffff;
+            color: var(--gray-900);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Critical Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-4) var(--space-6);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            transition: color var(--transition-fast);
+        }
+        
+        .logo:hover { color: var(--primary-600); }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: var(--text-sm);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-fast);
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-700);
+            background: var(--primary-50);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--text-xl);
+            color: var(--gray-600);
+            cursor: pointer;
+            padding: var(--space-2);
+            border-radius: var(--radius-md);
+        }
+        
+        /* Critical Layout */
+        .page {
+            padding-top: 80px;
+            min-height: 100vh;
+            display: none;
+        }
+        
+        .page.active { display: block; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+        
+        /* Critical Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-50) 100%);
+            padding: var(--space-32) 0 var(--space-24);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+            color: var(--gray-900);
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+        
+        .hero .subtitle {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-8);
+            color: var(--gray-600);
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--gray-900);
+            color: #ffffff;
+            padding: var(--space-4) var(--space-8);
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-base);
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-700);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* Critical Cards */
+        .bio-card, .course-card, .contact-form {
+            background: #ffffff;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .course-card:hover, .bio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* Critical Forms */
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-3) var(--space-4);
+            background: #ffffff;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            color: var(--gray-900) !important;
+            font-size: var(--text-base);
+            transition: all var(--transition-fast);
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px var(--primary-100);
+        }
+        
+        /* Mobile Critical */
+        @media (max-width: 768px) {
+            .container { padding: 0 var(--space-4); }
+            .hero { padding: var(--space-20) 0 var(--space-16); }
+            .hero h1 { font-size: var(--text-4xl); }
+            .hero .subtitle { font-size: var(--text-lg); }
+            .mobile-menu-btn { display: block; }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: var(--space-4);
+                right: var(--space-4);
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-lg);
+                padding: var(--space-4);
+                flex-direction: column;
+            }
+            .nav-menu.active { display: flex; }
+        }
+    </style>
+    
+    <!-- External CSS for non-critical styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Simple Help Button -->
+    <div class="help-button">
+        <button class="help-btn" id="helpBtn" title="Need Help?">?</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">TYNOBO ACADEMY</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active" data-page="home">HOME</a></li>
+                <li><a href="#" class="nav-link" data-page="courses">COURSES</a></li>
+                <li><a href="#" class="nav-link" data-page="ebooks">E-BOOKS</a></li>
+                <li><a href="#" class="nav-link" data-page="about">ABOUT</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">CONTACT</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="page active" id="home">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>ACTUARIAL FINANCE & DATA SCIENCE</h1>
+                    <p class="subtitle">Master Advanced Techniques in Risk Analysis, Predictive Modeling, and Financial Data Science</p>
+                    <a href="#" class="cta-button" data-page="courses">EXPLORE COURSES</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>CORE FEATURES</h2>
+                    <p>Discover powerful tools and methodologies for actuarial and data-driven financial decision-making.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Advanced Risk Modeling</h3>
+                        <p>Learn Monte Carlo simulations and predictive analytics for financial risk assessment.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI in Finance</h3>
+                        <p>Integrate machine learning for insurance pricing and market forecasting.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Data Visualization Mastery</h3>
+                        <p>Create interactive reports with Power BI and Matplotlib for financial insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Courses Page -->
+    <div class="page" id="courses">
+        <section class="courses-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>OUR COURSES</h2>
+                    <p>Practical, hands-on courses in actuarial finance and data science, designed for students and professionals.</p>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Basics of Actuarial Finance with Python</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Covers basic actuarial models like risk assessment and pricing using Python libraries such as pandas and numpy.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">AI in Insurance: From Theory to Application</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Explore machine learning (e.g., neural networks) for risk evaluation and insurance policy pricing.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Risk Modeling with Monte Carlo Simulation</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Learn stochastic simulation techniques for estimating financial risks using Python or Excel.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Advanced Statistics for Actuaries</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Explains statistical distributions (Poisson, Normal) and their use in actuarial modeling.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Data Science in Insurance</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Teach data analysis with SQL and Tableau to optimize insurance decisions.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Building Predictive Models for Financial Markets</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Covers ML techniques like Random Forest and LSTM for market movement prediction.</p>
+                            <button class="enroll-btn">ENROLL NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- E-books Page -->
+    <div class="page" id="ebooks">
+        <section class="courses-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>OUR EBOOKS</h2>
+                    <p>Comprehensive guides and practical ebooks on actuarial finance and data science topics.</p>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Beginner's Guide to Actuarial Finance</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Introductory book explaining core concepts like time value of money and insurance equations.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Learn Python for Financial Data Analysis in 30 Days</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Daily lessons to master Python with financial and actuarial examples.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Data Science for Actuaries: Modern Tools and Techniques</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Covers tools like Python, R, and SQL in insurance and finance contexts.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Risk Modeling: Practical Guide for Actuaries</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Explains techniques like VaR and stress testing with applicable examples.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Artificial Intelligence in Insurance</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Discusses AI's impact on insurance with case studies.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3 class="course-title">Actuarial Statistics: Comprehensive Guide</h3>
+                        </div>
+                        <div class="course-content">
+                            <p class="course-description">Detailed on statistical distributions and applications in finance and insurance.</p>
+                            <button class="enroll-btn">DOWNLOAD NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div class="page" id="about">
+        <section class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ABOUT US</h2>
+                    <p>Tynobo Academy specializes in actuarial finance and data science education, empowering students and professionals with essential skills.</p>
+                </div>
+                <div class="about-content">
+                    <div>
+                        <h3>Our Mission</h3>
+                        <p>We provide high-quality courses and ebooks to bridge theory and practice in financial data science.</p>
+                        
+                        <h3 style="margin-top: 2.5rem;">Our Vision</h3>
+                        <p>To lead in innovative education for the evolving world of finance and insurance.</p>
+                    </div>
+                    <div>
+                        <h3>Why Choose Us?</h3>
+                        <ul class="benefits-list">
+                            <li>Expert-led content from industry professionals</li>
+                            <li>Practical, hands-on projects</li>
+                            <li>Affordable access to quality resources</li>
+                            <li>Community support and updates</li>
+                            <li>Focus on modern technologies in finance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="page" id="contact">
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>CONTACT US</h2>
+                    <p>Get in touch for inquiries about courses, ebooks, or collaborations.</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h3>Contact Information</h3>
+                        <p>Reach out to us for any questions about our courses and ebooks.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Twitter">🐦</a>
+                            <a href="#" class="social-link" title="GitHub">⚡</a>
+                        </div>
+                        
+                        <div style="margin-top: 2.5rem;">
+                            <h4>Contact Details</h4>
+                            <p>Email: info@tynobo.com<br>
+                            Support Hours: 24/7</p>
+                        </div>
+                        
+                        <div style="margin-top: 2.5rem;">
+                            <h4>Quick Response</h4>
+                            <p>We respond to all inquiries within 24 hours. For urgent matters, please mention "URGENT" in your message.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modular JavaScript -->
+    <script src="js-core.js"></script>
+    <script src="js-scroll.js"></script>
+    <script src="js-interactions.js"></script>
+    <script src="js-legacy.js"></script>
+</body>
+</html>

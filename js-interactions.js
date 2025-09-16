@@ -135,3 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('🎯 Interactions Module Loaded');
 });
+
+
+import Spline from '@splinetool/react-spline/next';
+
+export default function Home() {
+  return (
+    <main>
+      <Spline
+        scene="https://prod.spline.design/sHC7mL-t7-zOYLUG/scene.splinecode" 
+      />
+    </main>
+  );
+}

@@ -3,302 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tynobo Academy offers courses and ebooks on actuarial finance and data science.">
-    <title>Tynobo Academy</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script type="module" src="js-hero.js"></script>
-    <script src="js-core.js"></script>
-    <script src="js-scroll.js"></script>
-    <script src="js-interactions.js"></script>
-    <script src="js-legacy.js"></script>
+    <title>Tynobo - Master Data Science with Professional Courses & E-Books</title>
+    <meta name="description" content="Master data science with Tynobo's comprehensive courses and e-books. From foundations to advanced AI, machine learning, and deep learning. Professional training for data scientists.">
+    <meta name="keywords" content="data science courses, machine learning training, python data science, AI courses, data science e-books, professional data science education">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <h1>TYNOBO ACADEMY</h1>
-            <button id="mobileMenuBtn" class="mobile-menu-btn" aria-expanded="false">☰</button>
-            <div id="navMenu" class="nav-menu">
-                <a href="#" class="nav-link active" data-page="home">HOME</a>
-                <a href="#" class="nav-link" data-page="courses">COURSES</a>
-                <a href="#" class="nav-link" data-page="ebooks">E-BOOKS</a>
-                <a href="#" class="nav-link" data-page="about">ABOUT</a>
-                <a href="#" class="nav-link" data-page="contact">CONTACT</a>
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">Tynobo</div>
+            <ul class="nav-links">
+                <li><a href="#home" aria-label="Home page">Home</a></li>
+                <li><a href="#about" aria-label="About us">About</a></li>
+                <li><a href="#courses" aria-label="Our courses">Courses</a></li>
+                <li><a href="#ebooks" aria-label="E-books">E-Books</a></li>
+                <li><a href="#blog" aria-label="Blog and resources">Blog</a></li>
+                <li><a href="#contact" aria-label="Contact us">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" aria-label="Mobile menu toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
-    <main class="page active" id="home">
-        <section class="hero">
-            <canvas id="hero-canvas" class="hero-bg"></canvas>
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="assets/videos/data-flow.mp4" type="video/mp4">
-                <img src="assets/images/data-flow.jpg" alt="Data Flow Fallback">
-            </video>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
             <div class="hero-content">
-                <h1>Master Actuarial Finance & Data Science</h1>
-                <p>Advanced Techniques in Risk Analysis, Predictive Modeling, and Financial Data Science</p>
-                <div class="hero-ctas">
-                    <a href="#courses" class="cta-button">Explore Courses</a>
-                    <a href="#ebooks" class="cta-button secondary">See E-books</a>
+                <h1 class="floating">Master Data Science</h1>
+                <p class="hero-subtitle">
+                    Transform your career with comprehensive data science courses and e-books. From Python programming to advanced AI, 
+                    master every skill needed to become a professional data scientist.
+                </p>
+                <p class="hero-subtitle arabic" style="margin-top: 1rem; font-size: 1rem; opacity: 0.8;">
+                    تعلم علم البيانات مع تينوبو - دورات شاملة وكتب إلكترونية احترافية
+                </p>
+                <div class="cta-buttons">
+                    <a href="#courses" class="btn btn-primary">Browse Courses</a>
+                    <a href="#ebooks" class="btn btn-secondary">Shop E-Books</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="features">
-            <div class="container">
-                <div class="section-header">
-                    <h2>CORE FEATURES</h2>
-                    <p>Discover powerful tools and methodologies for actuarial and data-driven financial decision-making.</p>
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <h2 class="section-title">Learning Paths</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="card-icon">📚</div>
+                    <h3 class="card-title">Complete E-Book Library</h3>
+                    <p>Access 8 comprehensive e-book categories covering foundations, machine learning, deep learning, and professional growth. From Python basics to advanced AI applications.</p>
                 </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Advanced Risk Modeling</h3>
-                        <p>Learn Monte Carlo simulations and predictive analytics for financial risk assessment.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🤖</div>
-                        <h3>AI in Finance</h3>
-                        <p>Integrate machine learning for insurance pricing and market forecasting.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📈</div>
-                        <h3>Data Visualization Mastery</h3>
-                        <p>Create interactive reports with Power BI and Matplotlib for financial insights.</p>
+                <div class="featured-card">
+                    <div class="card-icon">🎓</div>
+                    <h3 class="card-title">Structured Course Path</h3>
+                    <p>Follow our 7-level learning roadmap from beginner foundations to advanced specializations. Master mathematics, programming, ML, and deep learning step by step.</p>
+                </div>
+                <div class="featured-card">
+                    <div class="card-icon">💼</div>
+                    <h3 class="card-title">Professional Certification</h3>
+                    <p>Build your portfolio, prepare for interviews, and advance your career. Learn MLOps, cloud platforms, and real-world applications in business, finance, and healthcare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">🎓 Roadmap of Data Science Courses</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">Level 1: Foundations (Beginner)</h3>
+                    <ul class="roadmap-list">
+                        <li>Mathematics for Data Science</li>
+                        <li>Linear Algebra, Probability, Statistics, Calculus basics</li>
+                        <li>(Course example: Mathematics for Machine Learning – Coursera)</li>
+                        <li>Programming</li>
+                        <li>Python for Data Science (NumPy, Pandas, Matplotlib)</li>
+                        <li>R for Data Science (tidyverse, dplyr, ggplot2)</li>
+                        <li>Databases & SQL</li>
+                        <li>SQL Basics for Data Science</li>
+                        <li>Working with Relational Databases</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary buy-btn">Buy Level 1</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">Level 2: Data Handling & Visualization (Intermediate)</h3>
+                    <ul class="roadmap-list">
+                        <li>Data Wrangling</li>
+                        <li>Cleaning, preprocessing, and feature engineering</li>
+                        <li>Data Visualization</li>
+                        <li>Exploratory Data Analysis with Python (Seaborn, Plotly)</li>
+                        <li>Storytelling with Data & Dashboards (Tableau, Power BI)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary buy-btn">Buy Level 2</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">Level 3: Machine Learning</h3>
+                    <ul class="roadmap-list">
+                        <li>Core ML Concepts</li>
+                        <li>Regression, Classification, Clustering, Decision Trees</li>
+                        <li>Model evaluation & selection</li>
+                        <li>Specialized ML</li>
+                        <li>Feature Engineering & Pipelines</li>
+                        <li>Advanced algorithms (XGBoost, Random Forest, SVM)</li>
+                        <li>ML with Scikit-learn or caret (R)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary buy-btn">Buy Level 3</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">Level 4: Deep Learning & AI</h3>
+                    <ul class="roadmap-list">
+                        <li>Neural Networks Basics</li>
+                        <li>Deep Learning Frameworks (TensorFlow, PyTorch)</li>
+                        <li>Computer Vision (CNNs, transfer learning)</li>
+                        <li>Natural Language Processing (NLP) (RNNs, Transformers, LLMs)</li>
+                        <li>Generative AI (GANs, prompt engineering, fine-tuning models)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary buy-btn">Buy Level 4</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">Level 5: Advanced Topics & Specializations</h3>
+                    <ul class="roadmap-list">
+                        <li>Big Data & Data Engineering</li>
+                        <li>Apache Spark, Hadoop, Airflow</li>
+                        <li>Cloud platforms: AWS, GCP, Azure for data pipelines</li>
+                        <li>Time Series Analysis & Forecasting</li>
+                        <li>Recommender Systems</li>
+                        <li>MLOps & Deployment</li>
+                        <li>Model serving, monitoring, CI/CD pipelines</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary buy-btn">Buy Level 5</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">Level 6: Applied Data Science</h3>
+                    <ul class="roadmap-list">
+                        <li>Case Studies in Business, Finance, Healthcare, Marketing</li>
+                        <li>Data Ethics & Responsible AI</li>
+                        <li>Real-world projects & competitions (Kaggle)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary buy-btn">Buy Level 6</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">Level 7: Professional Growth</h3>
+                    <ul class="roadmap-list">
+                        <li>Building a Portfolio & GitHub Projects</li>
+                        <li>Technical Writing & Blogging for Data Scientists</li>
+                        <li>Interview Preparation (Leetcode for DS, system design for ML)</li>
+                        <li>Freelancing & Consulting as a Data Scientist</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary buy-btn">Buy Level 7</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Books Section -->
+    <section id="ebooks" class="ebooks">
+        <div class="container">
+            <h2 class="section-title">📘 Roadmap of E-Books for Professional Data Science</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">1. Foundations of Data Science</h3>
+                    <ul class="roadmap-list">
+                        <li>Introduction to Data Science & AI</li>
+                        <li>Mathematics for Data Science (Linear Algebra, Calculus, Probability, Statistics)</li>
+                        <li>Python Programming for Data Science</li>
+                        <li>R Programming for Data Science</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">2. Data Handling & Processing</h3>
+                    <ul class="roadmap-list">
+                        <li>Data Wrangling with Pandas / dplyr</li>
+                        <li>Databases & SQL for Data Science</li>
+                        <li>Big Data Fundamentals (Hadoop, Spark, etc.)</li>
+                        <li>Data Cleaning & Preprocessing</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">3. Data Visualization</h3>
+                    <ul class="roadmap-list">
+                        <li>Fundamentals of Data Visualization (Matplotlib, Seaborn, ggplot2)</li>
+                        <li>Storytelling with Data</li>
+                        <li>Dashboards with Power BI / Tableau</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">4. Machine Learning</h3>
+                    <ul class="roadmap-list">
+                        <li>Introduction to Machine Learning (Scikit-learn, caret)</li>
+                        <li>Supervised Learning Algorithms (Regression, Classification)</li>
+                        <li>Unsupervised Learning (Clustering, PCA)</li>
+                        <li>Feature Engineering & Model Selection</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">5. Deep Learning & AI</h3>
+                    <ul class="roadmap-list">
+                        <li>Neural Networks Basics</li>
+                        <li>Deep Learning with TensorFlow & PyTorch</li>
+                        <li>Computer Vision (CNNs)</li>
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Generative AI (GANs, Transformers, LLMs)</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">6. Specializations</h3>
+                    <ul class="roadmap-list">
+                        <li>Data Engineering & Pipelines</li>
+                        <li>MLOps (Model Deployment & Monitoring)</li>
+                        <li>Cloud Platforms (AWS, GCP, Azure for Data Science)</li>
+                        <li>Time Series Analysis & Forecasting</li>
+                        <li>Recommender Systems</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">7. Applied Data Science</h3>
+                    <ul class="roadmap-list">
+                        <li>Case Studies in Business Analytics</li>
+                        <li>Data Science for Finance</li>
+                        <li>Data Science for Healthcare</li>
+                        <li>Data Science for Marketing</li>
+                        <li>Ethics & Responsible AI</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+                <div class="roadmap-card">
+                    <h3 class="roadmap-title">8. Professional Growth</h3>
+                    <ul class="roadmap-list">
+                        <li>Data Science Portfolio Building</li>
+                        <li>Writing Technical Reports & Publishing</li>
+                        <li>Interview Preparation for Data Science Jobs</li>
+                        <li>Freelancing & Consulting as a Data Scientist</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Join the Tynobo Community</h2>
+            <p>Get exclusive access to new courses, free resources, and special discounts on our premium e-books and training programs.</p>
+            <form class="newsletter-form" aria-label="Newsletter signup">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Courses</h3>
+                    <a href="#courses">Foundations (Level 1-2)</a>
+                    <a href="#courses">Machine Learning (Level 3)</a>
+                    <a href="#courses">Deep Learning & AI (Level 4)</a>
+                    <a href="#courses">Advanced Topics (Level 5-7)</a>
+                </div>
+                <div class="footer-section">
+                    <h3>E-Books</h3>
+                    <a href="#ebooks">Foundations of Data Science</a>
+                    <a href="#ebooks">Machine Learning Collection</a>
+                    <a href="#ebooks">Deep Learning & AI</a>
+                    <a href="#ebooks">Professional Growth</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#about">About Tynobo</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:hello@tynobo.com">hello@tynobo.com</a>
+                    <a href="tel:+1-555-TYNOBO">+1 (555) TYNOBO</a>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><span>💼</span></a>
+                        <a href="#" aria-label="Twitter"><span>🐦</span></a>
+                        <a href="#" aria-label="GitHub"><span>💻</span></a>
+                        <a href="#" aria-label="YouTube"><span>📺</span></a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <main class="page" id="courses">
-        <section class="courses-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>OUR COURSES</h2>
-                    <p>Practical, hands-on courses in actuarial finance and data science, designed for students and professionals.</p>
-                </div>
-                <div class="courses-grid">
-                    <div class="course-card" data-course="python" style="--course-accent: #00BFFF;">
-                        <img src="assets/images/python-course.svg" alt="Python Course" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Basics of Actuarial Finance with Python</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Covers basic actuarial models like risk assessment and pricing using Python libraries such as pandas and numpy.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                            <span class="course-badge recommended">Recommended for You</span>
-                        </div>
-                    </div>
-                    <div class="course-card" data-course="ai-insurance" style="--course-accent: #7B2CBF;">
-                        <img src="assets/images/ai-insurance.svg" alt="AI Insurance Course" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">AI in Insurance: From Theory to Application</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Explore machine learning (e.g., neural networks) for risk evaluation and insurance policy pricing.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card" data-course="monte-carlo" style="--course-accent: #FFD700;">
-                        <img src="assets/images/monte-carlo.svg" alt="Monte Carlo Course" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Risk Modeling with Monte Carlo Simulation</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Learn stochastic simulation techniques for estimating financial risks using Python or Excel.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card" data-course="stats" style="--course-accent: #2ECC71;">
-                        <img src="assets/images/stats.svg" alt="Statistics Course" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Advanced Statistics for Actuaries</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Explains statistical distributions (Poisson, Normal) and their use in actuarial modeling.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card" data-course="data-science" style="--course-accent: #E74C3C;">
-                        <img src="assets/images/data-science.svg" alt="Data Science Course" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Data Science in Insurance</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Teach data analysis with SQL and Tableau to optimize insurance decisions.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card" data-course="predictive" style="--course-accent: #3498DB;">
-                        <img src="assets/images/predictive.svg" alt="Predictive Models Course" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Building Predictive Models for Financial Markets</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Covers ML techniques like Random Forest and LSTM for market movement prediction.</p>
-                            <button class="enroll-btn">ENROLL NOW</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tynobo. All rights reserved. | Master Data Science with Professional Training.</p>
             </div>
-        </section>
-    </main>
+        </div>
+    </footer>
 
-    <main class="page" id="ebooks">
-        <section class="ebooks-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>OUR EBOOKS</h2>
-                    <p>Comprehensive guides and practical ebooks on actuarial finance and data science topics.</p>
-                </div>
-                <div class="courses-grid">
-                    <div class="course-card">
-                        <img src="assets/images/ebook-actuarial.svg" alt="Actuarial Ebook" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Beginner's Guide to Actuarial Finance</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Introductory book explaining core concepts like time value of money and insurance equations.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="assets/images/ebook-python.svg" alt="Python Ebook" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Learn Python for Financial Data Analysis in 30 Days</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Daily lessons to master Python with financial and actuarial examples.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="assets/images/ebook-data-science.svg" alt="Data Science Ebook" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Data Science for Actuaries: Modern Tools and Techniques</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Covers tools like Python, R, and SQL in insurance and finance contexts.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="assets/images/ebook-risk.svg" alt="Risk Ebook" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Risk Modeling: Practical Guide for Actuaries</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Explains techniques like VaR and stress testing with applicable examples.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="assets/images/ebook-ai.svg" alt="AI Ebook" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Artificial Intelligence in Insurance</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Discusses AI's impact on insurance with case studies.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <img src="assets/images/ebook-stats.svg" alt="Stats Ebook" class="course-thumb">
-                        <div class="course-header">
-                            <h3 class="course-title">Actuarial Statistics: Comprehensive Guide</h3>
-                        </div>
-                        <div class="course-content">
-                            <p class="course-description">Detailed on statistical distributions and applications in finance and insurance.</p>
-                            <button class="enroll-btn">DOWNLOAD NOW</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <main class="page" id="about">
-        <section class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>ABOUT US</h2>
-                    <p>Tynobo Academy specializes in actuarial finance and data science education, empowering students and professionals with essential skills.</p>
-                </div>
-                <div class="about-content">
-                    <div class="bio-card">
-                        <h3>Our Mission</h3>
-                        <p>We provide high-quality courses and ebooks to bridge theory and practice in financial data science.</p>
-                        <h3>Our Vision</h3>
-                        <p>To lead in innovative education for the evolving world of finance and insurance.</p>
-                    </div>
-                    <div class="bio-card">
-                        <h3>Why Choose Us?</h3>
-                        <ul class="benefits-list">
-                            <li>Expert-led content from industry professionals</li>
-                            <li>Practical, hands-on projects</li>
-                            <li>Affordable access to quality resources</li>
-                            <li>Community support and updates</li>
-                            <li>Focus on modern technologies in finance</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <main class="page" id="contact">
-        <section class="contact-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>CONTACT US</h2>
-                    <p>Get in touch for inquiries about courses, ebooks, or collaborations.</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-form">
-                        <form id="contactForm" class="form-group">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">SEND MESSAGE</button>
-                        </form>
-                    </div>
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <div id="world-map" class="world-map"></div>
-                        <div class="social-links">
-                            <a href="https://linkedin.com" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://x.com" class="social-link"><i class="fab fa-twitter"></i></a>
-                        </div>
-                        <p>Email: <a href="mailto:info@tynobo.com">info@tynobo.com</a></p>
-                        <p>Support Hours: 24/7</p>
-                        <p>Quick Response: We respond within 24 hours. For urgent matters, mention "URGENT".</p>
-                    </div>
-                </div>
-                <div id="success-modal" class="modal">
-                    <div class="modal-content">
-                        <h3>Message Sent!</h3>
-                        <p>Thank you, <span id="modal-name"></span>! We'll reply within 24 hours.</p>
-                        <button class="modal-close">Close</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <button class="help-button">
-        <span class="help-btn">?</span>
-    </button>
+    <script src="script.js"></script>
 </body>
 </html>

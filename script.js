@@ -1,19 +1,12 @@
 // Mobile menu toggle
 document.querySelector('.mobile-menu').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '60px';
-    navLinks.style.right = '20px';
-    navLinks.style.background = 'var(--secondary-bg)';
-    navLinks.style.padding = '1rem';
-    navLinks.style.borderRadius = '10px';
+    navLinks.classList.toggle('active');
 });
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -25,6 +18,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Language toggle
+document.querySelector('.lang-toggle').addEventListener('change', function(e) {
+    document.body.classList.toggle('arabic', e.target.value === 'ar');
+    // Placeholder for full translation logic (requires backend or JSON files)
+    if (e.target.value === 'ar') {
+        document.querySelector('.hero h1').textContent = 'إتقان علم البيانات';
+        document.querySelectorAll('.btn-primary')[0].textContent = 'تصفح الدورات';
+        document.querySelectorAll('.btn-secondary')[0].textContent = 'تسوق الكتب الإلكترونية';
+    } else {
+        document.querySelector('.hero h1').textContent = 'Master Data Science';
+        document.querySelectorAll('.btn-primary')[0].textContent = 'Browse Courses';
+        document.querySelectorAll('.btn-secondary')[0].textContent = 'Shop E-Books';
+    }
+});
+
+// Search functionality
+document.querySelector('.search-input').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    document.querySelectorAll('.roadmap-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+    });
+});
+
 // Newsletter form submission
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -33,7 +50,22 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
     this.reset();
 });
 
-// Add intersection observer for animations
+// Contact form submission
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const message = this.querySelector('textarea').value;
+    alert(`Thank you, ${name}! Your message has been sent. We'll get back to you at ${email}.`);
+    this.reset();
+});
+
+// Cart icon placeholder
+document.querySelector('.cart-icon').addEventListener('click', function() {
+    alert('Shopping cart functionality coming soon!');
+});
+
+// Intersection observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -48,19 +80,15 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all cards for animation
-document.querySelectorAll('.featured-card, .roadmap-card').forEach(card => {
+document.querySelectorAll('.featured-card, .roadmap-card, .team-member').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(card);
 });
 
-// Add Google Analytics (placeholder)
-// Replace 'GA_MEASUREMENT_ID' with your actual Google Analytics ID
-/*
+// Google Analytics (placeholder)
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'GA_MEASUREMENT_ID');
-*/

@@ -6,16 +6,22 @@
     <title>Tynobo - Master Data Science with Professional Courses & E-Books</title>
     <meta name="description" content="Master data science with Tynobo's comprehensive courses and e-books. From foundations to advanced AI, machine learning, and deep learning. Professional training for data scientists.">
     <meta name="keywords" content="data science courses, machine learning training, python data science, AI courses, data science e-books, professional data science education">
+    <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
     <!-- Navigation -->
     <nav role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">Tynobo</div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search courses or e-books..." aria-label="Search">
+            </div>
             <ul class="nav-links">
                 <li><a href="#home" aria-label="Home page">Home</a></li>
                 <li><a href="#about" aria-label="About us">About</a></li>
@@ -24,10 +30,17 @@
                 <li><a href="#blog" aria-label="Blog and resources">Blog</a></li>
                 <li><a href="#contact" aria-label="Contact us">Contact</a></li>
             </ul>
-            <div class="mobile-menu" aria-label="Mobile menu toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-right">
+                <select class="lang-toggle" aria-label="Language selector">
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <div class="cart-icon" aria-label="Shopping cart">🛒</div>
+                <div class="mobile-menu" aria-label="Mobile menu toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -94,7 +107,8 @@
                         <li>SQL Basics for Data Science</li>
                         <li>Working with Relational Databases</li>
                     </ul>
-                    <a href="#" class="btn btn-primary buy-btn">Buy Level 1</a>
+                    <a href="/courses/level1" class="btn btn-primary buy-btn">Buy Level 1 - $49</a>
+                    <a href="/courses/level1/preview" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">Level 2: Data Handling & Visualization (Intermediate)</h3>
@@ -105,7 +119,8 @@
                         <li>Exploratory Data Analysis with Python (Seaborn, Plotly)</li>
                         <li>Storytelling with Data & Dashboards (Tableau, Power BI)</li>
                     </ul>
-                    <a href="#" class="btn btn-primary buy-btn">Buy Level 2</a>
+                    <a href="/courses/level2" class="btn btn-primary buy-btn">Buy Level 2 - $79</a>
+                    <a href="/courses/level2/preview" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">Level 3: Machine Learning</h3>
@@ -118,7 +133,8 @@
                         <li>Advanced algorithms (XGBoost, Random Forest, SVM)</li>
                         <li>ML with Scikit-learn or caret (R)</li>
                     </ul>
-                    <a href="#" class="btn btn-primary buy-btn">Buy Level 3</a>
+                    <a href="/courses/level3" class="btn btn-primary buy-btn">Buy Level 3 - $99</a>
+                    <a href="/courses/level3/preview" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">Level 4: Deep Learning & AI</h3>
@@ -129,7 +145,8 @@
                         <li>Natural Language Processing (NLP) (RNNs, Transformers, LLMs)</li>
                         <li>Generative AI (GANs, prompt engineering, fine-tuning models)</li>
                     </ul>
-                    <a href="#" class="btn btn-primary buy-btn">Buy Level 4</a>
+                    <a href="/courses/level4" class="btn btn-primary buy-btn">Buy Level 4 - $129</a>
+                    <a href="/courses/level4/preview" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">Level 5: Advanced Topics & Specializations</h3>
@@ -142,7 +159,8 @@
                         <li>MLOps & Deployment</li>
                         <li>Model serving, monitoring, CI/CD pipelines</li>
                     </ul>
-                    <a href="#" class="btn btn-primary buy-btn">Buy Level 5</a>
+                    <a href="/courses/level5" class="btn btn-primary buy-btn">Buy Level 5 - $149</a>
+                    <a href="/courses/level5/preview" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">Level 6: Applied Data Science</h3>
@@ -151,7 +169,8 @@
                         <li>Data Ethics & Responsible AI</li>
                         <li>Real-world projects & competitions (Kaggle)</li>
                     </ul>
-                    <a href="#" class="btn btn-primary buy-btn">Buy Level 6</a>
+                    <a href="/courses/level6" class="btn btn-primary buy-btn">Buy Level 6 - $169</a>
+                    <a href="/courses/level6/preview" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">Level 7: Professional Growth</h3>
@@ -161,7 +180,8 @@
                         <li>Interview Preparation (Leetcode for DS, system design for ML)</li>
                         <li>Freelancing & Consulting as a Data Scientist</li>
                     </ul>
-                    <a href="#" class="btn btn-primary buy-btn">Buy Level 7</a>
+                    <a href="/courses/level7" class="btn btn-primary buy-btn">Buy Level 7 - $199</a>
+                    <a href="/courses/level7/preview" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
             </div>
         </div>
@@ -180,7 +200,7 @@
                         <li>Python Programming for Data Science</li>
                         <li>R Programming for Data Science</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/foundations" class="btn btn-secondary buy-btn">Buy This E-Book - $9.99</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">2. Data Handling & Processing</h3>
@@ -190,7 +210,7 @@
                         <li>Big Data Fundamentals (Hadoop, Spark, etc.)</li>
                         <li>Data Cleaning & Preprocessing</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/data-handling" class="btn btn-secondary buy-btn">Buy This E-Book - $12.99</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">3. Data Visualization</h3>
@@ -199,7 +219,7 @@
                         <li>Storytelling with Data</li>
                         <li>Dashboards with Power BI / Tableau</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/visualization" class="btn btn-secondary buy-btn">Buy This E-Book - $14.99</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">4. Machine Learning</h3>
@@ -209,7 +229,7 @@
                         <li>Unsupervised Learning (Clustering, PCA)</li>
                         <li>Feature Engineering & Model Selection</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/machine-learning" class="btn btn-secondary buy-btn">Buy This E-Book - $19.99</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">5. Deep Learning & AI</h3>
@@ -220,7 +240,7 @@
                         <li>Natural Language Processing (NLP)</li>
                         <li>Generative AI (GANs, Transformers, LLMs)</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/deep-learning" class="btn btn-secondary buy-btn">Buy This E-Book - $24.99</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">6. Specializations</h3>
@@ -231,7 +251,7 @@
                         <li>Time Series Analysis & Forecasting</li>
                         <li>Recommender Systems</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/specializations" class="btn btn-secondary buy-btn">Buy This E-Book - $24.99</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">7. Applied Data Science</h3>
@@ -242,7 +262,7 @@
                         <li>Data Science for Marketing</li>
                         <li>Ethics & Responsible AI</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/applied" class="btn btn-secondary buy-btn">Buy This E-Book - $19.99</a>
                 </div>
                 <div class="roadmap-card">
                     <h3 class="roadmap-title">8. Professional Growth</h3>
@@ -252,14 +272,46 @@
                         <li>Interview Preparation for Data Science Jobs</li>
                         <li>Freelancing & Consulting as a Data Scientist</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary buy-btn">Buy This E-Book</a>
+                    <a href="/ebooks/professional-growth" class="btn btn-secondary buy-btn">Buy This E-Book - $14.99</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Tynobo</h2>
+            <p>Tynobo is your gateway to mastering data science. Our expertly crafted courses and e-books guide you from beginner to professional, covering everything from Python to generative AI. Founded in 2024, we aim to empower aspiring data scientists worldwide.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Dr. Jane Doe</h3>
+                    <p>Lead Instructor, PhD in AI</p>
+                </div>
+                <div class="team-member">
+                    <h3>John Smith</h3>
+                    <p>Founder, Data Science Expert</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Have questions? Reach out to our team for support or inquiries.</p>
+            <form class="contact-form" aria-label="Contact form">
+                <input type="text" placeholder="Your Name" required aria-label="Name">
+                <input type="email" placeholder="Your Email" required aria-label="Email">
+                <textarea placeholder="Your Message" required aria-label="Message"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Newsletter Section -->
-    <section class="newsletter">
+    <section id="newsletter" class="newsletter">
         <div class="container">
             <h2 class="section-title">Join the Tynobo Community</h2>
             <p>Get exclusive access to new courses, free resources, and special discounts on our premium e-books and training programs.</p>
@@ -300,15 +352,15 @@
                     <a href="mailto:hello@tynobo.com">hello@tynobo.com</a>
                     <a href="tel:+1-555-TYNOBO">+1 (555) TYNOBO</a>
                     <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><span>💼</span></a>
-                        <a href="#" aria-label="Twitter"><span>🐦</span></a>
-                        <a href="#" aria-label="GitHub"><span>💻</span></a>
-                        <a href="#" aria-label="YouTube"><span>📺</span></a>
+                        <a href="https://linkedin.com" aria-label="LinkedIn"><span>💼</span></a>
+                        <a href="https://twitter.com" aria-label="Twitter"><span>🐦</span></a>
+                        <a href="https://github.com" aria-label="GitHub"><span>💻</span></a>
+                        <a href="https://youtube.com" aria-label="YouTube"><span>📺</span></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Tynobo. All rights reserved. | Master Data Science with Professional Training.</p>
+                <p>&copy; 2025 Tynobo. All rights reserved. | Master Data Science with Professional Training.</p>
             </div>
         </div>
     </footer>

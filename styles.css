@@ -45,11 +45,6 @@ body::before {
     animation: backgroundShift 20s ease-in-out infinite;
 }
 
-body.arabic {
-    font-family: 'Amiri', serif;
-    direction: rtl;
-}
-
 @keyframes backgroundShift {
     0%, 100% { 
         background: 
@@ -180,26 +175,18 @@ nav:hover::before {
     color: var(--text-primary);
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    width: 200px;
 }
 
 .search-input:focus {
     outline: none;
     border-color: var(--accent-blue);
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    width: 250px;
 }
 
 .search-input::placeholder {
     color: var(--text-secondary);
-}
-
-.lang-toggle {
-    padding: 8px;
-    border: 2px solid var(--accent-blue);
-    border-radius: 10px;
-    background: rgba(26, 26, 46, 0.8);
-    color: var(--text-primary);
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
 }
 
 .cart-icon {
@@ -207,11 +194,23 @@ nav:hover::before {
     cursor: pointer;
     color: var(--accent-blue);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .cart-icon:hover {
     color: var(--accent-green);
     transform: scale(1.1);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--accent-pink);
+    color: var(--primary-bg);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
 }
 
 .mobile-menu {
@@ -524,18 +523,18 @@ nav:hover::before {
 }
 
 /* Courses and E-Books Sections */
-.courses, .ebooks, .about, .contact {
+.courses, .ebooks, .about, .blog, .contact {
     padding: 5rem 0;
     background: var(--gradient-dark);
 }
 
-.roadmap-grid, .team-grid {
+.roadmap-grid, .team-grid, .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.roadmap-card, .team-member {
+.roadmap-card, .team-member, .blog-post {
     background: rgba(26, 26, 46, 0.8);
     border-radius: 20px;
     padding: 2rem;
@@ -545,13 +544,13 @@ nav:hover::before {
     overflow: hidden;
 }
 
-.roadmap-card:hover, .team-member:hover {
+.roadmap-card:hover, .team-member:hover, .blog-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
     border-color: var(--accent-green);
 }
 
-.roadmap-title, .team-member h3 {
+.roadmap-title, .team-member h3, .blog-post h3 {
     font-family: 'Orbitron', monospace;
     font-size: 1.2rem;
     color: var(--accent-green);
@@ -579,6 +578,11 @@ nav:hover::before {
 .buy-btn {
     margin-top: 1rem;
     display: inline-block;
+}
+
+/* Blog Styles */
+.blog-post p {
+    margin-bottom: 1rem;
 }
 
 /* Contact Form */
@@ -808,12 +812,16 @@ footer::before {
         flex-direction: column;
     }
 
-    .featured-grid, .roadmap-grid, .team-grid {
+    .featured-grid, .roadmap-grid, .team-grid, .blog-grid {
         grid-template-columns: 1fr;
     }
 
-    .search-bar {
-        display: none;
+    .search-input {
+        width: 150px;
+    }
+
+    .search-input:focus {
+        width: 200px;
     }
 }
 
@@ -890,7 +898,7 @@ html {
     border: 0;
 }
 
-.btn:focus, .newsletter-input:focus, .nav-links a:focus, .search-input:focus, .lang-toggle:focus {
+.btn:focus, .newsletter-input:focus, .nav-links a:focus, .search-input:focus {
     outline: 2px solid var(--accent-blue);
     outline-offset: 2px;
 }

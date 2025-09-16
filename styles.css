@@ -45,6 +45,11 @@ body::before {
     animation: backgroundShift 20s ease-in-out infinite;
 }
 
+body.arabic {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+}
+
 @keyframes backgroundShift {
     0%, 100% { 
         background: 
@@ -120,12 +125,8 @@ nav:hover::before {
 }
 
 @keyframes logoGlow {
-    0% { 
-        filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
-    }
-    100% { 
-        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
-    }
+    0% { filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5)); }
+    100% { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8)); }
 }
 
 .nav-links {
@@ -158,6 +159,59 @@ nav:hover::before {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px 15px;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50px;
+    background: rgba(26, 26, 46, 0.8);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.lang-toggle {
+    padding: 8px;
+    border: 2px solid var(--accent-blue);
+    border-radius: 10px;
+    background: rgba(26, 26, 46, 0.8);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.cart-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--accent-blue);
+    transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+    color: var(--accent-green);
+    transform: scale(1.1);
 }
 
 .mobile-menu {
@@ -260,12 +314,8 @@ nav:hover::before {
 }
 
 @keyframes titleGlow {
-    0% { 
-        filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
-    }
-    100% { 
-        filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.8));
-    }
+    0% { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5)); }
+    100% { filter: drop-shadow(0 0 30px rgba(0, 255, 136, 0.8)); }
 }
 
 @keyframes colorShift {
@@ -462,14 +512,8 @@ nav:hover::before {
 }
 
 @keyframes iconPulse {
-    0%, 100% { 
-        transform: scale(1);
-        box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-    }
-    50% { 
-        transform: scale(1.05);
-        box-shadow: 0 0 40px rgba(0, 255, 136, 0.7);
-    }
+    0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 255, 136, 0.7); }
 }
 
 .card-title {
@@ -477,6 +521,94 @@ nav:hover::before {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     color: var(--accent-blue);
+}
+
+/* Courses and E-Books Sections */
+.courses, .ebooks, .about, .contact {
+    padding: 5rem 0;
+    background: var(--gradient-dark);
+}
+
+.roadmap-grid, .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.roadmap-card, .team-member {
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmap-card:hover, .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    border-color: var(--accent-green);
+}
+
+.roadmap-title, .team-member h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2rem;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+}
+
+.roadmap-list {
+    list-style: none;
+}
+
+.roadmap-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.roadmap-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+}
+
+.buy-btn {
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(26, 26, 46, 0.8);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
 /* Newsletter Section */
@@ -508,7 +640,7 @@ nav:hover::before {
 
 .newsletter-form {
     max-width: 600px;
-    margin: 2rem auto 0;
+    margin: 2rem auto;
     display: flex;
     gap: 1rem;
     position: relative;
@@ -646,6 +778,17 @@ footer::before {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: var(--secondary-bg);
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .mobile-menu {
@@ -661,12 +804,16 @@ footer::before {
         align-items: center;
     }
 
-    .newsletter-form {
+    .newsletter-form, .contact-form {
         flex-direction: column;
     }
 
-    .featured-grid {
+    .featured-grid, .roadmap-grid, .team-grid {
         grid-template-columns: 1fr;
+    }
+
+    .search-bar {
+        display: none;
     }
 }
 
@@ -690,14 +837,8 @@ footer::before {
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in-up {
@@ -705,14 +846,8 @@ footer::before {
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 .slide-in-left {
@@ -742,12 +877,6 @@ html {
     background: var(--gradient-secondary);
 }
 
-/* Arabic Support */
-.arabic {
-    direction: rtl;
-    font-family: 'Roboto', 'Amiri', serif;
-}
-
 /* Accessibility */
 .sr-only {
     position: absolute;
@@ -761,68 +890,7 @@ html {
     border: 0;
 }
 
-/* Focus styles for accessibility */
-.btn:focus,
-.newsletter-input:focus,
-.nav-links a:focus {
+.btn:focus, .newsletter-input:focus, .nav-links a:focus, .search-input:focus, .lang-toggle:focus {
     outline: 2px solid var(--accent-blue);
     outline-offset: 2px;
-}
-
-/* New Styles for Courses and E-Books Sections */
-.courses, .ebooks {
-    padding: 5rem 0;
-    background: var(--gradient-dark);
-}
-
-.roadmap-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.roadmap-card {
-    background: rgba(26, 26, 46, 0.8);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.roadmap-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-    border-color: var(--accent-green);
-}
-
-.roadmap-title {
-    font-family: 'Orbitron', monospace;
-    font-size: 1.2rem;
-    color: var(--accent-green);
-    margin-bottom: 1rem;
-}
-
-.roadmap-list {
-    list-style: none;
-}
-
-.roadmap-list li {
-    margin-bottom: 0.5rem;
-    color: var(--text-secondary);
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.roadmap-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent-blue);
-}
-
-.buy-btn {
-    margin-top: 1rem;
-    display: inline-block;
 }

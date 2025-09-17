@@ -13,7 +13,20 @@
     --gradient-glow: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 255, 136, 0.3) 100%);
     --shadow-glow: 0 0 50px rgba(0, 212, 255, 0.3);
     --shadow-glow-hover: 0 0 80px rgba(0, 212, 255, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(10px);
 }
+
+body.light-mode {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f0f0f0;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+    --gradient-dark: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,6 +40,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
+    will-change: background;
 }
 
 body::before {
@@ -65,7 +80,6 @@ body::before {
     padding: 0 20px;
 }
 
-/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -226,7 +240,6 @@ nav:hover::before {
     transition: 0.3s;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -394,7 +407,6 @@ nav:hover::before {
     color: var(--accent-green);
 }
 
-/* Featured Section */
 .featured {
     padding: 5rem 0;
     background: var(--gradient-dark);
@@ -411,22 +423,20 @@ nav:hover::before {
     background-clip: text;
 }
 
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+.featured-grid, .roadmap-grid, .team-grid, .blog-grid {
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 3rem;
+    justify-content: center;
 }
 
-.featured-card {
-    background: rgba(26, 26, 46, 0.8);
+.featured-card, .roadmap-card, .team-member, .blog-post {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
     border-radius: 20px;
     padding: 2.5rem;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .featured-card::before {
@@ -521,32 +531,9 @@ nav:hover::before {
     color: var(--accent-blue);
 }
 
-/* Courses and E-Books Sections */
-.courses, .ebooks, .about, .blog, .contact {
+.courses, .ebooks, .about, .blog, .contact, .career, .faq {
     padding: 5rem 0;
     background: var(--gradient-dark);
-}
-
-.roadmap-grid, .team-grid, .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.roadmap-card, .team-member, .blog-post {
-    background: rgba(26, 26, 46, 0.8);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.roadmap-card:hover, .team-member:hover, .blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-    border-color: var(--accent-green);
 }
 
 .roadmap-title, .team-member h3, .blog-post h3 {
@@ -579,12 +566,10 @@ nav:hover::before {
     display: inline-block;
 }
 
-/* Blog Styles */
 .blog-post p {
     margin-bottom: 1rem;
 }
 
-/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -614,7 +599,6 @@ nav:hover::before {
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
-/* Newsletter Section */
 .newsletter {
     padding: 5rem 0;
     background: var(--gradient-dark);
@@ -673,13 +657,13 @@ nav:hover::before {
     color: var(--text-secondary);
 }
 
-/* Footer */
 footer {
     background: var(--secondary-bg);
     padding: 4rem 0 2rem;
     border-top: 1px solid rgba(0, 212, 255, 0.3);
     position: relative;
     overflow: hidden;
+    margin-top: auto;
 }
 
 footer::before {
@@ -777,7 +761,6 @@ footer::before {
     z-index: 2;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -812,7 +795,7 @@ footer::before {
     }
 
     .featured-grid, .roadmap-grid, .team-grid, .blog-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .search-input {
@@ -824,7 +807,12 @@ footer::before {
     }
 }
 
-/* Animations */
+@media (pointer: coarse) {
+    .btn:hover {
+        transform: none;
+    }
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
@@ -834,39 +822,24 @@ footer::before {
     animation: float 4s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
-
-.pulse {
-    animation: pulse 2s ease-in-out infinite;
-}
-
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up-hidden {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-.slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-}
-
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -884,7 +857,6 @@ html {
     background: var(--gradient-secondary);
 }
 
-/* Accessibility */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -900,4 +872,12 @@ html {
 .btn:focus, .newsletter-input:focus, .nav-links a:focus, .search-input:focus {
     outline: 2px solid var(--accent-blue);
     outline-offset: 2px;
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
 }

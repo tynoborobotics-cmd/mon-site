@@ -4,37 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tynobo - Master Data Science with Professional Courses & E-Books</title>
-    <meta name="description" content="Master data science with Tynobo's comprehensive courses and e-books. From foundations to advanced AI, machine learning, and deep learning. Professional training for data scientists. Discover Python data science courses, ML training, and AI e-books.">
-    <meta name="keywords" content="data science courses, machine learning training, python data science, AI courses, data science e-books, professional data science education, beginner data science roadmap">
+    <meta name="description" content="Master data science with Tynobo's comprehensive courses and e-books. From foundations to advanced AI, machine learning, and deep learning. Professional training for data scientists.">
+    <meta name="keywords" content="data science courses, machine learning training, python data science, AI courses, data science e-books, professional data science education">
     <meta name="robots" content="index, follow">
-    <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="Tynobo - Master Data Science Courses & E-Books">
-    <meta property="og:description" content="Transform your career with data science from beginner to pro.">
-    <meta property="og:image" content="https://example.com/hero-image.jpg">
-    <meta property="og:url" content="https://tynobo.com">
-    <!-- Schema.org for Courses -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tynobo",
-      "url": "https://tynobo.com",
-      "description": "Online platform for data science courses and e-books",
-      "course": [
-        {
-          "@type": "Course",
-          "name": "Level 1: Foundations of Data Science",
-          "description": "Beginner course on math, Python, and SQL for data science.",
-          "provider": {"@type": "Organization", "name": "Tynobo"}
-        }
-        // Add more for each course/ebook
-      ]
-    }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="style" href="styles.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -45,9 +20,7 @@
         <div class="nav-container">
             <div class="logo">Tynobo</div>
             <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Search courses or e-books (e.g., machine learning)..." aria-label="Search courses and e-books">
-                <div class="autocomplete-dropdown" id="autocomplete"></div>
-                <div class="search-results" id="search-results"></div>
+                <input type="text" class="search-input" placeholder="Search courses or e-books..." aria-label="Search">
             </div>
             <ul class="nav-links">
                 <li><a href="#home" aria-label="Home page">Home</a></li>
@@ -59,7 +32,6 @@
             </ul>
             <div class="nav-right">
                 <div class="cart-icon" aria-label="Shopping cart">🛒 <span class="cart-count">0</span></div>
-                <button class="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
                 <div class="mobile-menu" aria-label="Mobile menu toggle">
                     <span></span>
                     <span></span>
@@ -76,7 +48,7 @@
                 <h1 class="floating">Master Data Science</h1>
                 <p class="hero-subtitle">
                     Transform your career with comprehensive data science courses and e-books. From Python programming to advanced AI, 
-                    master every skill needed to become a professional data scientist. No prior experience required – flexible schedule.
+                    master every skill needed to become a professional data scientist.
                 </p>
                 <div class="cta-buttons">
                     <a href="#courses" class="btn btn-primary">Browse Courses</a>
@@ -92,17 +64,17 @@
             <h2 class="section-title">Learning Paths</h2>
             <div class="featured-grid">
                 <div class="featured-card">
-                    <div class="card-icon" alt="E-Book Library Icon">📚</div>
+                    <div class="card-icon">📚</div>
                     <h3 class="card-title">Complete E-Book Library</h3>
                     <p>Access 8 comprehensive e-book categories covering foundations, machine learning, deep learning, and professional growth. From Python basics to advanced AI applications.</p>
                 </div>
                 <div class="featured-card">
-                    <div class="card-icon" alt="Course Path Icon">🎓</div>
+                    <div class="card-icon">🎓</div>
                     <h3 class="card-title">Structured Course Path</h3>
                     <p>Follow our 7-level learning roadmap from beginner foundations to advanced specializations. Master mathematics, programming, ML, and deep learning step by step.</p>
                 </div>
                 <div class="featured-card">
-                    <div class="card-icon" alt="Certification Icon">💼</div>
+                    <div class="card-icon">💼</div>
                     <h3 class="card-title">Professional Certification</h3>
                     <p>Build your portfolio, prepare for interviews, and advance your career. Learn MLOps, cloud platforms, and real-world applications in business, finance, and healthcare.</p>
                 </div>
@@ -111,24 +83,16 @@
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="courses" id="main-content">
+    <section id="courses" class="courses">
         <div class="container">
             <h2 class="section-title">🎓 Roadmap of Data Science Courses</h2>
-            <div class="prerequisites-section">
-                <h3>Prerequisites</h3>
-                <ul>
-                    <li>Basic computer skills</li>
-                    <li>High school level math</li>
-                    <li>English proficiency</li>
-                </ul>
-            </div>
             <div class="roadmap-grid">
-                <div class="roadmap-card" data-type="course" data-id="level1" data-keywords="foundations beginner math python sql numpy pandas">
+                <div class="roadmap-card" data-type="course" data-id="level1">
                     <h3 class="roadmap-title">Level 1: Foundations (Beginner)</h3>
                     <ul class="roadmap-list">
                         <li>Mathematics for Data Science</li>
                         <li>Linear Algebra, Probability, Statistics, Calculus basics</li>
-                        <li>(Example: Mathematics for Machine Learning – <a href="https://www.coursera.org/learn/mathematics-machine-learning" target="_blank" rel="nofollow">Coursera</a>)</li>
+                        <li>(Course example: Mathematics for Machine Learning – Coursera)</li>
                         <li>Programming</li>
                         <li>Python for Data Science (NumPy, Pandas, Matplotlib)</li>
                         <li>R for Data Science (tidyverse, dplyr, ggplot2)</li>
@@ -136,22 +100,10 @@
                         <li>SQL Basics for Data Science</li>
                         <li>Working with Relational Databases</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Mathematical foundations</li>
-                            <li>Python/R programming</li>
-                            <li>SQL querying</li>
-                        </ul>
-                    </div>
-                    <div class="projects">
-                        <h4>Hands-on Projects</h4>
-                        <p>Build a simple data analysis script on Kaggle.</p>
-                    </div>
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 1 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-                <div class="roadmap-card" data-type="course" data-id="level2" data-keywords="data handling visualization intermediate cleaning seaborn plotly tableau">
+                <div class="roadmap-card" data-type="course" data-id="level2">
                     <h3 class="roadmap-title">Level 2: Data Handling & Visualization (Intermediate)</h3>
                     <ul class="roadmap-list">
                         <li>Data Wrangling</li>
@@ -160,22 +112,10 @@
                         <li>Exploratory Data Analysis with Python (Seaborn, Plotly)</li>
                         <li>Storytelling with Data & Dashboards (Tableau, Power BI)</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Data cleaning</li>
-                            <li>Visualization tools</li>
-                            <li>Dashboard creation</li>
-                        </ul>
-                    </div>
-                    <div class="projects">
-                        <h4>Hands-on Projects</h4>
-                        <p>Create an interactive dashboard with Plotly.</p>
-                    </div>
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 2 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-                <div class="roadmap-card" data-type="course" data-id="level3" data-keywords="machine learning ml regression classification clustering scikit-learn xgboost">
+                <div class="roadmap-card" data-type="course" data-id="level3">
                     <h3 class="roadmap-title">Level 3: Machine Learning</h3>
                     <ul class="roadmap-list">
                         <li>Core ML Concepts</li>
@@ -186,22 +126,10 @@
                         <li>Advanced algorithms (XGBoost, Random Forest, SVM)</li>
                         <li>ML with Scikit-learn or caret (R)</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>ML algorithms implementation</li>
-                            <li>Model evaluation metrics</li>
-                            <li>Scikit-learn proficiency</li>
-                        </ul>
-                    </div>
-                    <div class="projects">
-                        <h4>Hands-on Projects</h4>
-                        <p>Develop a predictive model for a Kaggle competition.</p>
-                    </div>
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 3 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-                <div class="roadmap-card" data-type="course" data-id="level4" data-keywords="deep learning ai neural networks tensorflow pytorch cnn nlp gans">
+                <div class="roadmap-card" data-type="course" data-id="level4">
                     <h3 class="roadmap-title">Level 4: Deep Learning & AI</h3>
                     <ul class="roadmap-list">
                         <li>Neural Networks Basics</li>
@@ -210,22 +138,10 @@
                         <li>Natural Language Processing (NLP) (RNNs, Transformers, LLMs)</li>
                         <li>Generative AI (GANs, prompt engineering, fine-tuning models)</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Neural network design</li>
-                            <li>TensorFlow/PyTorch usage</li>
-                            <li>NLP and CV applications</li>
-                        </ul>
-                    </div>
-                    <div class="projects">
-                        <h4>Hands-on Projects</h4>
-                        <p>Build an image classifier using CNNs.</p>
-                    </div>
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 4 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-                <div class="roadmap-card" data-type="course" data-id="level5" data-keywords="advanced big data spark aws mlops time series recommender">
+                <div class="roadmap-card" data-type="course" data-id="level5">
                     <h3 class="roadmap-title">Level 5: Advanced Topics & Specializations</h3>
                     <ul class="roadmap-list">
                         <li>Big Data & Data Engineering</li>
@@ -236,44 +152,20 @@
                         <li>MLOps & Deployment</li>
                         <li>Model serving, monitoring, CI/CD pipelines</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Big data processing</li>
-                            <li>Cloud data engineering</li>
-                            <li>MLOps practices</li>
-                        </ul>
-                    </div>
-                    <div class="projects">
-                        <h4>Hands-on Projects</h4>
-                        <p>Deploy a model on AWS SageMaker.</p>
-                    </div>
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 5 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-                <div class="roadmap-card" data-type="course" data-id="level6" data-keywords="applied data science case studies ethics kaggle business finance healthcare">
+                <div class="roadmap-card" data-type="course" data-id="level6">
                     <h3 class="roadmap-title">Level 6: Applied Data Science</h3>
                     <ul class="roadmap-list">
                         <li>Case Studies in Business, Finance, Healthcare, Marketing</li>
                         <li>Data Ethics & Responsible AI</li>
                         <li>Real-world projects & competitions (Kaggle)</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Domain-specific applications</li>
-                            <li>Ethical AI considerations</li>
-                            <li>Project management</li>
-                        </ul>
-                    </div>
-                    <div class="projects">
-                        <h4>Hands-on Projects</h4>
-                        <p>Analyze a healthcare dataset for insights.</p>
-                    </div>
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 6 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-                <div class="roadmap-card" data-type="course" data-id="level7" data-keywords="professional growth portfolio interview freelancing github">
+                <div class="roadmap-card" data-type="course" data-id="level7">
                     <h3 class="roadmap-title">Level 7: Professional Growth</h3>
                     <ul class="roadmap-list">
                         <li>Building a Portfolio & GitHub Projects</li>
@@ -281,26 +173,9 @@
                         <li>Interview Preparation (Leetcode for DS, system design for ML)</li>
                         <li>Freelancing & Consulting as a Data Scientist</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Portfolio development</li>
-                            <li>Interview techniques</li>
-                            <li>Career advancement strategies</li>
-                        </ul>
-                    </div>
-                    <div class="projects">
-                        <h4>Hands-on Projects</h4>
-                        <p>Create a professional GitHub portfolio.</p>
-                    </div>
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 7 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-            </div>
-            <div class="reviews-section">
-                <h3>Learner Reviews</h3>
-                <p>Average rating: 4.8/5 (based on 500+ reviews)</p>
-                <div class="review"> "Great foundational course!" - John D.</div>
             </div>
         </div>
     </section>
@@ -310,7 +185,7 @@
         <div class="container">
             <h2 class="section-title">📘 Roadmap of E-Books for Professional Data Science</h2>
             <div class="roadmap-grid">
-                <div class="roadmap-card" data-type="ebook" data-id="foundations" data-keywords="foundations data science math python r introduction">
+                <div class="roadmap-card" data-type="ebook" data-id="foundations">
                     <h3 class="roadmap-title">1. Foundations of Data Science</h3>
                     <ul class="roadmap-list">
                         <li>Introduction to Data Science & AI</li>
@@ -318,16 +193,9 @@
                         <li>Python Programming for Data Science</li>
                         <li>R Programming for Data Science</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Core data science concepts</li>
-                            <li>Python/R fundamentals</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Foundations E-Book">Buy - $9.99</a>
                 </div>
-                <div class="roadmap-card" data-type="ebook" data-id="data-handling" data-keywords="data handling processing pandas sql big data hadoop spark cleaning">
+                <div class="roadmap-card" data-type="ebook" data-id="data-handling">
                     <h3 class="roadmap-title">2. Data Handling & Processing</h3>
                     <ul class="roadmap-list">
                         <li>Data Wrangling with Pandas / dplyr</li>
@@ -335,32 +203,18 @@
                         <li>Big Data Fundamentals (Hadoop, Spark, etc.)</li>
                         <li>Data Cleaning & Preprocessing</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Data manipulation techniques</li>
-                            <li>SQL and big data basics</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Data Handling E-Book">Buy - $9.99</a>
                 </div>
-                <div class="roadmap-card" data-type="ebook" data-id="visualization" data-keywords="data visualization matplotlib seaborn ggplot2 dashboards power bi tableau storytelling">
+                <div class="roadmap-card" data-type="ebook" data-id="visualization">
                     <h3 class="roadmap-title">3. Data Visualization</h3>
                     <ul class="roadmap-list">
                         <li>Fundamentals of Data Visualization (Matplotlib, Seaborn, ggplot2)</li>
                         <li>Storytelling with Data</li>
                         <li>Dashboards with Power BI / Tableau</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Visualization libraries</li>
-                            <li>Dashboard design</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Data Visualization E-Book">Buy - $9.99</a>
                 </div>
-                <div class="roadmap-card" data-type="ebook" data-id="machine-learning" data-keywords="machine learning scikit-learn supervised unsupervised clustering pca feature engineering">
+                <div class="roadmap-card" data-type="ebook" data-id="machine-learning">
                     <h3 class="roadmap-title">4. Machine Learning</h3>
                     <ul class="roadmap-list">
                         <li>Introduction to Machine Learning (Scikit-learn, caret)</li>
@@ -368,16 +222,9 @@
                         <li>Unsupervised Learning (Clustering, PCA)</li>
                         <li>Feature Engineering & Model Selection</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>ML algorithms</li>
-                            <li>Feature engineering</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Machine Learning E-Book">Buy - $9.99</a>
                 </div>
-                <div class="roadmap-card" data-type="ebook" data-id="deep-learning" data-keywords="deep learning ai neural networks tensorflow pytorch cnn nlp gans transformers llms">
+                <div class="roadmap-card" data-type="ebook" data-id="deep-learning">
                     <h3 class="roadmap-title">5. Deep Learning & AI</h3>
                     <ul class="roadmap-list">
                         <li>Neural Networks Basics</li>
@@ -386,16 +233,9 @@
                         <li>Natural Language Processing (NLP)</li>
                         <li>Generative AI (GANs, Transformers, LLMs)</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Deep learning frameworks</li>
-                            <li>AI applications</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Deep Learning E-Book">Buy - $9.99</a>
                 </div>
-                <div class="roadmap-card" data-type="ebook" data-id="specializations" data-keywords="specializations data engineering mlops cloud aws gcp azure time series recommender">
+                <div class="roadmap-card" data-type="ebook" data-id="specializations">
                     <h3 class="roadmap-title">6. Specializations</h3>
                     <ul class="roadmap-list">
                         <li>Data Engineering & Pipelines</li>
@@ -404,16 +244,9 @@
                         <li>Time Series Analysis & Forecasting</li>
                         <li>Recommender Systems</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Advanced specializations</li>
-                            <li>Deployment strategies</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Specializations E-Book">Buy - $9.99</a>
                 </div>
-                <div class="roadmap-card" data-type="ebook" data-id="applied" data-keywords="applied data science business finance healthcare marketing ethics responsible ai">
+                <div class="roadmap-card" data-type="ebook" data-id="applied">
                     <h3 class="roadmap-title">7. Applied Data Science</h3>
                     <ul class="roadmap-list">
                         <li>Case Studies in Business Analytics</li>
@@ -422,16 +255,9 @@
                         <li>Data Science for Marketing</li>
                         <li>Ethics & Responsible AI</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Industry applications</li>
-                            <li>Ethical practices</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Applied Data Science E-Book">Buy - $9.99</a>
                 </div>
-                <div class="roadmap-card" data-type="ebook" data-id="professional-growth" data-keywords="professional growth portfolio technical writing interview freelancing consulting">
+                <div class="roadmap-card" data-type="ebook" data-id="professional-growth">
                     <h3 class="roadmap-title">8. Professional Growth</h3>
                     <ul class="roadmap-list">
                         <li>Data Science Portfolio Building</li>
@@ -439,13 +265,6 @@
                         <li>Interview Preparation for Data Science Jobs</li>
                         <li>Freelancing & Consulting as a Data Scientist</li>
                     </ul>
-                    <div class="skills-gained">
-                        <h4>Skills Gained</h4>
-                        <ul>
-                            <li>Career development</li>
-                            <li>Professional communication</li>
-                        </ul>
-                    </div>
                     <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Professional Growth E-Book">Buy - $9.99</a>
                 </div>
             </div>
@@ -492,33 +311,6 @@
                     <a href="#" class="btn btn-secondary">Read More</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Career Support Section -->
-    <section id="career" class="career">
-        <div class="container">
-            <h2 class="section-title">Career Support</h2>
-            <p>Get resume tips, interview prep, and portfolio building guidance. Earn a shareable certificate upon completion.</p>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <details>
-                <summary>What is the duration of the courses?</summary>
-                <p>Flexible, 4-6 months at 10 hours/week.</p>
-            </details>
-            <details>
-                <summary>Do I need prior experience?</summary>
-                <p>No, our courses start from beginner level.</p>
-            </details>
-            <details>
-                <summary>Are certificates provided?</summary>
-                <p>Yes, upon completion of each level.</p>
-            </details>
         </div>
     </section>
 

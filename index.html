@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,11 +48,6 @@
                 <input type="text" class="search-input" placeholder="Search courses or e-books (e.g., machine learning)..." aria-label="Search courses and e-books">
                 <div class="autocomplete-dropdown" id="autocomplete"></div>
                 <div class="search-results" id="search-results"></div>
-                <div class="search-filters" id="search-filters">
-                    <label><input type="checkbox" value="course"> Courses</label>
-                    <label><input type="checkbox" value="ebook"> E-Books</label>
-                    <label>Sort by: <select id="sort-select"><option value="relevance">Relevance</option><option value="price">Price</option></select></label>
-                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home" aria-label="Home page">Home</a></li>
@@ -157,7 +151,6 @@
                     <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 1 Course">Buy - $14.99</a>
                     <a href="#" class="btn btn-secondary">Watch Free Preview</a>
                 </div>
-                <!-- Repeat for all 7 levels with data-keywords for better search -->
                 <div class="roadmap-card" data-type="course" data-id="level2" data-keywords="data handling visualization intermediate cleaning seaborn plotly tableau">
                     <h3 class="roadmap-title">Level 2: Data Handling & Visualization (Intermediate)</h3>
                     <ul class="roadmap-list">
@@ -312,7 +305,7 @@
         </div>
     </section>
 
-    <!-- E-Books Section (similar structure with data-keywords) -->
+    <!-- E-Books Section -->
     <section id="ebooks" class="ebooks">
         <div class="container">
             <h2 class="section-title">📘 Roadmap of E-Books for Professional Data Science</h2>
@@ -459,8 +452,144 @@
         </div>
     </section>
 
-    <!-- Rest of sections remain the same -->
-    <!-- About, Blog, Career, FAQ, Contact, Newsletter, Footer -->
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Tynobo</h2>
+            <p>Tynobo is your gateway to mastering data science. Our expertly crafted courses and e-books guide you from beginner to professional, covering everything from Python to generative AI. Founded in 2024, we aim to empower aspiring data scientists worldwide.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Dr. Jane Doe</h3>
+                    <p>Lead Instructor, PhD in AI</p>
+                </div>
+                <div class="team-member">
+                    <h3>John Smith</h3>
+                    <p>Founder, Data Science Expert</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Tynobo Blog</h2>
+            <p>Explore our latest articles on data science, AI, and career advice.</p>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <h3>Top 5 Machine Learning Algorithms for Beginners</h3>
+                    <p>Discover the essential algorithms to kickstart your ML journey, including regression, classification, and more.</p>
+                    <a href="#" class="btn btn-secondary">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <h3>How to Build a Data Science Portfolio</h3>
+                    <p>Step-by-step guide to creating a standout portfolio with GitHub projects and real-world examples.</p>
+                    <a href="#" class="btn btn-secondary">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <h3>The Future of Generative AI</h3>
+                    <p>Explore trends in GANs, Transformers, and LLMs shaping the AI landscape.</p>
+                    <a href="#" class="btn btn-secondary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Support Section -->
+    <section id="career" class="career">
+        <div class="container">
+            <h2 class="section-title">Career Support</h2>
+            <p>Get resume tips, interview prep, and portfolio building guidance. Earn a shareable certificate upon completion.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <details>
+                <summary>What is the duration of the courses?</summary>
+                <p>Flexible, 4-6 months at 10 hours/week.</p>
+            </details>
+            <details>
+                <summary>Do I need prior experience?</summary>
+                <p>No, our courses start from beginner level.</p>
+            </details>
+            <details>
+                <summary>Are certificates provided?</summary>
+                <p>Yes, upon completion of each level.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Have questions? Reach out to our team for support or inquiries.</p>
+            <form class="contact-form" aria-label="Contact form">
+                <input type="text" placeholder="Your Name" required aria-label="Name">
+                <input type="email" placeholder="Your Email" required aria-label="Email">
+                <textarea placeholder="Your Message" required aria-label="Message"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Join the Tynobo Community</h2>
+            <p>Get exclusive access to new courses, free resources, and special discounts on our premium e-books and training programs.</p>
+            <form class="newsletter-form" aria-label="Newsletter signup">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Courses</h3>
+                    <a href="#courses">Foundations (Level 1-2)</a>
+                    <a href="#courses">Machine Learning (Level 3)</a>
+                    <a href="#courses">Deep Learning & AI (Level 4)</a>
+                    <a href="#courses">Advanced Topics (Level 5-7)</a>
+                </div>
+                <div class="footer-section">
+                    <h3>E-Books</h3>
+                    <a href="#ebooks">Foundations of Data Science</a>
+                    <a href="#ebooks">Machine Learning Collection</a>
+                    <a href="#ebooks">Deep Learning & AI</a>
+                    <a href="#ebooks">Professional Growth</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#about">About Tynobo</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:hello@tynobo.com">hello@tynobo.com</a>
+                    <a href="tel:+1-555-TYNOBO">+1 (555) TYNOBO</a>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" aria-label="LinkedIn"><span>💼</span></a>
+                        <a href="https://twitter.com" aria-label="Twitter"><span>🐦</span></a>
+                        <a href="https://github.com" aria-label="GitHub"><span>💻</span></a>
+                        <a href="https://youtube.com" aria-label="YouTube"><span>📺</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tynobo. All rights reserved. | Master Data Science with Professional Training.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

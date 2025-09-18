@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Story | Tynobo 2030</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="/" class="logo"><span class="logo-icon">🚀</span>Tynobo 2030</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="story.html" class="nav-link">Story</a></li>
+        <li><a href="cart.html" class="nav-link">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-top:8rem;">
+    <div class="container">
+      <h1 class="hero-title">Story Editor</h1>
+      <p class="hero-subtitle">Edit your story content below</p>
+
+      <div class="feature-card">
+        <div id="editor" contenteditable="true" style="min-height:300px; line-height:1.6;">
+          "Once upon a time, <b>Emma</b> saved the rainbow kingdom..."
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="downloadStory()">⬇ Download Story (HTML)</button>
+    </div>
+  </section>
+
+  <script>
+    function downloadStory() {
+      const text = document.getElementById("editor").innerHTML;
+      const blob = new Blob([text], {type:"text/html"});
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "story.html";
+      link.click();
+    }
+  </script>
+</body>
+</html>

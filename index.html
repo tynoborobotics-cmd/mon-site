@@ -1,266 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Little Story - Personalized Children’s Books</title>
-  <meta name="description" content="Create personalized children's stories where your child is the hero. Unique, fun, and educational adventures made just for them.">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tynobo 2030 - AI-Powered Personalized Stories | Future of Children's Books</title>
+    <meta name="description" content="Experience the future of storytelling with AI-generated personalized adventures, holographic previews, and immersive AR experiences for children.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+<style>
     :root {
-      --primary: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      --secondary: linear-gradient(135deg, #a18cd1, #fbc2eb);
-      --accent: linear-gradient(135deg, #f6d365, #fda085);
-      --font: 'Fredoka', sans-serif;
-    }
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {
-      font-family: var(--font);
-      background: #fffafc;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      position: fixed; 
-      top:0; left:0; width:100%;
-      background: white;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
-      z-index:1000;
-    }
-    nav {
-      display:flex; justify-content:space-between; 
-      align-items:center;
-      max-width:1200px; margin:auto;
-      padding:1rem 2rem;
-    }
-    nav a.logo {
-      font-size:1.5rem; font-weight:700;
-      background: var(--primary);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      text-decoration:none;
-    }
-    nav ul {
-      list-style:none; display:flex; gap:1.5rem;
-    }
-    nav ul li a {
-      text-decoration:none; color:#444;
-      font-weight:600;
-    }
-    nav ul li a:hover {color:#ff6f91;}
-    
-    .hero {
-      min-height:100vh;
-      display:flex; align-items:center; justify-content:center;
-      text-align:center;
-      background: var(--secondary);
-      color:white;
-      padding:2rem;
-    }
-    .hero h1 {
-      font-size:3rem; margin-bottom:1rem;
-    }
-    .hero p {
-      font-size:1.2rem; margin-bottom:2rem;
-    }
-    .btn {
-      display:inline-block; padding:0.8rem 1.5rem;
-      border-radius:30px; font-weight:600;
-      text-decoration:none; color:white;
-      background: var(--accent);
-      transition:0.3s;
-    }
-    .btn:hover {opacity:0.9;}
-    
-    section {
-      max-width:1200px; margin:auto;
-      padding:4rem 2rem;
-    }
-    .section-title {
-      text-align:center; font-size:2rem;
-      margin-bottom:2rem; color:#444;
-    }
-    .features {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:2rem;
-    }
-    .feature {
-      background:white; padding:2rem; border-radius:20px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
-      text-align:center;
-    }
-    .feature span {
-      font-size:2rem; display:block; margin-bottom:1rem;
-    }
-    .pricing {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:2rem;
-    }
-    .price-card {
-      background:white; padding:2rem; border-radius:20px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
-      text-align:center;
-    }
-    .price-card h3 {margin-bottom:1rem;}
-    .price {
-      font-size:2rem; font-weight:700;
-      margin-bottom:1rem;
-      background:var(--primary);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    footer {
-      background:#f7f7f7;
-      text-align:center;
-      padding:2rem;
-      font-size:0.9rem;
-      color:#666;
-    }
-  </style>
+        /* 2030 Color Palette - Vibrant & Futuristic */
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        --secondary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --accent-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        --warm-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-playful);
+            color: white;
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all var(--transition-bounce);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: var(--accent-gradient);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                position: fixed;
+                top: var(--space-sm);
+                left: var(--space-sm);
+                right: var(--space-sm);
+                transform: none;
+                padding: var(--space-md);
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .nav-links {
+                gap: var(--space-md);
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+                text-align: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+</style>
 </head>
 <body>
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="typing">✨ Your Child is the Hero of Their Own Story ✨</h1>
-    <p>Create magical adventures customized with your child’s name, traits, and dreams.</p>
-    <a href="#order" class="btn-glow">Start Creating Now 🚀</a>
-  </div>
-  <div class="hero-visual">
-    <img src="storybook.png" alt="3D Storybook" class="floating-book">
-  </div>
-</section>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
 
-<style>
-.typing {
-  font-size: 2.5rem;
-  background: linear-gradient(90deg, #ff6f91, #ff9671, #ffc75f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: typing 4s steps(40, end), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #fff;
-}
+    <!-- Animated Background -->
+    <div class="cosmic-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
 
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink { 50% { border-color: transparent } }
-
-.btn-glow {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 0 20px rgba(106,17,203,0.6);
-  transition: transform .3s;
-}
-.btn-glow:hover { transform: scale(1.05); }
-.floating-book {
-  width: 250px;
-  animation: float 3s ease-in-out infinite;
-}
-@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-20px) } }
-</style>
-
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="#" class="logo">My Little Story</a>
-      <ul>
-        <li><a href="#features">Why Us</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#order">Order</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">
+                <span class="logo-icon">🚀</span>
+                <span>Tynobo 2030</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">AI Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#demo" class="nav-link">Try Demo</a></li>
+                <li><a href="story.html" class="nav-link">Create</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
+    <!-- The rest of your main content sections go here (hero, features, pricing, testimonials, demo, final-cta, footer, scripts) -->
+</body>
+</html>
+    </section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div>
-      <h1>Your Child is the Hero of Every Story!</h1>
-      <p>Create magical, personalized adventures where your child learns, grows, and shines as the main character.</p>
-      <a href="#order" class="btn">Order a Story Now</a>
-    </div>
-  </section>
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Make Your Child the Hero Today</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Digital Hero Story</h3>
+                    <div class="pricing-price">$14.99</div>
+                    <ul class="pricing-features">
+                        <li>Your child as the main character</li>
+                        <li>Personalized with name & details</li>
+                        <li>Instant PDF download</li>
+                        <li>Print at home anytime</li>
+                        <li>Interactive digital features</li>
+                    </ul>
+                    <a href="story.html" class="btn btn-secondary">Create Digital Story</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3 class="pricing-title">Premium Hero Book</h3>
+                    <div class="pricing-price">$29.99</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Digital Story</li>
+                        <li>Beautiful hardcover book</li>
+                        <li>Premium quality printing</li>
+                        <li>Holographic cover elements</li>
+                        <li>Free worldwide shipping</li>
+                        <li>Gift wrapping available</li>
+                    </ul>
+                    <a href="story.html" class="btn btn-primary">Order Hero Book</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Ultimate Hero Experience</h3>
+                    <div class="pricing-price">$49.99</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Premium Book</li>
+                        <li>Animated video story</li>
+                        <li>AR story mode</li>
+                        <li>Multiple story adventures</li>
+                        <li>Voice narration</li>
+                        <li>Interactive story elements</li>
+                    </ul>
+                    <a href="story.html" class="btn btn-secondary">Get Ultimate Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Features -->
-  <section id="features">
-    <h2 class="section-title">Why Choose Personalized Stories?</h2>
-    <div class="features">
-      <div class="feature">
-        <span>⭐</span>
-        <h3>Your Child is the Star</h3>
-        <p>Every story is centered around your child’s name, traits, and dreams.</p>
-      </div>
-      <div class="feature">
-        <span>🎨</span>
-        <h3>Fully Customized</h3>
-        <p>We include favorite hobbies, friends, and even personal settings.</p>
-      </div>
-      <div class="feature">
-        <span>📚</span>
-        <h3>Encourages Reading</h3>
-        <p>Children love reading when they are the heroes of the book.</p>
-      </div>
-      <div class="feature">
-        <span>💝</span>
-        <h3>Memorable Gift</h3>
-        <p>A story they’ll cherish forever, perfect for birthdays and special occasions.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" style="padding: var(--space-4xl) 0; background: rgba(255, 255, 255, 0.05);">
+        <div class="container">
+            <h2 class="section-title">Parents and Kids Love Their Hero Stories</h2>
+            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-xl);">
+                <div class="testimonial-card" style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--radius-xl); padding: var(--space-xl);">
+                    <div style="font-size: 2rem; margin-bottom: var(--space-md);">⭐⭐⭐⭐⭐</div>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg); font-style: italic;">
+                        "My daughter Emma absolutely LOVES her hero book! She carries it everywhere and tells everyone she meets about how she saved the unicorns. It's made her so confident!"
+                    </p>
+                    <div style="color: var(--accent-color); font-weight: 600;">Sarah M. - Mother of Emma, age 5</div>
+                </div>
+                
+                <div class="testimonial-card" style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--radius-xl); padding: var(--space-xl);">
+                    <div style="font-size: 2rem; margin-bottom: var(--space-md);">⭐⭐⭐⭐⭐</div>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg); font-style: italic;">
+                        "This was the perfect gift for my nephew's birthday. He was so excited to see himself as the superhero! Now he wants to read every night. Best purchase ever!"
+                    </p>
+                    <div style="color: var(--accent-color); font-weight: 600;">Michael R. - Uncle of Alex, age 7</div>
+                </div>
+                
+                <div class="testimonial-card" style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--radius-xl); padding: var(--space-xl);">
+                    <div style="font-size: 2rem; margin-bottom: var(--space-md);">⭐⭐⭐⭐⭐</div>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg); font-style: italic;">
+                        "My son used to hate reading, but now he asks for his hero story every bedtime! The quality is amazing and seeing his face light up was priceless."
+                    </p>
+                    <div style="color: var(--accent-color); font-weight: 600;">Jennifer L. - Mother of Sam, age 6</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Pricing -->
-  <section id="pricing">
-    <h2 class="section-title">Choose Your Plan</h2>
-    <div class="pricing">
-      <div class="price-card">
-        <h3>Digital Story</h3>
-        <div class="price">$10</div>
-        <p>PDF story personalized with your child’s name and details.</p>
-      </div>
-      <div class="price-card">
-        <h3>Illustrated Story</h3>
-        <div class="price">$20</div>
-        <p>Full-color PDF with illustrations, customized for your child.</p>
-      </div>
-      <div class="price-card">
-        <h3>Story + Audio</h3>
-        <div class="price">$30</div>
-        <p>Illustrated PDF plus audio narration of the story.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="demo-container">
+                <h2 class="demo-title">See How Your Child Becomes the Hero</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    Here's a sneak peek of how we make your little one the star of every adventure
+                </p>
+                
+                <div class="story-preview">
+                    <div class="story-text" id="aiStoryText">
+                        "Help!" cried the magical unicorn. "The rainbow bridge is broken!" 
+                        But brave <span class="highlight">Emma</span> wasn't scared. With her <span class="highlight">special powers</span> 
+                        and kind heart, she knew exactly what to do. "Don't worry," said <span class="highlight">Emma</span> 
+                        confidently, "I'll fix it and save the day!"
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="generateHeroStory()">
+                        <span>⭐</span>
+                        See Another Hero Story
+                    </button>
+                    <button class="btn btn-secondary" onclick="showPersonalization()">
+                        <span>🎨</span>
+                        How We Personalize
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Order Form -->
-  <section id="order">
-    <h2 class="section-title">Order Your Story</h2>
-    <p style="text-align:center; margin-bottom:2rem;">
-      Fill in your child’s details and we’ll create a unique story just for them.
-    </p>
-    <div style="max-width:600px; margin:auto;">
-      <form style="display:grid; gap:1rem;">
-        <input type="text" placeholder="Child's Name" required style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
-        <input type="number" placeholder="Child's Age" required style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
-        <input type="text" placeholder="Favorite Hobby / Theme" style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
-        <select style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
-          <option>Select Story Type</option>
-          <option>Digital Story ($10)</option>
-          <option>Illustrated Story ($20)</option>
-          <option>Story + Audio ($30)</option>
-        </select>
-        <button type="submit" class="btn">Submit Request</button>
-      </form>
-    </div>
-  </section>
+    <!-- Final CTA Section -->
+    <section class="final-cta" style="padding: var(--space-4xl) 0; background: var(--primary-gradient); text-align: center;">
+        <div class="container">
+            <h2 style="font-family: var(--font-playful); font-size: clamp(2rem, 5vw, 3rem); color: white; margin-bottom: var(--space-lg);">
+                Ready to Make Your Child the Hero?
+            </h2>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9); margin-bottom: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join thousands of families who have discovered the magic of personalized stories. 
+                Your child's adventure is just one click away!
+            </p>
+            <div style="display: flex; gap: var(--space-lg); justify-content: center; flex-wrap: wrap;">
+                <a href="story.html" class="btn" style="background: white; color: var(--primary-color); font-size: 1.1rem; padding: var(--space-lg) var(--space-2xl);">
+                    <span>⭐</span>
+                    Create Their Hero Story Now
+                </a>
+                <a href="#pricing" class="btn btn-secondary" style="font-size: 1.1rem; padding: var(--space-lg) var(--space-2xl);">
+                    <span>💝</span>
+                    Perfect Gift Ideas
+                </a>
+            </div>
+            <p style="color: rgba(255,255,255,0.8); margin-top: var(--space-lg); font-size: 0.9rem;">
+                ✨ Free shipping worldwide • 30-day money-back guarantee • Instant digital delivery
+            </p>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 My Little Story. All rights reserved.</p>
-    <p>Contact us via WhatsApp | Facebook | Instagram</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🚀 Tynobo 2030</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">
+                        Pioneering the future of children's storytelling with AI, AR, and quantum technology.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>AI Features</h4>
+                    <ul>
+                        <li><a href="#">Neural Generation</a></li>
+                        <li><a href="#">Holographic Preview</a></li>
+                        <li><a href="#">AR Experiences</a></li>
+                        <li><a href="#">Voice Synthesis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li><a href="#">Quantum Printing</a></li>
+                        <li><a href="#">Adaptive Stories</a></li>
+                        <li><a href="#">VR Compatibility</a></li>
+                        <li><a href="#">Neural Learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Developer Portal</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2030 Tynobo. Powered by Quantum AI. Made with 💫 for the next generation.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Loading Animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Create Floating Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                
+                // Random colors
+                const colors = ['var(--neural-blue)', 'var(--neural-purple)', 'var(--neural-pink)', 'var(--neural-green)'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Create Neural Network Background
+        function createNeuralNetwork() {
+            const neuralBg = document.getElementById('neuralBg');
+            const nodeCount = 20;
+
+            for (let i = 0; i < nodeCount; i++) {
+                const node = document.createElement('div');
+                node.className = 'neural-node';
+                node.style.left = Math.random() * 100 + '%';
+                node.style.top = Math.random() * 100 + '%';
+                node.style.animationDelay = Math.random() * 3 + 's';
+                neuralBg.appendChild(node);
+            }
+        }
+
+        // Animate Book on Click
+        function animateBook() {
+            const book = document.querySelector('.book-3d');
+            book.style.transform = 'rotateY(360deg) scale(1.2)';
+            setTimeout(() => {
+                book.style.transform = 'rotateY(-15deg) scale(1)';
+            }, 1000);
+        }
+
+        // Show Feature Demo
+        function showFeatureDemo(feature) {
+            const demos = {
+                hero: "⭐ Your child becomes the brave hero who saves the day!\n🌟 They'll see their name throughout the story...\n📚 Watch their confidence grow with every page!",
+                personalized: "🎨 We include their name, age, and favorite things...\n✨ Every detail is customized just for them...\n💝 Creating a truly unique story experience!",
+                confidence: "💪 Seeing themselves as the hero builds self-esteem...\n🌟 They learn they can overcome any challenge...\n⭐ Perfect for building real-world confidence!",
+                reading: "📚 When they're the star, reading becomes exciting...\n✨ Perfect for reluctant readers...\n🎯 Makes story time their favorite time!",
+                memories: "💝 These books become treasured family keepsakes...\n📸 Capture this special time in their childhood...\n🌟 Memories they'll cherish forever!",
+                gift: "🎁 The most unique gift you can give a child...\n⭐ Impossible to find in any store...\n💫 A gift that shows how special they are!"
+            };
+
+            alert(demos[feature] || "Feature demo coming soon!");
+        }
+
+        // Generate Hero Story
+        function generateHeroStory() {
+            const storyElement = document.getElementById('aiStoryText');
+            const stories = [
+                'The dragon was enormous and scary, but <span class="highlight">Alex</span> wasn\'t afraid. "I know how to help you," said brave <span class="highlight">Alex</span>. With kindness and courage, <span class="highlight">Alex</span> discovered the dragon was just lonely and needed a friend!',
+                'When the spaceship started to shake, Captain <span class="highlight">Maya</span> stayed calm. "Don\'t worry, crew!" announced <span class="highlight">Maya</span> confidently. Using her <span class="highlight">amazing piloting skills</span>, she safely landed on the mysterious planet and saved everyone!',
+                'The mystery seemed impossible to solve, but Detective <span class="highlight">Sam</span> had a brilliant idea. "I\'ve got it!" exclaimed <span class="highlight">Sam</span> excitedly. With clever thinking and careful observation, <span class="highlight">Sam</span> cracked the case and became the hero of the day!'
+            ];
+
+            storyElement.style.opacity = '0';
+            setTimeout(() => {
+                storyElement.innerHTML = stories[Math.floor(Math.random() * stories.length)];
+                storyElement.style.opacity = '1';
+            }, 300);
+        }
+
+        // Show Personalization Process
+        function showPersonalization() {
+            alert("🎨 Here's how we make your child the hero:\n\n⭐ We use their name throughout the story\n👤 Customize their appearance and traits\n🎯 Include their favorite activities and interests\n💝 Add personal details that make them smile\n🌟 Create adventures that match their personality\n\n✨ The result? A story that's uniquely theirs!");
+        }
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize Effects
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            createNeuralNetwork();
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.cosmic-bg');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+
+        // Interactive Hover Effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.background = 'rgba(255, 255, 255, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.background = 'var(--glass-bg)';
+            });
+        });
+
+        // Typing Effect for Hero Title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after load
+        setTimeout(() => {
+            const heroTitle = document.querySelector('.hero-title');
+            const originalText = heroTitle.textContent;
+            typeWriter(heroTitle, originalText, 50);
+        }, 2000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98114c551225e1f4',t:'MTc1ODIwMzI3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>

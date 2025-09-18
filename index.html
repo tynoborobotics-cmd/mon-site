@@ -1,148 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tynobo creates personalized kids stories with custom characters, adventures, and more. Print or video options available.">
-    <meta name="keywords" content="personalized kids stories, custom children books, story generator, kids entertainment">
-    <title>Tynobo - Personalized Kids Stories</title>
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tynobo - Personalized Kids Stories">
-    <meta property="og:description" content="Create magical, personalized stories for your children. Customize characters, plots, and enjoy print or video formats.">
-    <meta property="og:image" content="https://tynobo.com/assets/images/og-image.jpg"> <!-- Assume an image exists; replace with actual URL -->
-    <meta property="og:url" content="https://tynobo.com">
-    <meta property="og:type" content="website">
-    <!-- Favicon (optional, assume exists) -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Little Story - Personalized Children’s Books</title>
+  <meta name="description" content="Create personalized children's stories where your child is the hero. Unique, fun, and educational adventures made just for them.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      --secondary: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      --accent: linear-gradient(135deg, #f6d365, #fda085);
+      --font: 'Fredoka', sans-serif;
+    }
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: var(--font);
+      background: #fffafc;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      position: fixed; 
+      top:0; left:0; width:100%;
+      background: white;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      z-index:1000;
+    }
+    nav {
+      display:flex; justify-content:space-between; 
+      align-items:center;
+      max-width:1200px; margin:auto;
+      padding:1rem 2rem;
+    }
+    nav a.logo {
+      font-size:1.5rem; font-weight:700;
+      background: var(--primary);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-decoration:none;
+    }
+    nav ul {
+      list-style:none; display:flex; gap:1.5rem;
+    }
+    nav ul li a {
+      text-decoration:none; color:#444;
+      font-weight:600;
+    }
+    nav ul li a:hover {color:#ff6f91;}
+    
+    .hero {
+      min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center;
+      background: var(--secondary);
+      color:white;
+      padding:2rem;
+    }
+    .hero h1 {
+      font-size:3rem; margin-bottom:1rem;
+    }
+    .hero p {
+      font-size:1.2rem; margin-bottom:2rem;
+    }
+    .btn {
+      display:inline-block; padding:0.8rem 1.5rem;
+      border-radius:30px; font-weight:600;
+      text-decoration:none; color:white;
+      background: var(--accent);
+      transition:0.3s;
+    }
+    .btn:hover {opacity:0.9;}
+    
+    section {
+      max-width:1200px; margin:auto;
+      padding:4rem 2rem;
+    }
+    .section-title {
+      text-align:center; font-size:2rem;
+      margin-bottom:2rem; color:#444;
+    }
+    .features {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+    }
+    .feature {
+      background:white; padding:2rem; border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      text-align:center;
+    }
+    .feature span {
+      font-size:2rem; display:block; margin-bottom:1rem;
+    }
+    .pricing {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .price-card {
+      background:white; padding:2rem; border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      text-align:center;
+    }
+    .price-card h3 {margin-bottom:1rem;}
+    .price {
+      font-size:2rem; font-weight:700;
+      margin-bottom:1rem;
+      background:var(--primary);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    footer {
+      background:#f7f7f7;
+      text-align:center;
+      padding:2rem;
+      font-size:0.9rem;
+      color:#666;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav" aria-label="Main navigation">
-                <a href="/" class="logo">Tynobo</a>
-                <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
-                    <span class="sr-only">Toggle menu</span>
-                    <span class="hamburger"></span>
-                </button>
-                <ul id="primary-menu" class="nav-menu">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#create" class="cta">Create a Story</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <section id="hero" class="hero">
-            <div class="container">
-                <h1 class="hero-headline">Personalized Kids Stories That Spark Imagination</h1>
-                <p class="hero-pitch">Create custom adventures featuring your child as the hero. Tailored stories that educate, entertain, and inspire.</p>
-                <div class="hero-ctas">
-                    <a href="#create" class="btn primary">Create a Story</a>
-                    <a href="#examples" class="btn secondary">See Examples</a>
-                </div>
-            </div>
-        </section>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#" class="logo">My Little Story</a>
+      <ul>
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title">Why Choose Tynobo?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>Personalization</h3>
-                        <p>Customize characters, names, settings, and plots to make the story uniquely yours.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Print Option</h3>
-                        <p>Get a beautifully illustrated physical book delivered to your door.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Video Option</h3>
-                        <p>Watch the story come to life with animated videos and voiceovers.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Your Child is the Hero of Every Story!</h1>
+      <p>Create magical, personalized adventures where your child learns, grows, and shines as the main character.</p>
+      <a href="#order" class="btn">Order a Story Now</a>
+    </div>
+  </section>
 
-        <section id="pricing" class="pricing">
-            <div class="container">
-                <h2 class="section-title">Simple Pricing</h2>
-                <div class="pricing-cards">
-                    <div class="pricing-card">
-                        <h3>Basic</h3>
-                        <p class="price">$9.99</p>
-                        <ul>
-                            <li>Digital Story</li>
-                            <li>Basic Personalization</li>
-                            <li>Email Delivery</li>
-                        </ul>
-                        <a href="#create" class="btn primary">Get Started</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <h3>Premium</h3>
-                        <p class="price">$19.99</p>
-                        <ul>
-                            <li>Digital + Print</li>
-                            <li>Full Personalization</li>
-                            <li>Video Option</li>
-                        </ul>
-                        <a href="#create" class="btn primary">Get Started</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>Ultimate</h3>
-                        <p class="price">$29.99</p>
-                        <ul>
-                            <li>All Features</li>
-                            <li>Multiple Stories</li>
-                            <li>Priority Support</li>
-                        </ul>
-                        <a href="#create" class="btn primary">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Features -->
+  <section id="features">
+    <h2 class="section-title">Why Choose Personalized Stories?</h2>
+    <div class="features">
+      <div class="feature">
+        <span>⭐</span>
+        <h3>Your Child is the Star</h3>
+        <p>Every story is centered around your child’s name, traits, and dreams.</p>
+      </div>
+      <div class="feature">
+        <span>🎨</span>
+        <h3>Fully Customized</h3>
+        <p>We include favorite hobbies, friends, and even personal settings.</p>
+      </div>
+      <div class="feature">
+        <span>📚</span>
+        <h3>Encourages Reading</h3>
+        <p>Children love reading when they are the heroes of the book.</p>
+      </div>
+      <div class="feature">
+        <span>💝</span>
+        <h3>Memorable Gift</h3>
+        <p>A story they’ll cherish forever, perfect for birthdays and special occasions.</p>
+      </div>
+    </div>
+  </section>
 
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <h2 class="section-title">What Parents Say</h2>
-                <div class="carousel" role="region" aria-label="Testimonials carousel">
-                    <button class="carousel-prev" aria-label="Previous testimonial">&#10094;</button>
-                    <div class="carousel-inner">
-                        <div class="testimonial active">
-                            <p>"Tynobo made bedtime stories magical for my kids!"</p>
-                            <cite>- Sarah M.</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"The personalization is spot on. Highly recommend!"</p>
-                            <cite>- John D.</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Video option is a game-changer for busy parents."</p>
-                            <cite>- Emily R.</cite>
-                        </div>
-                    </div>
-                    <button class="carousel-next" aria-label="Next testimonial">&#10095;</button>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- Pricing -->
+  <section id="pricing">
+    <h2 class="section-title">Choose Your Plan</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Digital Story</h3>
+        <div class="price">$10</div>
+        <p>PDF story personalized with your child’s name and details.</p>
+      </div>
+      <div class="price-card">
+        <h3>Illustrated Story</h3>
+        <div class="price">$20</div>
+        <p>Full-color PDF with illustrations, customized for your child.</p>
+      </div>
+      <div class="price-card">
+        <h3>Story + Audio</h3>
+        <div class="price">$30</div>
+        <p>Illustrated PDF plus audio narration of the story.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <div class="container">
-            <ul class="social-links">
-                <li><a href="https://twitter.com/tynoboo" aria-label="Twitter">Twitter</a></li>
-                <li><a href="https://facebook.com/tynoboo" aria-label="Facebook">Facebook</a></li>
-                <li><a href="https://instagram.com/tynoboo" aria-label="Instagram">Instagram</a></li>
-            </ul>
-            <p>&copy; 2025 Tynobo. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Order Form -->
+  <section id="order">
+    <h2 class="section-title">Order Your Story</h2>
+    <p style="text-align:center; margin-bottom:2rem;">
+      Fill in your child’s details and we’ll create a unique story just for them.
+    </p>
+    <div style="max-width:600px; margin:auto;">
+      <form style="display:grid; gap:1rem;">
+        <input type="text" placeholder="Child's Name" required style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
+        <input type="number" placeholder="Child's Age" required style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
+        <input type="text" placeholder="Favorite Hobby / Theme" style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
+        <select style="padding:1rem; border-radius:10px; border:1px solid #ddd;">
+          <option>Select Story Type</option>
+          <option>Digital Story ($10)</option>
+          <option>Illustrated Story ($20)</option>
+          <option>Story + Audio ($30)</option>
+        </select>
+        <button type="submit" class="btn">Submit Request</button>
+      </form>
+    </div>
+  </section>
 
-    <!-- JS Script -->
-    <script src="assets/js/main.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Little Story. All rights reserved.</p>
+    <p>Contact us via WhatsApp | Facebook | Instagram</p>
+  </footer>
+
 </body>
 </html>

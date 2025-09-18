@@ -3,20 +3,879 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tynobo 2030 - AI-Powered Personalized Stories | Future of Children's Books</title>
-    <meta name="description" content="Experience the future of storytelling with AI-generated personalized adventures, holographic previews, and immersive AR experiences for children.">
+    <title>Tynobo Story Books - AI-Powered Personalized Stories | Future of Children's Books</title>
+    <meta name="description" content="Experience the future of storytelling with AI-generated personalized adventures, holographic previews, and immersive AR experiences for children with Tynobo Story Books.">
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-<style>
-    :root {
-        /* 2030 Color Palette - Vibrant & Futuristic */
-        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        --secondary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        --accent-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        --warm-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    <style>
+        :root {
+            /* 2030 Color Palette - Vibrant & Futuristic */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --secondary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --accent-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --warm-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --cosmic-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d299c2 100%);
+            
+            --primary-color: #667eea;
+            --secondary-color: #4facfe;
+            --accent-color: #43e97b;
+            --warm-color: #fa709a;
+            
+            /* Neural Network Colors */
+            --neural-blue: #00d4ff;
+            --neural-purple: #b794f6;
+            --neural-pink: #f093fb;
+            --neural-green: #68d391;
+            
+            /* Glass Morphism */
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            
+            /* Dark Mode */
+            --dark-bg: #0a0a0f;
+            --dark-surface: #1a1a2e;
+            --dark-accent: #16213e;
+            
+            /* Typography */
+            --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-playful: 'Fredoka', cursive;
+            
+            /* Spacing & Sizing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 6rem;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-2xl: 48px;
+            --radius-blob: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            
+            /* Animations */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Shadows */
+            --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.4);
+            --shadow-float: 0 20px 40px rgba(0, 0, 0, 0.1);
+            --shadow-neural: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            animation: cosmicFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes cosmicFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--neural-blue);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+            50% { transform: translateY(-100px) translateX(50px); opacity: 1; }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Navigation - Futuristic Glass */
+        .navbar {
+            position: fixed;
+            top: var(--space-lg);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-md) var(--space-xl);
+            box-shadow: var(--glass-shadow);
+            transition: all var(--transition-smooth);
+        }
+
+        .navbar:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-50%) translateY(-2px);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .logo {
+            font-family: var(--font-playful);
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all var(--transition-fast);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: all var(--transition-fast);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section - Immersive 3D */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: center;
+            z-index: 2;
+        }
+
+        .hero-text {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero-title {
+            font-family: var(--font-playful);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-xl);
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        /* Futuristic Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-lg) var(--space-xl);
+            border: none;
+            border-radius: var(--radius-xl);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        /* 3D Book Showcase */
+        .hero-visual {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            animation: slideInRight 1s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .book-3d {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: bookFloat 4s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform var(--transition-smooth);
+        }
+
+        .book-3d:hover {
+            transform: rotateY(15deg) rotateX(5deg) scale(1.1);
+        }
+
+        @keyframes bookFloat {
+            0%, 100% { transform: rotateY(-15deg) translateY(0px); }
+            50% { transform: rotateY(-15deg) translateY(-20px); }
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 100%;
+            background: var(--cosmic-gradient);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-float);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        .book-title {
+            font-family: var(--font-playful);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-md);
+            z-index: 1;
+        }
+
+        .book-character {
+            font-size: 4rem;
+            margin: var(--space-lg) 0;
+            z-index: 1;
+            animation: characterDance 3s ease-in-out infinite;
+        }
+
+        @keyframes characterDance {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        /* 3D Floating Elements */
+        .floating-3d-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: float3D 8s ease-in-out infinite;
+        }
+
+        @keyframes float3D {
+            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+            25% { transform: translateY(-30px) rotateX(15deg) rotateY(90deg); }
+            50% { transform: translateY(-60px) rotateX(0deg) rotateY(180deg); }
+            75% { transform: translateY(-30px) rotateX(-15deg) rotateY(270deg); }
+        }
+
+        .element-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .element-2 { top: 20%; right: 15%; animation-delay: 1s; }
+        .element-3 { bottom: 30%; left: 20%; animation-delay: 2s; }
+        .element-4 { bottom: 20%; right: 10%; animation-delay: 3s; }
+
+        /* 3D SVG Icons */
+        .icon-3d {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+            transform-style: preserve-3d;
+        }
+
+        /* 3D Character Gallery */
+        .character-gallery {
+            display: flex;
+            gap: var(--space-xl);
+            justify-content: center;
+            margin: var(--space-2xl) 0;
+            perspective: 1000px;
+        }
+
+        .character-3d {
+            width: 120px;
+            height: 120px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transform-style: preserve-3d;
+            animation: characterFloat 6s ease-in-out infinite;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-3d:hover {
+            transform: rotateY(180deg) scale(1.2);
+            box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .character-3d::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes characterFloat {
+            0%, 100% { transform: translateY(0px) rotateY(0deg); }
+            33% { transform: translateY(-15px) rotateY(120deg); }
+            66% { transform: translateY(-10px) rotateY(240deg); }
+        }
+
+        /* 3D Book Stack */
+        .book-stack-3d {
+            position: relative;
+            width: 200px;
+            height: 250px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            animation: stackRotate 10s linear infinite;
+        }
+
+        @keyframes stackRotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .book-in-stack {
+            position: absolute;
+            width: 180px;
+            height: 240px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: var(--radius-md);
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .book-in-stack:nth-child(1) {
+            transform: translateZ(0px) rotateY(0deg);
+            background: var(--primary-gradient);
+        }
+
+        .book-in-stack:nth-child(2) {
+            transform: translateZ(-20px) rotateY(15deg);
+            background: var(--secondary-gradient);
+        }
+
+        .book-in-stack:nth-child(3) {
+            transform: translateZ(-40px) rotateY(30deg);
+            background: var(--accent-gradient);
+        }
+
+        /* 3D Holographic Display */
+        .hologram-display {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: var(--space-xl) auto;
+            perspective: 1000px;
+        }
+
+        .hologram-content {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: hologramSpin 8s linear infinite;
+            position: relative;
+        }
+
+        @keyframes hologramSpin {
+            0% { transform: rotateY(0deg) rotateX(0deg); }
+            25% { transform: rotateY(90deg) rotateX(15deg); }
+            50% { transform: rotateY(180deg) rotateX(0deg); }
+            75% { transform: rotateY(270deg) rotateX(-15deg); }
+            100% { transform: rotateY(360deg) rotateX(0deg); }
+        }
+
+        .hologram-face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid var(--neural-blue);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hologram-face:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
+        .hologram-face:nth-child(2) { transform: rotateY(90deg) translateZ(150px); }
+        .hologram-face:nth-child(3) { transform: rotateY(180deg) translateZ(150px); }
+        .hologram-face:nth-child(4) { transform: rotateY(270deg) translateZ(150px); }
+
+        /* 3D Pricing Cards Enhancement */
+        .pricing-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+            transform-style: preserve-3d;
+        }
+
+        .pricing-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .pricing-card:hover::after {
+            transform: translateX(100%);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-15px) scale(1.02) rotateX(5deg);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--neural-blue);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(183, 148, 246, 0.1));
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-15px) scale(1.07) rotateX(5deg);
+        }
+
+        /* 3D Feature Icons */
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-lg);
+            display: block;
+            animation: iconPulse3D 2s ease-in-out infinite;
+            transform-style: preserve-3d;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes iconPulse3D {
+            0%, 100% { transform: scale(1) rotateY(0deg); }
+            50% { transform: scale(1.1) rotateY(180deg); }
+        }
+
+        /* AI Features Section */
+        .ai-features {
+            padding: var(--space-4xl) 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--font-playful);
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-neural);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transition: transform var(--transition-smooth);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-title {
+            font-family: var(--font-playful);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: white;
+        }
+
+        .feature-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Neural Network Visualization */
+        .neural-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .neural-node {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--neural-blue);
+            border-radius: 50%;
+            animation: neuralPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: var(--space-4xl) 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gradient);
+            color: white;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .pricing-title {
+            font-family: var(--font-playful);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: white;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-lg);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: var(--space-xl);
+        }
+
+        .pricing-features li {
+            padding: var(--space-sm) 0;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .pricing-features li::before {
+            content: '✨';
+            font-size: 1.2rem;
+        }
+
+        /* Interactive Demo Section */
+        .demo-section {
+            padding: var(--space-4xl) 0;
+            text-align: center;
+        }
+
+        .demo-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-3xl);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .demo-title {
+            font-family: var(--font-playful);
+            font-size: 2rem;
+            margin-bottom: var(--space-xl);
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .story-preview {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+            border-left: 4px solid var(--accent-color);
+            text-align: left;
+        }
+
+        .story-text {
+            font-family: var(--font-playful);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .highlight {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* Footer - Minimalist Future */
+        .footer {
+            background: var(--dark-surface);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-4xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -122,6 +981,10 @@
             .pricing-card.featured {
                 transform: none;
             }
+
+            .character-gallery {
+                flex-wrap: wrap;
+            }
         }
 
         /* Accessibility */
@@ -167,7 +1030,7 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-</style>
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -186,7 +1049,7 @@
         <div class="nav-content">
             <a href="/" class="logo">
                 <span class="logo-icon">🚀</span>
-                <span>Tynobo 2030</span>
+                <span>Tynobo Story Books</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#features" class="nav-link">AI Features</a></li>
@@ -196,9 +1059,157 @@
             </ul>
         </div>
     </nav>
-    <!-- The rest of your main content sections go here (hero, features, pricing, testimonials, demo, final-cta, footer, scripts) -->
-</body>
-</html>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Your Child is the Hero of Every Adventure!</h1>
+                    <p class="hero-subtitle">
+                        Create magical personalized books where your little one saves the day, explores new worlds, 
+                        and becomes the star of their own incredible story. Available in futuristic formats!
+                    </p>
+                    <div class="hero-actions">
+                        <a href="story.html" class="btn btn-primary">
+                            <span>⭐</span>
+                            Make My Child a Hero
+                        </a>
+                        <a href="#demo" class="btn btn-secondary">
+                            <span>📖</span>
+                            See Story Examples
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- 3D Floating Elements -->
+                    <div class="floating-3d-elements">
+                        <div class="floating-element element-1">
+                            <svg class="icon-3d" viewBox="0 0 100 100" fill="none">
+                                <circle cx="50" cy="50" r="40" fill="url(#starGradient)" stroke="#00d4ff" stroke-width="2"/>
+                                <polygon points="50,20 55,35 70,35 58,45 63,60 50,50 37,60 42,45 30,35 45,35" fill="white"/>
+                                <defs>
+                                    <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#43e97b"/>
+                                        <stop offset="100%" style="stop-color:#38f9d7"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="floating-element element-2">
+                            <svg class="icon-3d" viewBox="0 0 100 100" fill="none">
+                                <rect x="20" y="30" width="60" height="40" rx="10" fill="url(#bookGradient)" stroke="#f093fb" stroke-width="2"/>
+                                <line x1="30" y1="40" x2="70" y2="40" stroke="white" stroke-width="2"/>
+                                <line x1="30" y1="50" x2="60" y2="50" stroke="white" stroke-width="1"/>
+                                <line x1="30" y1="60" x2="65" y2="60" stroke="white" stroke-width="1"/>
+                                <defs>
+                                    <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#667eea"/>
+                                        <stop offset="100%" style="stop-color:#764ba2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="floating-element element-3">
+                            <svg class="icon-3d" viewBox="0 0 100 100" fill="none">
+                                <circle cx="50" cy="35" r="15" fill="url(#rocketGradient)" stroke="#4facfe" stroke-width="2"/>
+                                <polygon points="50,20 45,50 55,50" fill="url(#rocketGradient)"/>
+                                <polygon points="40,50 35,70 45,60" fill="#fa709a"/>
+                                <polygon points="60,50 65,70 55,60" fill="#fa709a"/>
+                                <circle cx="50" cy="35" r="5" fill="white"/>
+                                <defs>
+                                    <linearGradient id="rocketGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#4facfe"/>
+                                        <stop offset="100%" style="stop-color:#00f2fe"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="floating-element element-4">
+                            <svg class="icon-3d" viewBox="0 0 100 100" fill="none">
+                                <circle cx="50" cy="50" r="35" fill="url(#magicGradient)" stroke="#b794f6" stroke-width="2"/>
+                                <path d="M35 50 L50 35 L65 50 L50 65 Z" fill="white" opacity="0.8"/>
+                                <circle cx="50" cy="50" r="8" fill="#fee140"/>
+                                <defs>
+                                    <linearGradient id="magicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#fa709a"/>
+                                        <stop offset="100%" style="stop-color:#fee140"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="book-3d" onclick="animateBook()">
+                        <div class="book-cover">
+                            <h3 class="book-title">Emma's Space Rescue Mission</h3>
+                            <div class="book-character">👧🚀🌟</div>
+                            <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Starring Your Child • Personalized • Interactive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Features Section -->
+    <section id="features" class="ai-features">
+        <div class="container">
+            <h2 class="section-title">Why Kids Love Being the Hero</h2>
+            <div class="features-grid">
+                <div class="feature-card" onclick="showFeatureDemo('hero')">
+                    <span class="feature-icon">⭐</span>
+                    <h3 class="feature-title">Your Child Stars in Every Story</h3>
+                    <p class="feature-description">
+                        Watch their face light up as they discover they're the brave hero, 
+                        clever detective, or magical princess saving the day in every adventure.
+                    </p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDemo('personalized')">
+                    <span class="feature-icon">🎨</span>
+                    <h3 class="feature-title">Completely Personalized</h3>
+                    <p class="feature-description">
+                        Every detail matters - from their name and appearance to their favorite 
+                        activities and friends. Each book is uniquely theirs.
+                    </p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDemo('confidence')">
+                    <span class="feature-icon">💪</span>
+                    <h3 class="feature-title">Builds Confidence & Self-Esteem</h3>
+                    <p class="feature-description">
+                        Seeing themselves as the hero helps children believe in their own 
+                        abilities and builds lasting confidence for real-life challenges.
+                    </p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDemo('reading')">
+                    <span class="feature-icon">📚</span>
+                    <h3 class="feature-title">Makes Reading Irresistible</h3>
+                    <p class="feature-description">
+                        When they're the star, children can't wait to read! Perfect for 
+                        reluctant readers and building lifelong love of books.
+                    </p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDemo('memories')">
+                    <span class="feature-icon">💝</span>
+                    <h3 class="feature-title">Creates Magical Memories</h3>
+                    <p class="feature-description">
+                        These aren't just books - they're treasured keepsakes that families 
+                        will cherish forever, with futuristic interactive elements.
+                    </p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDemo('gift')">
+                    <span class="feature-icon">🎁</span>
+                    <h3 class="feature-title">The Perfect Gift</h3>
+                    <p class="feature-description">
+                        Surprise any child with a gift that's impossible to find in stores - 
+                        a story where they're the hero, available in multiple formats.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Neural Network Background -->
+        <div class="neural-bg" id="neuralBg"></div>
     </section>
 
     <!-- Pricing Section -->
@@ -251,6 +1262,52 @@
         </div>
     </section>
 
+    <!-- 3D Holographic Showcase -->
+    <section class="hologram-section" style="padding: var(--space-4xl) 0; text-align: center;">
+        <div class="container">
+            <h2 class="section-title">Experience Stories in 3D Holographic Reality</h2>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-2xl); font-size: 1.1rem;">
+                Watch your child's story come alive with our revolutionary holographic technology
+            </p>
+            
+            <div class="hologram-display">
+                <div class="hologram-content">
+                    <div class="hologram-face">🚀</div>
+                    <div class="hologram-face">👑</div>
+                    <div class="hologram-face">🌟</div>
+                    <div class="hologram-face">🦄</div>
+                </div>
+            </div>
+            
+            <p style="color: rgba(255,255,255,0.7); margin-top: var(--space-lg);">
+                ✨ Holographic preview available with Premium and Ultimate packages
+            </p>
+        </div>
+    </section>
+
+    <!-- 3D Book Stack Display -->
+    <section class="book-stack-section" style="padding: var(--space-4xl) 0; background: rgba(255, 255, 255, 0.03);">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Choose from Endless Adventure Themes</h2>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-2xl);">
+                Every book is uniquely crafted with your child as the hero
+            </p>
+            
+            <div class="book-stack-3d">
+                <div class="book-in-stack"></div>
+                <div class="book-in-stack"></div>
+                <div class="book-in-stack"></div>
+            </div>
+            
+            <div style="margin-top: var(--space-2xl); display: flex; gap: var(--space-lg); justify-content: center; flex-wrap: wrap;">
+                <span style="background: var(--glass-bg); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-xl); color: rgba(255,255,255,0.9);">🏰 Fantasy Adventures</span>
+                <span style="background: var(--glass-bg); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-xl); color: rgba(255,255,255,0.9);">🚀 Space Missions</span>
+                <span style="background: var(--glass-bg); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-xl); color: rgba(255,255,255,0.9);">🦸‍♀️ Superhero Tales</span>
+                <span style="background: var(--glass-bg); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-xl); color: rgba(255,255,255,0.9);">🌊 Ocean Quests</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials-section" style="padding: var(--space-4xl) 0; background: rgba(255, 255, 255, 0.05);">
         <div class="container">
@@ -291,6 +1348,15 @@
                 <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
                     Here's a sneak peek of how we make your little one the star of every adventure
                 </p>
+                
+                <!-- 3D Character Gallery -->
+                <div class="character-gallery">
+                    <div class="character-3d" onclick="showCharacterDemo('superhero')">🦸‍♀️</div>
+                    <div class="character-3d" onclick="showCharacterDemo('astronaut')">👨‍🚀</div>
+                    <div class="character-3d" onclick="showCharacterDemo('princess')">👸</div>
+                    <div class="character-3d" onclick="showCharacterDemo('detective')">🕵️‍♂️</div>
+                    <div class="character-3d" onclick="showCharacterDemo('wizard')">🧙‍♀️</div>
+                </div>
                 
                 <div class="story-preview">
                     <div class="story-text" id="aiStoryText">
@@ -346,7 +1412,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>🚀 Tynobo 2030</h4>
+                    <h4>🚀 Tynobo Story Books</h4>
                     <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">
                         Pioneering the future of children's storytelling with AI, AR, and quantum technology.
                     </p>
@@ -386,7 +1452,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2030 Tynobo. Powered by Quantum AI. Made with 💫 for the next generation.</p>
+                <p>&copy; 2030 Tynobo Story Books. Powered by Quantum AI. Made with 💫 for the next generation.</p>
             </div>
         </div>
     </footer>
@@ -479,6 +1545,19 @@
             alert("🎨 Here's how we make your child the hero:\n\n⭐ We use their name throughout the story\n👤 Customize their appearance and traits\n🎯 Include their favorite activities and interests\n💝 Add personal details that make them smile\n🌟 Create adventures that match their personality\n\n✨ The result? A story that's uniquely theirs!");
         }
 
+        // Show Character Demo
+        function showCharacterDemo(character) {
+            const demos = {
+                superhero: "🦸‍♀️ Your child becomes Super [Name]!\n💪 They save the city with amazing powers\n🌟 Learns about courage and helping others\n✨ Perfect for building confidence!",
+                astronaut: "👨‍🚀 Captain [Name] explores the galaxy!\n🚀 Discovers new planets and alien friends\n🌌 Adventures in space stations and rockets\n⭐ STEM learning through adventure!",
+                princess: "👸 Princess [Name] rules with kindness!\n🏰 Solves kingdom problems with wisdom\n🦄 Magical creatures become loyal friends\n💎 Teaches leadership and compassion!",
+                detective: "🕵️‍♂️ Detective [Name] solves mysteries!\n🔍 Uses clever thinking and observation\n🎯 Cracks cases that stump everyone else\n🧠 Develops problem-solving skills!",
+                wizard: "🧙‍♀️ Wizard [Name] masters magic!\n✨ Learns spells to help friends in need\n📚 Studies ancient books of wisdom\n🌟 Discovers that knowledge is power!"
+            };
+
+            alert(demos[character] || "Character demo coming soon!");
+        }
+
         // Smooth Scrolling for Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -540,6 +1619,6 @@
             typeWriter(heroTitle, originalText, 50);
         }, 2000);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98114c551225e1f4',t:'MTc1ODIwMzI3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98125cf1c4d0aead',t:'MTc1ODIxNDQ0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>

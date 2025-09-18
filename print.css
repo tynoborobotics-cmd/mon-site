@@ -1,0 +1,15 @@
+body {
+  font-family: 'Times New Roman', serif;
+  margin:0;
+  padding:0;
+}
+
+.page {
+  page-break-after: always;
+  padding: 3cm;
+}
+
+@page {
+  size: A4;
+  margin: 2cm;
+}

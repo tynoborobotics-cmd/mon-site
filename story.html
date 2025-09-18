@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Your Hero Story | Tynobo 2030</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="/" class="logo"><span class="logo-icon">🚀</span>Tynobo 2030</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="editor.html" class="nav-link">Editor</a></li>
+        <li><a href="cart.html" class="nav-link">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Story Personalization -->
+  <section class="hero" style="padding-top:8rem;">
+    <div class="container">
+      <h1 class="hero-title">Personalize Your Child's Adventure</h1>
+      <p class="hero-subtitle">Fill in details and see the preview update in real-time.</p>
+
+      <form id="storyForm" class="feature-card">
+        <label>Child's Name <input type="text" id="childName" placeholder="Emma" required></label><br><br>
+        <label>Age <input type="number" id="childAge" placeholder="6"></label><br><br>
+        <label>Favorite Theme
+          <select id="childTheme">
+            <option value="space">🚀 Space Adventure</option>
+            <option value="princess">👑 Princess Tale</option>
+            <option value="football">⚽ Football Hero</option>
+          </select>
+        </label><br><br>
+        <label>Special Dedication <input type="text" id="dedication" placeholder="With love from Mom & Dad"></label>
+      </form>
+
+      <!-- Preview -->
+      <div class="story-preview" style="margin-top:2rem;">
+        <div id="storyPreview" class="story-text">
+          "Once upon a time, brave <span class='highlight'>Emma</span> began her magical journey..."
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <button class="btn btn-primary" onclick="addToCart()">➕ Add to Cart</button>
+    </div>
+  </section>
+
+  <script>
+    const nameInput = document.getElementById("childName");
+    const preview = document.getElementById("storyPreview");
+
+    nameInput.addEventListener("input", () => {
+      const name = nameInput.value || "Emma";
+      preview.innerHTML = `"Once upon a time, brave <span class='highlight'>${name}</span> began her magical journey..."`;
+    });
+
+    function addToCart() {
+      const item = {
+        id: Date.now(),
+        name: nameInput.value || "Emma",
+        theme: document.getElementById("childTheme").value,
+        price: 14.99
+      };
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("✅ Story added to cart!");
+    }
+  </script>
+</body>
+</html>

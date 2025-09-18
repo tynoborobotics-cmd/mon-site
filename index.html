@@ -121,6 +121,48 @@
   </style>
 </head>
 <body>
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="typing">✨ Your Child is the Hero of Their Own Story ✨</h1>
+    <p>Create magical adventures customized with your child’s name, traits, and dreams.</p>
+    <a href="#order" class="btn-glow">Start Creating Now 🚀</a>
+  </div>
+  <div class="hero-visual">
+    <img src="storybook.png" alt="3D Storybook" class="floating-book">
+  </div>
+</section>
+
+<style>
+.typing {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #ff6f91, #ff9671, #ffc75f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: typing 4s steps(40, end), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+}
+
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent } }
+
+.btn-glow {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(106,17,203,0.6);
+  transition: transform .3s;
+}
+.btn-glow:hover { transform: scale(1.05); }
+.floating-book {
+  width: 250px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-20px) } }
+</style>
 
   <!-- Header -->
   <header>

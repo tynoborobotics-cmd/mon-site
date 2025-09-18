@@ -1,389 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tynobo - Master Data Science with Professional Courses & E-Books</title>
-    <meta name="description" content="Master data science with Tynobo's comprehensive courses and e-books. From foundations to advanced AI, machine learning, and deep learning. Professional training for data scientists.">
-    <meta name="keywords" content="data science courses, machine learning training, python data science, AI courses, data science e-books, professional data science education">
-    <meta name="robots" content="index, follow">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Tynobo creates personalized kids stories with custom characters, adventures, and more. Print or video options available.">
+    <meta name="keywords" content="personalized kids stories, custom children books, story generator, kids entertainment">
+    <title>Tynobo - Personalized Kids Stories</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tynobo - Personalized Kids Stories">
+    <meta property="og:description" content="Create magical, personalized stories for your children. Customize characters, plots, and enjoy print or video formats.">
+    <meta property="og:image" content="https://tynoboo.com/assets/images/og-image.jpg"> <!-- Assume an image exists; replace with actual URL -->
+    <meta property="og:url" content="https://tynoboo.com">
+    <meta property="og:type" content="website">
+    <!-- Favicon (optional, assume exists) -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <a href="#main-content" class="sr-only">Skip to main content</a>
-
-    <!-- Navigation -->
-    <nav role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="logo">Tynobo</div>
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Search courses or e-books..." aria-label="Search">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" aria-label="Home page">Home</a></li>
-                <li><a href="#about" aria-label="About us">About</a></li>
-                <li><a href="#courses" aria-label="Our courses">Courses</a></li>
-                <li><a href="#ebooks" aria-label="E-books">E-Books</a></li>
-                <li><a href="#blog" aria-label="Blog and resources">Blog</a></li>
-                <li><a href="#contact" aria-label="Contact us">Contact</a></li>
-            </ul>
-            <div class="nav-right">
-                <div class="cart-icon" aria-label="Shopping cart">🛒 <span class="cart-count">0</span></div>
-                <div class="mobile-menu" aria-label="Mobile menu toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <header class="header">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="floating">Master Data Science</h1>
-                <p class="hero-subtitle">
-                    Transform your career with comprehensive data science courses and e-books. From Python programming to advanced AI, 
-                    master every skill needed to become a professional data scientist.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#courses" class="btn btn-primary">Browse Courses</a>
-                    <a href="#ebooks" class="btn btn-secondary">Shop E-Books</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="/" class="logo">Tynobo</a>
+                <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="hamburger"></span>
+                </button>
+                <ul id="primary-menu" class="nav-menu">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#create" class="cta">Create a Story</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1 class="hero-headline">Personalized Kids Stories That Spark Imagination</h1>
+                <p class="hero-pitch">Create custom adventures featuring your child as the hero. Tailored stories that educate, entertain, and inspire.</p>
+                <div class="hero-ctas">
+                    <a href="#create" class="btn primary">Create a Story</a>
+                    <a href="#examples" class="btn secondary">See Examples</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Featured Section -->
-    <section id="featured" class="featured">
-        <div class="container">
-            <h2 class="section-title">Learning Paths</h2>
-            <div class="featured-grid">
-                <div class="featured-card">
-                    <div class="card-icon">📚</div>
-                    <h3 class="card-title">Complete E-Book Library</h3>
-                    <p>Access 8 comprehensive e-book categories covering foundations, machine learning, deep learning, and professional growth. From Python basics to advanced AI applications.</p>
-                </div>
-                <div class="featured-card">
-                    <div class="card-icon">🎓</div>
-                    <h3 class="card-title">Structured Course Path</h3>
-                    <p>Follow our 7-level learning roadmap from beginner foundations to advanced specializations. Master mathematics, programming, ML, and deep learning step by step.</p>
-                </div>
-                <div class="featured-card">
-                    <div class="card-icon">💼</div>
-                    <h3 class="card-title">Professional Certification</h3>
-                    <p>Build your portfolio, prepare for interviews, and advance your career. Learn MLOps, cloud platforms, and real-world applications in business, finance, and healthcare.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="courses">
-        <div class="container">
-            <h2 class="section-title">🎓 Roadmap of Data Science Courses</h2>
-            <div class="roadmap-grid">
-                <div class="roadmap-card" data-type="course" data-id="level1">
-                    <h3 class="roadmap-title">Level 1: Foundations (Beginner)</h3>
-                    <ul class="roadmap-list">
-                        <li>Mathematics for Data Science</li>
-                        <li>Linear Algebra, Probability, Statistics, Calculus basics</li>
-                        <li>(Course example: Mathematics for Machine Learning – Coursera)</li>
-                        <li>Programming</li>
-                        <li>Python for Data Science (NumPy, Pandas, Matplotlib)</li>
-                        <li>R for Data Science (tidyverse, dplyr, ggplot2)</li>
-                        <li>Databases & SQL</li>
-                        <li>SQL Basics for Data Science</li>
-                        <li>Working with Relational Databases</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 1 Course">Buy - $14.99</a>
-                    <a href="#" class="btn btn-secondary">Watch Free Preview</a>
-                </div>
-                <div class="roadmap-card" data-type="course" data-id="level2">
-                    <h3 class="roadmap-title">Level 2: Data Handling & Visualization (Intermediate)</h3>
-                    <ul class="roadmap-list">
-                        <li>Data Wrangling</li>
-                        <li>Cleaning, preprocessing, and feature engineering</li>
-                        <li>Data Visualization</li>
-                        <li>Exploratory Data Analysis with Python (Seaborn, Plotly)</li>
-                        <li>Storytelling with Data & Dashboards (Tableau, Power BI)</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 2 Course">Buy - $14.99</a>
-                    <a href="#" class="btn btn-secondary">Watch Free Preview</a>
-                </div>
-                <div class="roadmap-card" data-type="course" data-id="level3">
-                    <h3 class="roadmap-title">Level 3: Machine Learning</h3>
-                    <ul class="roadmap-list">
-                        <li>Core ML Concepts</li>
-                        <li>Regression, Classification, Clustering, Decision Trees</li>
-                        <li>Model evaluation & selection</li>
-                        <li>Specialized ML</li>
-                        <li>Feature Engineering & Pipelines</li>
-                        <li>Advanced algorithms (XGBoost, Random Forest, SVM)</li>
-                        <li>ML with Scikit-learn or caret (R)</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 3 Course">Buy - $14.99</a>
-                    <a href="#" class="btn btn-secondary">Watch Free Preview</a>
-                </div>
-                <div class="roadmap-card" data-type="course" data-id="level4">
-                    <h3 class="roadmap-title">Level 4: Deep Learning & AI</h3>
-                    <ul class="roadmap-list">
-                        <li>Neural Networks Basics</li>
-                        <li>Deep Learning Frameworks (TensorFlow, PyTorch)</li>
-                        <li>Computer Vision (CNNs, transfer learning)</li>
-                        <li>Natural Language Processing (NLP) (RNNs, Transformers, LLMs)</li>
-                        <li>Generative AI (GANs, prompt engineering, fine-tuning models)</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 4 Course">Buy - $14.99</a>
-                    <a href="#" class="btn btn-secondary">Watch Free Preview</a>
-                </div>
-                <div class="roadmap-card" data-type="course" data-id="level5">
-                    <h3 class="roadmap-title">Level 5: Advanced Topics & Specializations</h3>
-                    <ul class="roadmap-list">
-                        <li>Big Data & Data Engineering</li>
-                        <li>Apache Spark, Hadoop, Airflow</li>
-                        <li>Cloud platforms: AWS, GCP, Azure for data pipelines</li>
-                        <li>Time Series Analysis & Forecasting</li>
-                        <li>Recommender Systems</li>
-                        <li>MLOps & Deployment</li>
-                        <li>Model serving, monitoring, CI/CD pipelines</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 5 Course">Buy - $14.99</a>
-                    <a href="#" class="btn btn-secondary">Watch Free Preview</a>
-                </div>
-                <div class="roadmap-card" data-type="course" data-id="level6">
-                    <h3 class="roadmap-title">Level 6: Applied Data Science</h3>
-                    <ul class="roadmap-list">
-                        <li>Case Studies in Business, Finance, Healthcare, Marketing</li>
-                        <li>Data Ethics & Responsible AI</li>
-                        <li>Real-world projects & competitions (Kaggle)</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 6 Course">Buy - $14.99</a>
-                    <a href="#" class="btn btn-secondary">Watch Free Preview</a>
-                </div>
-                <div class="roadmap-card" data-type="course" data-id="level7">
-                    <h3 class="roadmap-title">Level 7: Professional Growth</h3>
-                    <ul class="roadmap-list">
-                        <li>Building a Portfolio & GitHub Projects</li>
-                        <li>Technical Writing & Blogging for Data Scientists</li>
-                        <li>Interview Preparation (Leetcode for DS, system design for ML)</li>
-                        <li>Freelancing & Consulting as a Data Scientist</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary buy-btn" data-price="14.99" data-name="Level 7 Course">Buy - $14.99</a>
-                    <a href="#" class="btn btn-secondary">Watch Free Preview</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- E-Books Section -->
-    <section id="ebooks" class="ebooks">
-        <div class="container">
-            <h2 class="section-title">📘 Roadmap of E-Books for Professional Data Science</h2>
-            <div class="roadmap-grid">
-                <div class="roadmap-card" data-type="ebook" data-id="foundations">
-                    <h3 class="roadmap-title">1. Foundations of Data Science</h3>
-                    <ul class="roadmap-list">
-                        <li>Introduction to Data Science & AI</li>
-                        <li>Mathematics for Data Science (Linear Algebra, Calculus, Probability, Statistics)</li>
-                        <li>Python Programming for Data Science</li>
-                        <li>R Programming for Data Science</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Foundations E-Book">Buy - $9.99</a>
-                </div>
-                <div class="roadmap-card" data-type="ebook" data-id="data-handling">
-                    <h3 class="roadmap-title">2. Data Handling & Processing</h3>
-                    <ul class="roadmap-list">
-                        <li>Data Wrangling with Pandas / dplyr</li>
-                        <li>Databases & SQL for Data Science</li>
-                        <li>Big Data Fundamentals (Hadoop, Spark, etc.)</li>
-                        <li>Data Cleaning & Preprocessing</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Data Handling E-Book">Buy - $9.99</a>
-                </div>
-                <div class="roadmap-card" data-type="ebook" data-id="visualization">
-                    <h3 class="roadmap-title">3. Data Visualization</h3>
-                    <ul class="roadmap-list">
-                        <li>Fundamentals of Data Visualization (Matplotlib, Seaborn, ggplot2)</li>
-                        <li>Storytelling with Data</li>
-                        <li>Dashboards with Power BI / Tableau</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Data Visualization E-Book">Buy - $9.99</a>
-                </div>
-                <div class="roadmap-card" data-type="ebook" data-id="machine-learning">
-                    <h3 class="roadmap-title">4. Machine Learning</h3>
-                    <ul class="roadmap-list">
-                        <li>Introduction to Machine Learning (Scikit-learn, caret)</li>
-                        <li>Supervised Learning Algorithms (Regression, Classification)</li>
-                        <li>Unsupervised Learning (Clustering, PCA)</li>
-                        <li>Feature Engineering & Model Selection</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Machine Learning E-Book">Buy - $9.99</a>
-                </div>
-                <div class="roadmap-card" data-type="ebook" data-id="deep-learning">
-                    <h3 class="roadmap-title">5. Deep Learning & AI</h3>
-                    <ul class="roadmap-list">
-                        <li>Neural Networks Basics</li>
-                        <li>Deep Learning with TensorFlow & PyTorch</li>
-                        <li>Computer Vision (CNNs)</li>
-                        <li>Natural Language Processing (NLP)</li>
-                        <li>Generative AI (GANs, Transformers, LLMs)</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Deep Learning E-Book">Buy - $9.99</a>
-                </div>
-                <div class="roadmap-card" data-type="ebook" data-id="specializations">
-                    <h3 class="roadmap-title">6. Specializations</h3>
-                    <ul class="roadmap-list">
-                        <li>Data Engineering & Pipelines</li>
-                        <li>MLOps (Model Deployment & Monitoring)</li>
-                        <li>Cloud Platforms (AWS, GCP, Azure for Data Science)</li>
-                        <li>Time Series Analysis & Forecasting</li>
-                        <li>Recommender Systems</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Specializations E-Book">Buy - $9.99</a>
-                </div>
-                <div class="roadmap-card" data-type="ebook" data-id="applied">
-                    <h3 class="roadmap-title">7. Applied Data Science</h3>
-                    <ul class="roadmap-list">
-                        <li>Case Studies in Business Analytics</li>
-                        <li>Data Science for Finance</li>
-                        <li>Data Science for Healthcare</li>
-                        <li>Data Science for Marketing</li>
-                        <li>Ethics & Responsible AI</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Applied Data Science E-Book">Buy - $9.99</a>
-                </div>
-                <div class="roadmap-card" data-type="ebook" data-id="professional-growth">
-                    <h3 class="roadmap-title">8. Professional Growth</h3>
-                    <ul class="roadmap-list">
-                        <li>Data Science Portfolio Building</li>
-                        <li>Writing Technical Reports & Publishing</li>
-                        <li>Interview Preparation for Data Science Jobs</li>
-                        <li>Freelancing & Consulting as a Data Scientist</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary buy-btn" data-price="9.99" data-name="Professional Growth E-Book">Buy - $9.99</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Tynobo</h2>
-            <p>Tynobo is your gateway to mastering data science. Our expertly crafted courses and e-books guide you from beginner to professional, covering everything from Python to generative AI. Founded in 2024, we aim to empower aspiring data scientists worldwide.</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <h3>Dr. Jane Doe</h3>
-                    <p>Lead Instructor, PhD in AI</p>
-                </div>
-                <div class="team-member">
-                    <h3>John Smith</h3>
-                    <p>Founder, Data Science Expert</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2 class="section-title">Tynobo Blog</h2>
-            <p>Explore our latest articles on data science, AI, and career advice.</p>
-            <div class="blog-grid">
-                <div class="blog-post">
-                    <h3>Top 5 Machine Learning Algorithms for Beginners</h3>
-                    <p>Discover the essential algorithms to kickstart your ML journey, including regression, classification, and more.</p>
-                    <a href="#" class="btn btn-secondary">Read More</a>
-                </div>
-                <div class="blog-post">
-                    <h3>How to Build a Data Science Portfolio</h3>
-                    <p>Step-by-step guide to creating a standout portfolio with GitHub projects and real-world examples.</p>
-                    <a href="#" class="btn btn-secondary">Read More</a>
-                </div>
-                <div class="blog-post">
-                    <h3>The Future of Generative AI</h3>
-                    <p>Explore trends in GANs, Transformers, and LLMs shaping the AI landscape.</p>
-                    <a href="#" class="btn btn-secondary">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <p>Have questions? Reach out to our team for support or inquiries.</p>
-            <form class="contact-form" aria-label="Contact form">
-                <input type="text" placeholder="Your Name" required aria-label="Name">
-                <input type="email" placeholder="Your Email" required aria-label="Email">
-                <textarea placeholder="Your Message" required aria-label="Message"></textarea>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <h2 class="section-title">Join the Tynobo Community</h2>
-            <p>Get exclusive access to new courses, free resources, and special discounts on our premium e-books and training programs.</p>
-            <form class="newsletter-form" aria-label="Newsletter signup">
-                <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address">
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Courses</h3>
-                    <a href="#courses">Foundations (Level 1-2)</a>
-                    <a href="#courses">Machine Learning (Level 3)</a>
-                    <a href="#courses">Deep Learning & AI (Level 4)</a>
-                    <a href="#courses">Advanced Topics (Level 5-7)</a>
-                </div>
-                <div class="footer-section">
-                    <h3>E-Books</h3>
-                    <a href="#ebooks">Foundations of Data Science</a>
-                    <a href="#ebooks">Machine Learning Collection</a>
-                    <a href="#ebooks">Deep Learning & AI</a>
-                    <a href="#ebooks">Professional Growth</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="#about">About Tynobo</a>
-                    <a href="#contact">Contact Us</a>
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <a href="mailto:hello@tynobo.com">hello@tynobo.com</a>
-                    <a href="tel:+1-555-TYNOBO">+1 (555) TYNOBO</a>
-                    <div class="social-links">
-                        <a href="https://linkedin.com" aria-label="LinkedIn"><span>💼</span></a>
-                        <a href="https://twitter.com" aria-label="Twitter"><span>🐦</span></a>
-                        <a href="https://github.com" aria-label="GitHub"><span>💻</span></a>
-                        <a href="https://youtube.com" aria-label="YouTube"><span>📺</span></a>
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Tynobo?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Personalization</h3>
+                        <p>Customize characters, names, settings, and plots to make the story uniquely yours.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Print Option</h3>
+                        <p>Get a beautifully illustrated physical book delivered to your door.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Video Option</h3>
+                        <p>Watch the story come to life with animated videos and voiceovers.</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tynobo. All rights reserved. | Master Data Science with Professional Training.</p>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 class="section-title">Simple Pricing</h2>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <p class="price">$9.99</p>
+                        <ul>
+                            <li>Digital Story</li>
+                            <li>Basic Personalization</li>
+                            <li>Email Delivery</li>
+                        </ul>
+                        <a href="#create" class="btn primary">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>Premium</h3>
+                        <p class="price">$19.99</p>
+                        <ul>
+                            <li>Digital + Print</li>
+                            <li>Full Personalization</li>
+                            <li>Video Option</li>
+                        </ul>
+                        <a href="#create" class="btn primary">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Ultimate</h3>
+                        <p class="price">$29.99</p>
+                        <ul>
+                            <li>All Features</li>
+                            <li>Multiple Stories</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="#create" class="btn primary">Get Started</a>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Parents Say</h2>
+                <div class="carousel" role="region" aria-label="Testimonials carousel">
+                    <button class="carousel-prev" aria-label="Previous testimonial">&#10094;</button>
+                    <div class="carousel-inner">
+                        <div class="testimonial active">
+                            <p>"Tynobo made bedtime stories magical for my kids!"</p>
+                            <cite>- Sarah M.</cite>
+                        </div>
+                        <div class="testimonial">
+                            <p>"The personalization is spot on. Highly recommend!"</p>
+                            <cite>- John D.</cite>
+                        </div>
+                        <div class="testimonial">
+                            <p>"Video option is a game-changer for busy parents."</p>
+                            <cite>- Emily R.</cite>
+                        </div>
+                    </div>
+                    <button class="carousel-next" aria-label="Next testimonial">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="social-links">
+                <li><a href="https://twitter.com/tynoboo" aria-label="Twitter">Twitter</a></li>
+                <li><a href="https://facebook.com/tynoboo" aria-label="Facebook">Facebook</a></li>
+                <li><a href="https://instagram.com/tynoboo" aria-label="Instagram">Instagram</a></li>
+            </ul>
+            <p>&copy; 2025 Tynobo. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JS Script -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

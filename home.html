@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tynobo Academy - Actuarial Finance & Data Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo" data-page="home" aria-label="Tynobo Academy Home">
+                <img src="logo.svg" alt="Tynobo Academy Logo" style="height:32px;vertical-align:middle;">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="home.html" class="nav-link active" data-page="home">HOME</a></li>
+                <li><a href="courses.html" class="nav-link" data-page="courses">COURSES</a></li>
+                <li><a href="ebooks.html" class="nav-link" data-page="ebooks">E-BOOKS</a></li>
+                <li><a href="about.html" class="nav-link" data-page="about">ABOUT</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">CONTACT</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="navMenu">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>ACTUARIAL FINANCE & DATA SCIENCE</h1>
+                    <p class="subtitle">Master Advanced Techniques in Risk Analysis, Predictive Modeling, and Financial Data Science</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                        <a href="courses.html" class="cta-button" data-page="courses">EXPLORE COURSES</a>
+                        <a href="ebooks.html" class="cta-button" data-page="ebooks" style="background: var(--primary-600);">EXPLORE E-BOOKS</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="features container">
+                <div class="section-header">
+                    <h2>CORE FEATURES</h2>
+                    <p>Discover powerful tools and methodologies for actuarial and data-driven financial decision-making.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="bio-card feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Advanced Risk Modeling</h3>
+                        <p>Learn Monte Carlo simulations and predictive analytics for financial risk assessment.</p>
+                    </div>
+                    <div class="bio-card feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI in Finance</h3>
+                        <p>Integrate machine learning for insurance pricing and market forecasting.</p>
+                    </div>
+                    <div class="bio-card feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Data Visualization Mastery</h3>
+                        <p>Create interactive reports with Power BI and Matplotlib for financial insights.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- Gumroad Purchase Section -->
+        <section class="payment container">
+            <div class="section-header">
+                <h2>BUY COURSES & E-BOOKS</h2>
+                <p>Purchase securely via Gumroad. Instant access after payment.</p>
+            </div>
+            <div style="text-align: center; margin: 2rem 0;">
+                <a class="gumroad-button" href="https://gumroad.com/l/your-product-id" target="_blank" rel="noopener">
+                    <img src="https://assets.gumroad.com/button/button-1.svg" alt="Buy on Gumroad" style="height:48px;">
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
